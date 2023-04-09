@@ -1,0 +1,11 @@
+Puri is a coastal city located in the eastern state of Odisha, India. It is famous for the Jagannath Temple, one of the most important Hindu temples in the country.
+
+The Jagannath Temple is dedicated to Lord Jagannath, a form of Lord Vishnu, and is believed to have been built in the 12th century. The temple is an important pilgrimage site for Hindus, and is particularly significant for followers of the Vaishnava tradition.
+
+The temple complex covers an area of over 400,000 square feet and includes several smaller shrines and temples, as well as a large kitchen that prepares food for thousands of pilgrims every day. The temple's main sanctum houses idols of Lord Jagannath, his brother Lord Balabhadra, and their sister Subhadra.
+
+One of the most important festivals celebrated at the Jagannath Temple is the Rath Yatra, or Chariot Festival, which takes place every year in June or July. During the festival, large chariots carrying the idols of Lord Jagannath, Balabhadra, and Subhadra are pulled through the streets of Puri by thousands of devotees. The festival is attended by millions of people from around the world.
+
+The Jagannath Temple is known for its unique rituals and customs, including the prohibition of certain foods and the use of special utensils and clothing. Non-Hindus are not allowed inside the temple complex, but can view the temple from a distance.
+
+Puri itself is a popular tourist destination, known for its beautiful beaches and vibrant culture. The city is also home to several other important Hindu temples, as well as museums and art galleries showcasing the region's rich history and traditions.
