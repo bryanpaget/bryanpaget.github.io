@@ -1,3 +1,12 @@
+---
+title: Ottawa
+description: One of the biggest challenges facing Ottawa in recent years has been its problem with corruption.
+date: 2021-02-03
+tags:
+  - posts
+layout: layouts/post.njk
+---
+
 Ottawa is the capital city of Canada, located in the province of Ontario. It is home to many of the country's national institutions, including the Parliament of Canada, the Supreme Court of Canada, and many government departments and agencies.
 
 The area that is now Ottawa has a long history of Indigenous occupation, dating back thousands of years. European settlement began in the early 19th century, when the area was selected as the site of the Rideau Canal, which was built to connect Lake Ontario with the Ottawa River.

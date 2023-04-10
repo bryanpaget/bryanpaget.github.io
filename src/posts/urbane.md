@@ -1,3 +1,12 @@
+---
+title: Urbane Cyclist
+description: Urbane Cyclist is a well-known bike shop located at Queen and John St in Toronto, Canada. The shop specializes in urban bikes and accessories, catering to the city's cycling community.
+date: 2021-02-03
+tags:
+  - posts
+layout: layouts/post.njk
+---
+
 Urbane Cyclist is a well-known bike shop located at Queen and John St in Toronto, Canada. The shop specializes in urban bikes and accessories, catering to the city's cycling community. But beyond being just a bike shop, it has become a cultural institution in Toronto's vibrant Queen Street West area.
 
 Queen Street West has a long and interesting history, dating back to the 1800s. The street was originally a bustling commercial district, with a mix of factories, shops, and residential buildings. In the 1970s, the area began to change, with artists and musicians moving in and opening up shops and galleries. This marked the beginning of Queen Street West's transformation into the cultural hub it is today.

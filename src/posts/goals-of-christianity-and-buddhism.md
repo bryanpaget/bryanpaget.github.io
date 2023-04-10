@@ -1,4 +1,11 @@
-are the goals of christianity and buddhism opposite?
+---
+title: Goals of Buddhism and Christianity
+description: While the goals of Christianity and Buddhism are different, they are not opposite. Both religions seek to help individuals overcome suffering and achieve a deeper understanding of the nature of reality.
+date: 2021-02-03
+tags:
+  - posts
+layout: layouts/post.njk
+---
 
 The goals of Christianity and Buddhism are not opposite, but rather they are different. While both religions have different beliefs, practices, and teachings, they share a common emphasis on compassion, love, and ethical conduct.
 

@@ -1,3 +1,14 @@
+---
+title: Male Role Models
+author: Bryan Paget
+description: London is one of the most diverse and cosmopolitan cities in the world, with a population of over 8 million people. It is home to a wide range of cultures, religions, and languages, and has a thriving arts and music scene, as well as some of the world's best restaurants, museums, and galleries.
+date: 2023-04-09
+tags:
+  - posts
+  - data
+layout: layouts/post.njk
+---
+
 Growing up without positive male role models can have a profound impact on a person's life. It can affect their confidence, self-esteem, and ability to form healthy relationships. In this post, we will explore the challenges of growing up without positive male role models and some of the ways to cope with this difficult situation.
 
 The Impact of Growing Up Without Positive Male Role Models

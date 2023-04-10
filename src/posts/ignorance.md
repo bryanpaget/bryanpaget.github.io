@@ -1,5 +1,12 @@
-write a blog post about how ignorance is the root cause of all evils including racism and desire for world war. it's true that throughout history peoples could have worked out their differences but instead they let their emotions get the best of them. Emotions are important but they come from our organs, which are ancient in their development and function.
-
+---
+title: Ignorance
+author: Bryan Paget
+description: It's time to recognize the destructive power of ignorance and take steps towards a more enlightened future. By working towards greater understanding and empathy, we can create a more peaceful and just world for ourselves and future generations.
+date: 2023-04-09
+tags:
+  - posts
+  - gender
+layout: layouts/post.njk
 ---
 
 Ignorance is the root cause of all evils, and it manifests itself in many ways throughout history. From racism and discrimination to the desire for world war, ignorance has been at the heart of some of the most destructive and devastating events in human history.
@@ -13,7 +20,3 @@ Racism, for example, is often rooted in a lack of understanding and empathy for 
 The solution to overcoming ignorance lies in education and self-awareness. By learning about other cultures and ways of life, we can gain a better understanding of the world and the people who inhabit it. We can also work on developing emotional intelligence, which involves recognizing and managing our own emotions and those of others.
 
 It's time to recognize the destructive power of ignorance and take steps towards a more enlightened future. By working towards greater understanding and empathy, we can create a more peaceful and just world for ourselves and future generations. Let's work together to overcome ignorance and build a better world for all.
-
-Statistician and Data Scientist
-
-sjmsms

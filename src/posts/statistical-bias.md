@@ -1,4 +1,11 @@
-# Statistical Bias
+---
+title: Statistical Bias
+description: Critical thinking is essential to combating statistical bias because it enables us to identify bias, evaluate evidence, consider multiple perspectives, question assumptions, and promote fairness.
+date: 2021-02-03
+tags:
+  - posts
+layout: layouts/post.njk
+---
 
 Data science and machine learning have become essential tools in today’s world, enabling us to extract valuable insights and make informed decisions. However, as with any tool, it’s essential to understand its limitations and potential pitfalls to avoid making costly mistakes. One of the most significant issues facing data science and machine learning is statistical bias, which can have serious consequences in many domains, including healthcare, finance, and criminal justice.
 

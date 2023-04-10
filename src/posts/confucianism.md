@@ -17,6 +17,3 @@ Confucianism also places a strong emphasis on the idea of filial piety, or the r
 Another important concept in Confucianism is the idea of the "rectification of names," which refers to the importance of using words correctly and accurately to reflect reality. Confucius believed that using words inaccurately or dishonestly could lead to confusion and misunderstanding, and that this could ultimately lead to social disorder.
 
 Overall, Confucianism is a rich and complex philosophical and ethical system that has had a profound impact on Chinese culture and society for thousands of years. Its teachings continue to influence many aspects of Chinese life, including education, politics, and interpersonal relationships.
-
-
-

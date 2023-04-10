@@ -1,3 +1,12 @@
+---
+title: Hackney
+description: Hackney is known for its vibrant and diverse community, with residents from all backgrounds and walks of life.
+date: 2021-02-03
+tags:
+  - posts
+layout: layouts/post.njk
+---
+
 Hackney is a vibrant and diverse area located in East London, UK. It has a rich history dating back to the Middle Ages when it was a small village known for its orchards and fields. Over the years, Hackney has transformed into a bustling urban center with a diverse population and a thriving arts and culture scene.
 
 In the 19th century, Hackney became a center for industry and manufacturing, with factories and workshops producing everything from textiles to furniture. The area was heavily bombed during World War II, causing significant damage and displacing many residents. In the post-war years, Hackney underwent a period of renewal and regeneration, with new housing developments and public amenities.

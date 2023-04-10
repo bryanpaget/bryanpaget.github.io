@@ -1,4 +1,11 @@
-what would the buddha say about following other people and being influenced by persuasive speech, what would the buddha say about being insecure and wanting friends
+---
+title: Persuasive Speech
+description: According to Buddhist teachings, the Buddha would emphasize the importance of developing one's own understanding and insight rather than blindly following the words of others or being swayed by persuasive speech.
+date: 2021-02-03
+tags:
+  - posts
+layout: layouts/post.njk
+---
 
 According to Buddhist teachings, the Buddha would emphasize the importance of developing one's own understanding and insight rather than blindly following the words of others or being swayed by persuasive speech. The Buddha encouraged his followers to seek the truth for themselves through personal experience and reflection.
 

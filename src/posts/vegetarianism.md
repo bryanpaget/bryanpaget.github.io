@@ -1,3 +1,12 @@
+---
+title: Vegetarianism
+description: One of the earliest known advocates of vegetarianism was the Greek mathematician and philosopher Pythagoras, who believed in the transmigration of souls and taught that it was wrong to eat the flesh of animals.
+date: 2021-02-03
+tags:
+  - posts
+layout: layouts/post.njk
+---
+
 Vegetarianism is the practice of abstaining from the consumption of meat, poultry, and fish, and in some cases, also avoiding the use of animal products such as dairy, eggs, and honey. The practice has a long and varied history, with roots in various religious and philosophical traditions.
 
 One of the earliest known advocates of vegetarianism was the Greek mathematician and philosopher Pythagoras, who believed in the transmigration of souls and taught that it was wrong to eat the flesh of animals. Other notable historical figures who have advocated for vegetarianism include Leonardo da Vinci, Mahatma Gandhi, and Albert Einstein.

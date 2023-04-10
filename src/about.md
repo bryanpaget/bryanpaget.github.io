@@ -2,7 +2,7 @@
 layout: layouts/page.njk
 ---
 
-## About this site
+# About this site
 
 Here you can write some details about you and your new blog: 
 

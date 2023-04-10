@@ -1,3 +1,14 @@
+---
+title: Final Fantasy VII
+author: Bryan Paget
+description: The game's plot is a complex and emotional journey, touching on themes of love, loss, and redemption.
+date: 2023-04-09
+tags:
+  - posts
+  - data
+layout: layouts/post.njk
+---
+
 Final Fantasy VII is a classic role-playing video game that was released by Square Enix in 1997. It is widely regarded as one of the greatest video games of all time due to its compelling story, memorable characters, and innovative gameplay.
 
 The game takes place in the fictional world of Gaia, a planet where a corporation called Shinra Electric Power Company has developed technology that allows them to extract the planet's life energy, known as "Mako," for their own profit. This process has resulted in environmental devastation, causing the planet to slowly die.

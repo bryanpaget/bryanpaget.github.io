@@ -1,3 +1,15 @@
+---
+title: Nonviolent Communication
+author: Bryan Paget
+description: One key aspect of nonviolent communication is learning to identify and express our own feelings and needs, as well as recognizing those of others. This involves practicing mindfulness and tuning in to our emotions and thoughts in a non-judgmental way.
+date: 2023-04-09
+tags:
+  - posts
+  - data
+layout: layouts/post.njk
+---
+
+
 Mindfulness meditation and loving kindness can be powerful tools in navigating difficult and controversial topics in our conversations and relationships. One helpful resource for this is the book "Nonviolent Communication: A Language of Life" by Marshall Rosenberg.
 
 In this book, Rosenberg offers a guide for communication that emphasizes understanding and empathy, rather than judgment and blame. The principles he outlines can be applied in a variety of contexts, including personal relationships, workplace settings, and political discussions.

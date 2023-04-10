@@ -2,17 +2,40 @@
 layout: layouts/home.njk
 ---
 
-<div class="illo-container">
-  <img src="img/profile.jpg" class="illustration" style="align: right" alt="Me!">
-</div>
-
 # Bryan Paget
 
-My interests revolve around the intersection of project management and data, with a focus on the user experience and engagement. I am particularly drawn to the principles of F.A.I.R. data and the role of metadata in creating a harmonious and efficient approach to data management.
+<div class="margin-bottom">
+    <div class="responsive">
+        <div class="gallery">
+            <img src="img/profile.jpg" alt="Me!">
+        </div>
+    </div>
+    <div class="responsive">
+        <div class="gallery">
+            <img src="img/profile-2.jpg" alt="Me!">
+        </div>
+    </div>
+    <div class="responsive">
+        <div class="gallery">
+            <img src="img/profile.jpg" alt="Me!">
+        </div>
+    </div>
+    <div class="responsive">
+        <div class="gallery">
+            <img src="img/profile.jpg" alt="Me!">
+        </div>
+    </div>
+</div>
 
-I'd write about what F.A.I.R. data is in a relatedable way. It just means I'm interested in helping people work with their data. How to collect, store, sort, retrieve, calculate, move data from one thing to another, etc.
+## Nice to Meet You!
 
-I am intrigued by the power of engaging data catalogues to promote discovery and transparency. By combining these elements in a thoughtful and strategic way, we can create a more effective and impactful approach to data-driven decision-making.
+Thanks for visiting my website. I'll tell you about myself since you are here. I am passionate about the intersection of project management and data, with a focus on enhancing the user experience and engagement. My goal is to help people work more efficiently with their data - from collection to storage, sorting, retrieval, calculation, and movement from one system to another.
+
+One of the guiding principles that I am drawn to is F.A.I.R. data, which stands for Findable, Accessible, Interoperable, and Reusable. By following these principles, we can create a more harmonious and effective approach to data management that promotes transparency and collaboration.
+
+I am also a strong believer in the power of engaging data catalogues to promote discovery and accessibility. By combining these elements in a thoughtful and strategic way, we can unlock the full potential of data-driven decision-making.
+
+Whether you are an individual, team, or organization, I am excited to help you optimize your data management strategy and achieve your goals. Let's work together to create a smarter, more connected world through data!
 
 <p><strong>Find me on: &nbsp;</strong>
     <a href="https://rpubs.com/bryanpaget">RPubs</a>,

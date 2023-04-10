@@ -1,3 +1,14 @@
+---
+title: London
+author: Bryan Paget
+description: London is one of the most diverse and cosmopolitan cities in the world, with a population of over 8 million people. It is home to a wide range of cultures, religions, and languages, and has a thriving arts and music scene, as well as some of the world's best restaurants, museums, and galleries.
+date: 2023-04-09
+tags:
+  - posts
+  - data
+layout: layouts/post.njk
+---
+
 London is the capital city of the United Kingdom, located in the southeast of England. It has a rich and fascinating history that dates back over 2,000 years. Originally founded by the Romans as a trading post, London grew rapidly in the medieval period as a center of commerce, culture, and politics. It has played a central role in many key moments in British history, including the Great Fire of London in 1666, the Industrial Revolution, and both World War I and II.
 
 Today, London is one of the most diverse and cosmopolitan cities in the world, with a population of over 8 million people. It is home to a wide range of cultures, religions, and languages, and has a thriving arts and music scene, as well as some of the world's best restaurants, museums, and galleries.

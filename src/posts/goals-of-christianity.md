@@ -1,4 +1,13 @@
-what is the goal of christianity
+---
+title: Goals of Christianity
+author: Bryan Paget
+description: The goal of Christianity is to have a personal relationship with God and to attain eternal life in heaven after death.
+date: 2023-04-09
+tags:
+  - posts
+  - data
+layout: layouts/post.njk
+---
 
 The goal of Christianity is to have a personal relationship with God and to attain eternal life in heaven after death. Christians believe in the existence of a loving and just God who created the universe and all living things, and who desires a relationship with every human being.
 

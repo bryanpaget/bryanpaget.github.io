@@ -1,4 +1,11 @@
-what is the goal of buddhism
+---
+title: Goals of Buddhism
+description: Buddhism teaches that suffering arises from craving, ignorance, and attachment to worldly desires and possessions.
+date: 2021-02-03
+tags:
+  - posts
+layout: layouts/post.njk
+---
 
 The goal of Buddhism is to achieve enlightenment, which is a state of perfect wisdom and compassion that transcends the cycle of birth, death, and rebirth (known as samsara) and leads to liberation from suffering. This state is also known as Nirvana.
 

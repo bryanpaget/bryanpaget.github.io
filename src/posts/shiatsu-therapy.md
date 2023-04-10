@@ -1,7 +1,11 @@
-# Shiatsu Therapy
-
-
-## Introduction
+---
+title: Shiatsu Therapy
+description: Critical thinking is essential to combating statistical bias because it enables us to identify bias, evaluate evidence, consider multiple perspectives, question assumptions, and promote fairness.
+date: 2021-02-03
+tags:
+  - posts
+layout: layouts/post.njk
+---
 
 Shiatsu therapy is a traditional Japanese form of massage that has been used for centuries to promote healing and relaxation. The practice is rooted in the principles of Traditional Chinese Medicine (TCM), which emphasizes the balance and flow of energy (known as "qi" or "chi") throughout the body. In this blog post, we will explore the history and practice of shiatsu therapy, including its key principles, techniques, and potential benefits.
 

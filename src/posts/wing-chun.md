@@ -1,3 +1,12 @@
+---
+title: Wing Chun
+description: Wing Chun is a style of Kung Fu that originated in China's southern province of Guangdong.
+date: 2021-02-03
+tags:
+  - posts
+layout: layouts/post.njk
+---
+
 Wing Chun is a style of Kung Fu that originated in China's southern province of Guangdong. It was created in the 17th century by a woman named Ng Mui, who was a Shaolin nun. She combined her knowledge of martial arts with her observations of nature, specifically the movements of the crane and the snake, to create a highly effective fighting style.
 
 The name "Wing Chun" means "eternal springtime" in Cantonese, and the style is characterized by its efficiency, directness, and simplicity. It is a close-range fighting system that emphasizes trapping and striking techniques, along with footwork and sensitivity to the opponent's movements.

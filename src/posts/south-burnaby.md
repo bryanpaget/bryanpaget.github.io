@@ -1,3 +1,12 @@
+---
+title: South Burnaby
+description: Today, South Burnaby is a culturally diverse community with a mix of residential, commercial, and industrial areas.
+date: 2021-02-03
+tags:
+  - posts
+layout: layouts/post.njk
+---
+
 South Burnaby is a vibrant and diverse community located in the city of Burnaby, British Columbia, Canada. It is home to over 85,000 people and is known for its rich history, cultural diversity, and natural beauty.
 
 The history of South Burnaby dates back to the late 19th century when the area was primarily agricultural land. It wasn't until the early 1900s that the area began to see significant growth and development, with the establishment of the Canadian Pacific Railway and the construction of several major roads and highways.

@@ -1,3 +1,12 @@
+---
+title: Parkdale
+description: After the Second World War, Parkdale began to change as many of the wealthy residents moved out and the area became more industrialized. This led to a decline in property values and the emergence of a new community of immigrants, artists, and working-class families. The neighborhood became a hub for Portuguese, Tibetan, and African communities, among others.
+date: 2021-02-03
+tags:
+  - posts
+layout: layouts/post.njk
+---
+
 Parkdale is a neighborhood located in the west end of Toronto, Ontario, Canada. It has a rich history and a vibrant culture that has evolved over the years. Parkdale was originally a wealthy neighborhood that attracted the elite of Toronto society in the late 19th and early 20th century. However, the area went into decline after the Second World War and became a hub for marginalized communities and artists.
 
 The history of Parkdale dates back to the 1870s when it was first established as a village outside of Toronto. It was annexed by Toronto in 1889 and was transformed into a fashionable neighborhood for the city's wealthy residents. Many of the grand Victorian mansions and homes that were built during this time still stand today, giving the neighborhood a distinctive architectural character.

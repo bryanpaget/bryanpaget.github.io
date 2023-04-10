@@ -3,26 +3,33 @@ layout: layouts/base.njk
 templateClass: tmpl-home
 ---
 
-<div class="card">
-  <div>
+<div class="wrapper home card">
+    <div class="content">
 
-  <h1 class='postTitle'>{{title}}</h1>
+        <h1 class='postTitle'>{{ title }}</h1>
 
-    {{ content | safe }}
-    <div class="controls">
+        <p>
+            <em>{{ description }}</em>
+        </p>
 
-    {% if prevPost.url %}
-      <p>
-        <strong>Previous post</strong>: 
-        <a class="previous" href="{{ prevPost.url }}">{{ prevPost.data.title }}</a>
-      </p>
-    {% endif %}
-    {% if nextPost.url %}
-      <p>
-        <strong>Next post</strong>: 
-        <a class="next" href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>
-      </p>
-    {% endif %}
+        {{ content | safe }}
+
+            <div class="controls">
+
+            {% if prevPost.url %}
+                <p>
+                    <strong>Previous post</strong>:
+                    <a class="previous" href="{{ prevPost.url }}">{{ prevPost.data.title }}</a>
+                </p>
+            {% endif %}
+
+            {% if nextPost.url %}
+                <p>
+                    <strong>Next post</strong>:
+                    <a class="next" href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>
+                </p>
+            {% endif %}
+
+        </div>
     </div>
-  </div>
 </div>

@@ -1,3 +1,12 @@
+---
+title: Panzer Dragoon Saga
+description: Panzer Dragoon Saga is a masterpiece of video game storytelling and design. Its engaging plot, well-developed characters, unique visuals, and outstanding music all contribute to an unforgettable gaming experience.
+date: 2021-02-03
+tags:
+  - posts
+layout: layouts/post.njk
+---
+
 Panzer Dragoon Saga is an action role-playing game developed by Team Andromeda and published by Sega for the Sega Saturn in 1998. It is the third entry in the Panzer Dragoon series and is widely regarded as a classic and one of the greatest RPGs of all time.
 
 The game's story takes place in a post-apocalyptic world where humans have been reduced to living in small communities, and the remnants of ancient technology are worshipped as divine artifacts. The player takes on the role of a young man named Edge, who discovers a mysterious girl named Azel who has been created by the powerful ancients. Together, they must uncover the truth about Azel's creation and stop an ancient evil that threatens to destroy the world.

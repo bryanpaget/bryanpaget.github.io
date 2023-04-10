@@ -1,3 +1,14 @@
+---
+title: Momentum
+author: Bryan Paget
+description: While the existence of ki/qi is still a subject of debate, there is no denying that momentum plays a crucial role in martial arts, and understanding how to use it can help you become a more powerful and effective martial artist.
+date: 2023-04-09
+tags:
+  - posts
+  - data
+layout: layouts/post.njk
+---
+
 The concept of ki or qi has been a topic of fascination and discussion in martial arts circles for centuries. Many practitioners believe that ki/qi is a kind of energy that flows through the body and can be harnessed to enhance physical performance. While the existence of ki/qi is still a subject of debate, there is no denying that momentum plays a crucial role in martial arts, and understanding how to use it can help you become a more powerful and effective martial artist.
 
 Momentum is the product of an object's mass and its velocity. In other words, the faster an object is moving, and the more massive it is, the greater its momentum. Martial arts practitioners learn to use their momentum to generate power in their strikes and movements. This is why you often see martial artists using their whole body to execute a strike, rather than just relying on the strength of their arm or leg.

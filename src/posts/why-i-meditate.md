@@ -1,4 +1,11 @@
-# Why I Meditate
+---
+title: Why I Meditate
+description: Meditation allows us to become more aware of our thoughts and feelings.
+date: 2021-02-03
+tags:
+  - posts
+layout: layouts/post.njk
+---
 
 As human beings, we all have biases and prejudices. It’s a fact of life. However, the important thing is to recognize these biases and work towards overcoming them. One powerful tool for doing this is meditation.
 

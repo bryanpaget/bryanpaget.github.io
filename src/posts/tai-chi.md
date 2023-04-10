@@ -1,3 +1,12 @@
+---
+title: Tai Chi
+description: The history of Tai Chi can be traced back to the Chen family, who developed the original form in the late 16th century. Over time, Tai Chi evolved and new styles were developed, such as the Yang, Wu, and Sun styles.
+date: 2021-02-03
+tags:
+  - posts
+layout: layouts/post.njk
+---
+
 Tai Chi, also known as Tai Chi Chuan, is an ancient Chinese martial art that has become popular around the world for its health benefits and meditative qualities. Tai Chi is a form of moving meditation that originated in China in the 16th century, and it is believed to have been inspired by the movements of animals, such as the crane, snake, and tiger.
 
 The practice of Tai Chi involves slow, flowing movements that are designed to promote relaxation, flexibility, and balance. The movements are performed in a continuous, circular pattern that is said to represent the cycle of nature, and they are accompanied by deep breathing and visualization techniques.

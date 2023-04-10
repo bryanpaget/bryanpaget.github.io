@@ -1,3 +1,12 @@
+---
+title: The Future
+description: In this future, corruption is no longer tolerated and those in positions of power are held accountable for their actions. The government is transparent and responsive to the needs and concerns of its citizens.
+date: 2021-02-03
+tags:
+  - posts
+layout: layouts/post.njk
+---
+
 The future is always uncertain, but there are certain trends that can be observed and speculated upon. One potential future is a world where people use bicycles, trains, and driverless shuttles to get around. In this future, there is a focus on sustainable transportation that reduces carbon emissions and promotes physical health.
 
 Education is also a top priority in this future, with an emphasis on providing equal access to education for all. This includes access to quality education for children and adults alike, as well as ongoing opportunities for learning and skill-building.
