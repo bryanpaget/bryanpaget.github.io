@@ -24,4 +24,5 @@ In essence, our access to information can be both empowering and potentially dan
 <ul>
 <li><a href="https://rpubs.com/bryanpaget"><strong>RPubs:</strong></a>  Where I post my data analyses.</li>
 <li><a href="https://bryanpaget.shinyapps.io/air-pollution-dashboard/"><strong>Air Pollution:</strong></a>  Toronto air pollution levels before and after Covid-19 lockdown.</li>
+      <li><a href="https://docs.google.com/presentation/d/1tkZxcTat1bSQBZAyD6qXGlQHq8TiemD0B8BAYs-iM_Q/edit?usp=sharing"><strong>Advanced Analytics Workspace:</strong></a>&nbsp; Made for Statistics Canada in 2022.</li>
 </ul>

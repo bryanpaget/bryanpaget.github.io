@@ -23,3 +23,10 @@ Linux also empowers users to take control of their computing experience. With pr
 In the long run, it is unlikely that any American-owned operating system will outlive a world-owned, community-built operating system like Linux. With the increasing demand for privacy and security, Linux is poised to become a more significant player in the desktop operating system market.
 
 In conclusion, Linux offers a level of customization, security, and community-driven development that proprietary operating systems cannot match. As more people seek alternatives to American-owned technology companies, Desktop Linux has become an attractive choice. It empowers users, fosters a sense of community, and offers a unique computing experience that is truly one of a kind.
+
+### Example Work
+
+<ul>
+<li><a href="https://docs.google.com/presentation/d/1KUtJa6mUc5HFX0Ul58v1MmS6D4gk1-zfReQmM1mIRXM/edit?usp=sharing"><strong>Ubuntu Desktop:</strong></a>&nbsp; Made for Canonical in 2021.</li>
+      <li><a href="https://docs.google.com/presentation/d/1VnLY5xCQ6PkMc49D-lLM7yIujeNejDHcIL5HbxrGlPw/edit?usp=sharing"><strong>Ubuntu SDK Tools:</strong></a>&nbsp; Made for Canonical in 2021.</li>
+      </ul>

@@ -17,12 +17,12 @@ layout: layouts/home.njk
     </div>
     <div class="responsive">
         <div class="gallery">
-            <img src="img/profile.jpg" alt="Me!">
+            <img src="img/profile-3.jpg" alt="Me!">
         </div>
     </div>
     <div class="responsive">
         <div class="gallery">
-            <img src="img/profile.jpg" alt="Me!">
+            <img src="img/profile-4.jpg" alt="Me!">
         </div>
     </div>
 </div>
@@ -39,14 +39,14 @@ Whether you are an individual, team, or organization, I am excited to help you o
 
 <p><strong>Find me on: &nbsp;</strong>
     <a href="https://rpubs.com/bryanpaget">RPubs</a>,
-<a href="https://bryanpaget.medium.com/">Medium</a>,
-<a href="https://github.com/bryanpaget">Github</a>,
-<a href="https://www.instagram.com/bryanpaget/">Instagram</a>,
-<a href="https://www.youtube.com/channel/UCXyqeZK2jdGSAiGIuUKVNvA">YouTube</a>,
+    <!-- <a href="https://bryanpaget.medium.com/">Medium</a>, -->
+    <a href="https://github.com/bryanpaget">Github</a>,
+    <a href="https://www.instagram.com/bryanpaget/">Instagram</a>,
+    <a href="https://www.youtube.com/channel/UCXyqeZK2jdGSAiGIuUKVNvA">YouTube</a>,
     <a href="https://www.linkedin.com/in/bryan-paget-a08954a8/">LinkedIn</a>,
     <a href="https://gitlab.gnome.org/bryanpaget">GNOME</a>,
-    <a href="https://pixelfed.social/bryanpaget">Pixelfed</a>,
-    <a href="https://bryanpaget.tumblr.com/">Tumblr</a>
+    <a href="https://pixelfed.social/bryanpaget">Pixelfed</a>
+    <!-- <a href="https://bryanpaget.tumblr.com/">Tumblr</a> -->
 </p>
 
 ### Posts

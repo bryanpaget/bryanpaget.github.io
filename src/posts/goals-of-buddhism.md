@@ -4,6 +4,8 @@ description: Buddhism teaches that suffering arises from craving, ignorance, and
 date: 2021-02-03
 tags:
   - posts
+  - buddhism
+  - goals
 layout: layouts/post.njk
 ---
 

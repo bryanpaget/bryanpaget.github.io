@@ -5,6 +5,8 @@ description: Confucianism is a philosophical and ethical system that originated 
 date: 2023-04-09
 tags:
   - posts
+  - philosophy
+  - religion
 layout: layouts/post.njk
 ---
 
