@@ -1,7 +1,7 @@
 ---
 title: Yoga
 description: Yoga is a practice that originated in ancient India around 5000 years ago.
-date: 2021-02-03
+date: 2001-01-01
 tags:
   - posts
 layout: layouts/post.njk

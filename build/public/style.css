@@ -3,12 +3,12 @@
 :root {
     --color-primary: #666666;
     --color-secondary: #666666;
-    --color-tertiary: #666666;
+    --color-tertiary: var(--highlight);
     --wrapper-height: 80vh;
     --image-max-width: 320px;
-    --font-family: 'DM Sans', sans-serif;
-    --font-family-header: 'Ivar Text', 'Georgia', serif;
-    --font-subheading: 'Oli Grotesk', 'Oil Grotesk', sans-serif;
+    --font-family: 'Helvetica', sans-serif;
+    --font-family-header: 'Helvetica', sans-serif;
+    --font-subheading: 'Helvetica', sans-serif;
 }
 
 /* Basic page style resets */
