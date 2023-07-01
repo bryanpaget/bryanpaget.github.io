@@ -1,9 +1,9 @@
 @import url("https://cdn.jsdelivr.net/npm/water.css@2/out/water.css");
 
 :root {
-    --color-primary: #666666;
-    --color-secondary: #666666;
-    --color-tertiary: var(--highlight);
+    --color-primary: var(--selection);
+    --color-secondary: var(--highlight);
+    --color-tertiary: var(--variable);
     --wrapper-height: 80vh;
     --image-max-width: 320px;
     --font-family: 'Helvetica', sans-serif;
@@ -38,8 +38,6 @@ img {
 }
 
 .card {
-    border: 1px solid var(--color-primary);
-    box-shadow: 4px 4px var(--color-primary);
     padding: 32px 32px 32px 32px;
     margin-bottom: 32px;
 }
@@ -50,10 +48,13 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 1.5rem;
+    max-width: 800px;
 }
 
 .mynav a:link, a:visited {
   font-weight: 500;
+  border-bottom: 0;
 }
 
 .mynav .links {
@@ -78,7 +79,7 @@ body {
 .content {
   display: flex;
   flex-direction: column;
-  max-width: 640px;
+  max-width: 800px;
   margin: auto;
 }
 
@@ -92,6 +93,7 @@ body {
 p {
   line-height: 1.6 !important;
   font-weight: 400;
+  font-size: 1.5rem;
 }
 
 .postTitle {
@@ -110,26 +112,28 @@ h2 {
     margin-bottom: 1rem;
     font-family: var(--font-subheading);
     font-weight: 700;
-    font-size: 2rem;
+    font-size: 3rem;
 }
 
 h3 {
     margin-bottom: 0;
     font-family: var(--font-subheading);
     font-weight: 500;
-    font-size: 1.4rem;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 h4 {
     margin-bottom: 0;
     font-family: var(--font-subheading);
     font-weight: 300;
-    font-size: 1.3rem;
+    font-size: 2rem;
 }
 
 h5 {
     font-family: var(--font-subheading);
     font-weight: 300;
+    font-size: 2rem;
 }
 
 ul > li,
@@ -142,6 +146,7 @@ ul, li {
     padding: 0 0 0 1px;
     margin: 0;
     font-weight: 400;
+    font-size: 1.5rem;
 }
 
 .no-bullets {
@@ -156,7 +161,7 @@ ul, li {
 a:link,
 a:visited {
   text-decoration: none;
-  border-bottom: 1px dotted var(--color-tertiary);
+  border-bottom: 3px solid var(--color-tertiary);
   color: var(--foreground);
   transition: background 0.2s linear;
 }
@@ -208,5 +213,6 @@ a:hover {
 }
 
 .small {
-    font-size: 0.8rem;
+    font-size: 1.2rem;
+    margin-top: 8px;
 }

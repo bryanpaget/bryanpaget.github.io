@@ -7,15 +7,6 @@ templateClass: tmpl-home
     <div class="content">
 
         <h1 class='postTitle'>{{ title }}</h1>
-        <h5>
-            {{ page.date }}
-        </h5>
-        <h4>
-            Bryan Paget
-        </h4>
-        <p>
-            <em>Abstract: {{ description }}</em>
-        </p>
 
         {{ content | safe }}
 
@@ -40,9 +31,6 @@ templateClass: tmpl-home
             {% endif %}
 
         </div>
-             <p>
-            <em>{{ tags }}</em>
-        </p>
-            </div>
+        </div>
 
 </div>

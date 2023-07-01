@@ -1,9 +1,11 @@
 ---
 title: Why I Meditate
 description: Meditation allows us to become more aware of our thoughts and feelings.
-date: 2021-02-03
+date: 2001-02-03
 tags:
-  - posts
+  - meditation
+  - buddhism
+  - mental health
 layout: layouts/post.njk
 ---
 

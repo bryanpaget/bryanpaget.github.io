@@ -2,8 +2,6 @@
 layout: layouts/home.njk
 ---
 
-# Bryan Paget
-
 <div class="margin-bottom">
     <div class="responsive">
         <div class="gallery">

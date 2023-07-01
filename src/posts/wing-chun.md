@@ -1,9 +1,12 @@
 ---
 title: Wing Chun
 description: Wing Chun is a style of Kung Fu that originated in China's southern province of Guangdong.
-date: 2021-02-03
+date: 2022-12-03
 tags:
-  - posts
+  - martial arts
+  - kung fu
+  - exercise
+  - china
 layout: layouts/post.njk
 ---
 
