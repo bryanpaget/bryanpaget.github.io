@@ -24,9 +24,8 @@
 
 img {
     height: auto;
-    max-width: 320px;
+    max-width: 256px;
     border-radius: 8px;
-    padding: 5px;
 }
 
 .centered {
@@ -118,9 +117,9 @@ h2 {
 h3 {
     margin-bottom: 0;
     font-family: var(--font-subheading);
-    font-weight: 500;
+    font-weight: 600;
     font-size: 2rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 h4 {
@@ -179,7 +178,7 @@ a:hover {
 /* Gallery */
 
 .gallery img {
-  width: 100%;
+  width: 95%;
   height: auto;
 }
 

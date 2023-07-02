@@ -1,7 +1,7 @@
 ---
 title: Shin Buddhism
-description: Shin Buddhism, also known as Pure Land Buddhism
-date: 2021-02-03
+description: Shin Buddhism, also known as Pure Land Buddhism, is a Japanese school of Mahayana Buddhism that emphasizes the concept of “Other Power,” the idea that salvation comes not from one’s own efforts but from the grace of Amida Buddha. Shin Buddhism was founded by Shinran Shonin (1173–1262), a Japanese monk and scholar who studied under the influential Tendai monk Hōnen.
+date: 2010-02-03
 tags:
   - posts
 layout: layouts/post.njk

@@ -1,7 +1,7 @@
 ---
 title: Vancouver
-description: The area that is now Vancouver has been inhabited for thousands of years by Indigenous peoples, including the Musqueam, Squamish, and Tsleil-Waututh nations.
-date: 2021-02-03
+description: The area that is now Vancouver has been inhabited for thousands of years by Indigenous peoples, including the Musqueam, Squamish, and Tsleil-Waututh nations. European settlement began in the late 19th century, and Vancouver was incorporated as a city in 1886. It grew rapidly in the early 20th century, particularly after the opening of the Panama Canal in 1914, which made Vancouver a major port for trade with Asia.
+date: 2006-09-03
 tags:
   - posts
 layout: layouts/post.njk

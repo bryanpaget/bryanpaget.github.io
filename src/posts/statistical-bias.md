@@ -1,7 +1,7 @@
 ---
 title: Statistical Bias
-description: Critical thinking is essential to combating statistical bias because it enables us to identify bias, evaluate evidence, consider multiple perspectives, question assumptions, and promote fairness.
-date: 2021-02-03
+description: Statistical bias occurs when there is a systematic deviation from the true value in a sample. In other words, bias occurs when the sample used to draw conclusions is not representative of the population it’s meant to represent. There are many types of statistical bias, including selection bias, measurement bias, and publication bias, to name a few.
+date: 2015-09-03
 tags:
   - posts
 layout: layouts/post.njk

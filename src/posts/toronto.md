@@ -1,7 +1,7 @@
 ---
 title: Toronto
-description: The area that is now Toronto has been inhabited for thousands of years by Indigenous peoples, including the Huron-Wendat, Anishinaabe, and Haudenosaunee peoples.
-date: 2021-02-03
+description: The area that is now Toronto has been inhabited for thousands of years by Indigenous peoples, including the Huron-Wendat, Anishinaabe, and Haudenosaunee peoples. In the 17th century, French traders and explorers began to establish trading posts in the area, and in 1750, the British took control of the region. The city of Toronto was officially incorporated in 1834, and it grew rapidly in the 19th and 20th centuries to become a major economic and cultural hub.
+date: 2001-02-03
 tags:
   - posts
 layout: layouts/post.njk

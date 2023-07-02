@@ -1,8 +1,9 @@
 ---
 title: Yoga
-description: Yoga is a practice that originated in ancient India around 5000 years ago.
+description: Yoga is a practice that originated in ancient India around 5000 years ago. It is a holistic practice that includes physical postures, breath control, meditation, and ethical principles. Yoga was originally intended to be a tool for spiritual and mental development, and was practiced primarily by ascetics and monks.
 date: 2001-06-01
 tags:
+  - posts
   - yoga
   - exercise
 layout: layouts/post.njk

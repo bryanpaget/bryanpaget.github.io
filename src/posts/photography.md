@@ -1,13 +1,11 @@
 ---
 title: Photography
-description: Photography is not about capturing objects, but about capturing photons. It is about seeing the world in a different way and finding beauty in unexpected places.
-date: 2021-02-03
+description: Photography is much more than just capturing images of the world around us. It is the art of capturing photons, the particles of light that make up everything we see. Photography is a way of seeing the world and capturing moments in time that we may otherwise miss. In this post, we will explore the mindfulness of photography and how it can help us stay optimistic and appreciative of the beauty around us.
+date: 2007-04-23
 tags:
   - posts
 layout: layouts/post.njk
 ---
-
-<img alt="" src="./img/photography.jpg" width="384px">
 
 I find myself drawn to capturing the essence of big cities through the lens of my camera. I particularly enjoy photographing the striking architecture that is often found in urban environments. Through my photos, I strive to capture the intricate details and textures that make these structures so captivating.
 
@@ -36,10 +34,5 @@ Photography also requires us to keep a beginner's mind. It is important to appro
 Photographers remind us that life is beautiful if we take the time to see it that way. By being open and responsive to the world around us, we can capture moments of beauty and joy that we may have otherwise missed. Photography encourages us to slow down and appreciate the world in a way that we may not have otherwise done.
 
 ### Example Work
-
-<ul>
-<li><a href="https://www.instagram.com/bryanpaget/"><strong>Instagram:</strong></a>&nbsp; I occasionally post to Instagram.</li>
-<li><a href="https://pixelfed.social/bryanpaget"><strong>Pixelfed:</strong></a>&nbsp; I like the interface and lack of advertisements on Pixelfed.</li>
-</ul>
 
 In conclusion, photography is much more than just capturing images. It is about capturing moments in time and finding beauty in unexpected places. Photography encourages us to stay optimistic, keep a beginner's mind, and be open and responsive to the beautiful world around us. By practicing mindfulness and focusing on the beauty around us, we can lead happier, more fulfilling lives.

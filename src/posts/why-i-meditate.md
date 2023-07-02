@@ -1,8 +1,9 @@
 ---
 title: Why I Meditate
-description: Meditation allows us to become more aware of our thoughts and feelings.
+description: Meditation allows us to become more aware of our thoughts and feelings. By focusing on our breath and observing our mental state, we can begin to see our biases and prejudices more clearly. We can begin to understand why we have them and where they come from.
 date: 2001-02-03
 tags:
+  - posts
   - meditation
   - buddhism
   - mental health

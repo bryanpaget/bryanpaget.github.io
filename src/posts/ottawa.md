@@ -1,7 +1,7 @@
 ---
 title: Ottawa
-description: One of the biggest challenges facing Ottawa in recent years has been its problem with corruption.
-date: 2021-02-03
+description: Ottawa is the capital city of Canada, located in the province of Ontario. It is home to many of the country's national institutions, including the Parliament of Canada, the Supreme Court of Canada, and many government departments and agencies. One of the biggest challenges facing Ottawa in recent years has been its problem with corruption.
+date: 2014-09-03
 tags:
   - posts
 layout: layouts/post.njk

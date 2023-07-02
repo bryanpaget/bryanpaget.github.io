@@ -1,11 +1,11 @@
 ---
 title: Open Source
 author: Bryan Paget
-description: The concept of open source, where software code is freely available and can be modified and shared by anyone, did not exist during the time of the Buddha.
-date: 2023-04-09
+description: The Buddha might appreciate the idea of open source, as it embodies the principle of generosity and encourages sharing and collaboration without the constraints of ownership or profit. By freely sharing code and knowledge, individuals can work together to create something greater than what they could achieve alone, and can contribute to the greater good of society.
+date: 2002-04-09
 tags:
   - posts
-  - buddhism
+  - computers
 layout: layouts/post.njk
 ---
 

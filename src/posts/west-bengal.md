@@ -1,7 +1,7 @@
 ---
 title: West Bengal
-description: West Bengal is a state located in eastern India and is home to the city of Kolkata, formerly known as Calcutta.
-date: 2021-02-03
+description: West Bengal is a state located in eastern India and is home to the city of Kolkata, formerly known as Calcutta. The region has a rich history and cultural heritage that has been shaped by centuries of conquests, trade, and colonialism.
+date: 2008-09-03
 tags:
   - posts
 layout: layouts/post.njk
