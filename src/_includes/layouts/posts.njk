@@ -9,8 +9,8 @@ templateClass: tmpl-home
     {{ content | safe }}
 
     <ul class="posts">
-
-        {%- for post in collections.posts -%}
+        {% assign posts = collections.posts | reverse %}
+        {%- for post in posts -%}
 
             <li class="no-bullets"
 
