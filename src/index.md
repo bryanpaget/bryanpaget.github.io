@@ -39,7 +39,7 @@ Thanks for visiting my website. I am passionate about photography, computers and
     <a href="https://www.instagram.com/bryanpaget/">Instagram</a>,
     <a href="https://pixelfed.social/bryanpaget">Pixelfed</a>,
     <a href="https://www.youtube.com/channel/UCXyqeZK2jdGSAiGIuUKVNvA">YouTube</a>,
-    <a href="https://www.linkedin.com/in/bryan-paget-a08954a8/">LinkedIn</a>
+    <a href="https://www.linkedin.com/in/bryanpaget/">LinkedIn</a>
     <!-- <a href="https://bryanpaget.tumblr.com/">Tumblr</a> -->
 </p>
 
