@@ -21,6 +21,4 @@ One of the key principles of Wing Chun is the concept of "sticky hands," or chi 
 
 Wing Chun is often practiced in a formal setting, with students learning a series of techniques and forms. However, the true test of the style's effectiveness is in real-life situations. Many Wing Chun practitioners have reported using the style successfully in self-defense situations, and the style has been used by law enforcement and military personnel around the world.
 
-<img src="../img/wing-chun/wing-chun-5.jpg" alt="Wing-Chun-5">
-
 In addition to its practical applications, Wing Chun is also a popular form of exercise and stress relief. The practice of Wing Chun requires focus, discipline, and a willingness to learn, which can be valuable qualities in all areas of life.

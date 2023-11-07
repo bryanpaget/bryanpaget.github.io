@@ -9,8 +9,7 @@ templateClass: tmpl-home
     {{ content | safe }}
 
     <ul class="posts">
-        {% assign posts = collections.posts %}
-        {%- for post in posts -%}
+        {% for post in collections.posts %}
 
             <li class="no-bullets"
 
@@ -36,7 +35,7 @@ templateClass: tmpl-home
                 </p>
             </li>
 
-        {%- endfor -%}
+        {% endfor %}
     </ul>
 
   </div>
