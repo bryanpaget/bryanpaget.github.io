@@ -1,31 +1,33 @@
 @import url("https://cdn.jsdelivr.net/npm/water.css@2/out/water.css");
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
 
 :root {
     --color-primary: var(--selection);
     --color-secondary: var(--highlight);
     --color-tertiary: var(--variable);
     --wrapper-height: 80vh;
-    --image-max-width: 320px;
-    --font-family: 'Helvetica', sans-serif;
-    --font-family-header: 'Helvetica', sans-serif;
-    --font-subheading: 'Helvetica', sans-serif;
+    --image-max-width: 480px;
+    --image-max-height: 480px;
+    --font-family: 'Lato', sans-serif;
+    --font-family-header: 'Lato', sans-serif;
+    --font-subheading: 'Lato', sans-serif;
 }
 
 /* Basic page style resets */
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
+
 [hidden] {
-  display: none !important;
+    display: none !important;
 }
 
 /* Import fonts */
 
 img {
-    height: auto;
-    max-width: 256px;
-    border-radius: 8px;
+    height: var(--image-max-height);
+    max-width: var(--image-max-width);
 }
 
 .centered {
@@ -37,8 +39,8 @@ img {
 }
 
 .card {
-    padding: 32px 32px 32px 32px;
-    margin-bottom: 32px;
+    padding-top: 0;
+    margin-bottom: 0;
 }
 
 .mynav {
@@ -52,57 +54,55 @@ img {
 }
 
 .mynav a:link, a:visited {
-  font-weight: 500;
-  border-bottom: 0;
+    font-weight: 500;
+    border-bottom: 0;
 }
 
 .mynav .links {
-  padding: 0.5rem 1rem 1rem 0;
-  white-space: nowrap;
+    padding: 0.5rem 1rem 1rem 0;
+    white-space: nowrap;
 }
 
 .divider {
-  padding: 0 1rem;
+    padding: 0 1rem;
 }
 
 body {
-  font-family: var(--font-family);
-  margin: auto;
+    font-family: var(--font-family);
+    margin: auto;
 }
 
 .wrapper {
-  min-height: var(--wrapper-height);
-  place-items: center;
+    min-height: var(--wrapper-height);
+    place-items: center;
 }
 
 .content {
-  display: flex;
-  flex-direction: column;
-  max-width: 800px;
-  margin: auto;
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    margin: auto;
 }
 
 .margin-bottom {
-    margin-top: 32px;
-    margin-bottom: 32px;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 /* Typography */
 
 p {
-  line-height: 1.4 !important;
-  font-weight: 400;
-  font-size: 1rem;
+    font-weight: 300;
 }
 
 .postTitle {
-  font-size: 1.3rem;
+    font-size: 1.3rem;
 }
 
 h1 {
     font-family: var(--font-family-header);
     font-weight: 900;
-    font-size: 1rem;
+    font-size: 1.5rem;
     margin-bottom: 1rem;
     display: inline-flex;
 }
@@ -117,7 +117,7 @@ h2 {
 h3 {
     margin-bottom: 0;
     font-family: var(--font-subheading);
-    font-weight: 600;
+    font-weight: 700;
     font-size: 1rem;
     margin-bottom: 1rem;
 }
@@ -125,7 +125,7 @@ h3 {
 h4 {
     margin-bottom: 0;
     font-family: var(--font-subheading);
-    font-weight: 300;
+    font-weight: 400;
     font-size: 1rem;
 }
 
@@ -137,7 +137,7 @@ h5 {
 
 ul > li,
 ol > li {
-  margin-bottom: 0.4rem;
+    margin-bottom: 0.4rem;
 }
 
 ul, li {
@@ -149,66 +149,67 @@ ul, li {
 }
 
 .no-bullets {
-  list-style-type: none; /* Remove bullets */
-  padding: 0; /* Remove padding */
-  margin: 0; /* Remove margins */
-  margin-bottom: 24px;
+    list-style-type: none; /* Remove bullets */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margins */
+    margin-bottom: 24px;
 }
 
 /* Link styles */
 
 a:link,
 a:visited {
-  text-decoration: none;
-  border-bottom: 3px solid var(--color-tertiary);
-  color: var(--foreground);
-  transition: background 0.2s linear;
+    text-decoration: none;
+    border-bottom: 1px dotted var(--color-tertiary);
+    color: var(--foreground);
+    transition: background 0.2s linear;
 }
 
 a:hover {
-  background: var(--color-tertiary);
+    background: var(--color-tertiary);
 }
 
 /* Home */
 
 .home {
-  justify-content: left;
+    justify-content: left;
 }
 
 /* Gallery */
 
 .gallery img {
-  width: 95%;
-  height: auto;
+      width: 97%;
+      height: 97%;
 }
 
 .responsive {
-    float: left;
-    width: 24.99999%;
+    float: right;
+    width: 33.33333%;
+    margin: 0 0;
 }
 
 @media only screen and (max-width: 640px) {
-  .responsive {
-    width: 49.99999%;
-    margin: 6px 0;
-  }
+    .responsive {
+        width: 50%;
+        margin: 0 0;
+    }
 }
 
 @media only screen and (max-width: 320px) {
-  .responsive {
-    width: 100%;
-    margin: 0;
-  }
+    .responsive {
+        width: 100%;
+        margin: 0;
+    }
 }
 
 /* Post */
 
 .post {
-  place-items: normal;
+    place-items: normal;
 }
 
 .controls {
-  margin: 3rem 0 2rem;
+    margin: 3rem 0 2rem;
 }
 
 .small {
