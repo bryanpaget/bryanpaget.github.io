@@ -1,3 +1,0 @@
-# TODO 🚧
-
-- [ ] Deploy with Neocities.
