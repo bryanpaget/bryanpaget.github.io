@@ -5,34 +5,49 @@ layout: layouts/home.njk
 # Bryan Paget
 
 <div>
-    <div class="responsive">
+ <div class="responsive">
         <div class="gallery">
-            <img src="img/profile-01.jpg">
+            <img src="img/profile-2024-2.jpg">
         </div>
     </div>
     <div class="responsive">
         <div class="gallery">
-            <img src="img/profile-02.jpg">
+            <img src="img/profile-2024-4.jpg">
         </div>
     </div>
     <div class="responsive">
         <div class="gallery">
-            <img src="img/profile-03.jpg">
+            <img src="img/profile-2024-6.jpg">
         </div>
     </div>
     <div class="responsive">
         <div class="gallery">
-            <img src="img/profile-04.jpg">
+            <img src="img/profile-2024-8.jpg">
         </div>
     </div>
     <div class="responsive">
         <div class="gallery">
-            <img src="img/profile-05.jpg">
+            <img src="img/profile-2024-10.jpg">
         </div>
     </div>
     <div class="responsive">
         <div class="gallery">
-            <img src="img/profile-06.jpg">
+            <img src="img/profile-2024-12.jpg">
+        </div>
+    </div>
+    <div class="responsive">
+        <div class="gallery">
+            <img src="img/profile-2024-14.jpg">
+        </div>
+    </div>
+    <div class="responsive">
+        <div class="gallery">
+            <img src="img/profile-2024-16.jpg">
+        </div>
+    </div>
+    <div class="responsive">
+        <div class="gallery">
+            <img src="img/profile-2024-18.jpg">
         </div>
     </div>
 </div>
