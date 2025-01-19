@@ -1,5 +1,5 @@
 @import url("https://cdn.jsdelivr.net/npm/water.css@2/out/water.css");
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap");
 
 :root {
     --color-primary: var(--selection);
@@ -8,9 +8,9 @@
     --wrapper-height: 80vh;
     --image-max-width: 480px;
     --image-max-height: 480px;
-    --font-family: 'Lato', sans-serif;
-    --font-family-header: 'Lato', sans-serif;
-    --font-subheading: 'Lato', sans-serif;
+    --font-family: "Lato", sans-serif;
+    --font-family-header: "Lato", sans-serif;
+    --font-subheading: "Lato", sans-serif;
 }
 
 /* Basic page style resets */
@@ -53,7 +53,8 @@ img {
     max-width: 800px;
 }
 
-.mynav a:link, a:visited {
+.mynav a:link,
+a:visited {
     font-weight: 500;
     border-bottom: 0;
 }
@@ -140,7 +141,8 @@ ol > li {
     margin-bottom: 0.4rem;
 }
 
-ul, li {
+ul,
+li {
     list-style-type: none;
     padding: 0 0 0 1px;
     margin: 0;
@@ -178,8 +180,8 @@ a:hover {
 /* Gallery */
 
 .gallery img {
-      width: 97%;
-      height: 97%;
+    width: 97%;
+    height: 97%;
 }
 
 .responsive {
