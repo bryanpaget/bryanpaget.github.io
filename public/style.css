@@ -1,5 +1,4 @@
 @import url("https://cdn.jsdelivr.net/npm/water.css@2/out/water.css");
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap");
 
 :root {
     --color-primary: var(--selection);
@@ -8,9 +7,8 @@
     --wrapper-height: 80vh;
     --image-max-width: 480px;
     --image-max-height: 480px;
-    --font-family: "Lato", sans-serif;
-    --font-family-header: "Lato", sans-serif;
-    --font-subheading: "Lato", sans-serif;
+    --font-family: Arial, sans-serif;
+    --font-family-header: Arial, sans-serif;
 }
 
 /* Basic page style resets */
@@ -143,7 +141,6 @@ ol > li {
 
 ul,
 li {
-    list-style-type: none;
     padding: 0 0 0 1px;
     margin: 0;
     font-weight: 400;
@@ -217,4 +214,106 @@ a:hover {
 .small {
     font-size: 1rem;
     margin-top: 8px;
+}
+/* Base Styles */
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid var(--color-primary);
+}
+
+/* Typography */
+h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+h2 {
+    // color: var(--color-primary);
+    border-bottom: 2px solid var(--color-tertiary);
+    font-size: 1.4rem;
+    padding-bottom: 0.5rem;
+    margin: 2rem 0 1rem;
+    font-weight: bold;
+}
+
+h3 {
+    // color: var(--color-secondary);
+    font-size: 1.1rem;
+    margin: 1.5rem 0 0.5rem;
+    font-weight: bold;
+}
+
+/* Lists */
+ul {
+    padding-left: 1.5rem;
+    margin: 0.5rem 0;
+    list-style-type: square;
+}
+
+li {
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+/* Links */
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Grid Layouts */
+.skills-container,
+.education-certifications-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    margin: 1rem 0;
+}
+
+/* Special Components */
+.project-highlight {
+    border-left: 3px solid var(--color-secondary);
+    padding-left: 1rem;
+    margin: 1rem 0;
+}
+
+/* Print Styles */
+@media print {
+    body {
+        font-size: 12px;
+        padding: 0.5rem;
+    }
+
+    .no-print {
+        display: none;
+    }
+
+    h2 {
+        page-break-after: avoid;
+    }
+
+    .skills-container,
+    .education-certifications-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .education-certifications-grid > div {
+        padding: 0;
+    }
 }
