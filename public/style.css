@@ -1,79 +1,70 @@
 @import url("https://cdn.jsdelivr.net/npm/water.css@2/out/water.css");
 
+/* ==========================================================================
+   Variables & Base Configuration
+   ========================================================================== */
 :root {
     --color-primary: var(--selection);
     --color-secondary: var(--highlight);
-    --color-tertiary: var(--variable);
     --wrapper-height: 80vh;
     --image-max-width: 480px;
     --image-max-height: 480px;
     --font-family: Arial, sans-serif;
     --font-family-header: Arial, sans-serif;
+    --font-subheading: Arial, sans-serif;
 }
 
-/* Basic page style resets */
-
+/* ==========================================================================
+   Base Styles
+   ========================================================================== */
 * {
     box-sizing: border-box;
 }
 
-[hidden] {
-    display: none !important;
-}
-
-/* Import fonts */
-
-img {
-    height: var(--image-max-height);
-    max-width: var(--image-max-width);
-}
-
-.centered {
-    height: auto;
-    max-width: 70%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.card {
-    padding-top: 0;
-    margin-bottom: 0;
-}
-
-.mynav {
-    z-index: 99;
-    padding-top: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1rem;
-    max-width: 800px;
-}
-
-.mynav a:link,
-a:visited {
-    font-weight: 500;
-    border-bottom: 0;
-}
-
-.mynav .links {
-    padding: 0.5rem 1rem 1rem 0;
-    white-space: nowrap;
-}
-
-.divider {
-    padding: 0 1rem;
-}
-
 body {
     font-family: var(--font-family);
-    margin: auto;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
 }
 
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+h1 {
+    font-family: var(--font-family-header);
+    font-weight: 900;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    display: inline-flex;
+}
+
+h2 {
+    font-family: var(--font-subheading);
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin: 2rem 0 1rem;
+    border-bottom: 2px solid var(--color-primary);
+    padding-bottom: 0.5rem;
+}
+
+h3 {
+    font-family: var(--font-subheading);
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin: 1.5rem 0 0.5rem;
+}
+
+p {
+    font-weight: 300;
+}
+
+/* ==========================================================================
+   Layout Components
+   ========================================================================== */
 .wrapper {
     min-height: var(--wrapper-height);
-    place-items: center;
 }
 
 .content {
@@ -83,201 +74,18 @@ body {
     margin: auto;
 }
 
-.margin-bottom {
-    margin-top: 0;
+.card {
+    padding-top: 0;
     margin-bottom: 0;
 }
 
-/* Typography */
-
-p {
-    font-weight: 300;
-}
-
-.postTitle {
-    font-size: 1.3rem;
-}
-
-h1 {
-    font-family: var(--font-family-header);
-    font-weight: 900;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    display: inline-flex;
-}
-
-h2 {
-    margin-bottom: 1rem;
-    font-family: var(--font-subheading);
-    font-weight: 700;
-    font-size: 1rem;
-}
-
-h3 {
-    margin-bottom: 0;
-    font-family: var(--font-subheading);
-    font-weight: 700;
-    font-size: 1rem;
-    margin-bottom: 1rem;
-}
-
-h4 {
-    margin-bottom: 0;
-    font-family: var(--font-subheading);
-    font-weight: 400;
-    font-size: 1rem;
-}
-
-h5 {
-    font-family: var(--font-subheading);
-    font-weight: 300;
-    font-size: 1rem;
-}
-
-ul > li,
-ol > li {
-    margin-bottom: 0.4rem;
-}
-
-ul,
-li {
-    padding: 0 0 0 1px;
-    margin: 0;
-    font-weight: 400;
-    font-size: 1rem;
-}
-
-.no-bullets {
-    list-style-type: none; /* Remove bullets */
-    padding: 0; /* Remove padding */
-    margin: 0; /* Remove margins */
-    margin-bottom: 24px;
-}
-
-/* Link styles */
-
-a:link,
-a:visited {
-    text-decoration: none;
-    border-bottom: 1px dotted var(--color-tertiary);
-    color: var(--foreground);
-    transition: background 0.2s linear;
-}
-
-a:hover {
-    background: var(--color-tertiary);
-}
-
-/* Home */
-
-.home {
-    justify-content: left;
-}
-
-/* Gallery */
-
-.gallery img {
-    width: 97%;
-    height: 97%;
-}
-
-.responsive {
-    float: right;
-    width: 33.33333%;
-    margin: 0 0;
-}
-
-@media only screen and (max-width: 640px) {
-    .responsive {
-        width: 50%;
-        margin: 0 0;
-    }
-}
-
-@media only screen and (max-width: 320px) {
-    .responsive {
-        width: 100%;
-        margin: 0;
-    }
-}
-
-/* Post */
-
-.post {
-    place-items: normal;
-}
-
-.controls {
-    margin: 3rem 0 2rem;
-}
-
-.small {
-    font-size: 1rem;
-    margin-top: 8px;
-}
-/* Base Styles */
-body {
-    font-family: var(--font-family);
-    line-height: 1.6;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
-}
-
-/* Header */
-.header {
-    text-align: center;
+.section {
     margin-bottom: 2rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 2px solid var(--color-primary);
 }
 
-/* Typography */
-h1 {
-    font-size: 2.2rem;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-}
-
-h2 {
-    // color: var(--color-primary);
-    border-bottom: 2px solid var(--color-tertiary);
-    font-size: 1.4rem;
-    padding-bottom: 0.5rem;
-    margin: 2rem 0 1rem;
-    font-weight: bold;
-}
-
-h3 {
-    // color: var(--color-secondary);
-    font-size: 1.1rem;
-    margin: 1.5rem 0 0.5rem;
-    font-weight: bold;
-}
-
-/* Lists */
-ul {
-    padding-left: 1.5rem;
-    margin: 0.5rem 0;
-    list-style-type: square;
-}
-
-li {
-    margin-bottom: 0.5rem;
-    line-height: 1.4;
-}
-
-/* Links */
-a {
-    color: var(--color-primary);
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* Grid Layouts */
+/* ==========================================================================
+   Grid Layouts
+   ========================================================================== */
 .skills-container,
 .education-certifications-grid {
     display: grid;
@@ -286,26 +94,64 @@ a:hover {
     margin: 1rem 0;
 }
 
-/* Special Components */
-.project-highlight {
-    border-left: 3px solid var(--color-secondary);
-    padding-left: 1rem;
-    margin: 1rem 0;
+/* ==========================================================================
+   Media Elements
+   ========================================================================== */
+.gallery img {
+    width: 97%;
+    height: 97%;
 }
 
-/* Print Styles */
+.responsive {
+    float: right;
+    width: 33.33333%;
+    margin: 0;
+}
+
+/* ==========================================================================
+   Lists & Links
+   ========================================================================== */
+ul {
+    padding-left: 1.5rem;
+    margin: 0.5rem 0;
+}
+
+li {
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+a {
+    color: var(--foreground);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--color-primary);
+    transition: background 0.2s linear;
+}
+
+a:hover {
+    background: var(--color-primary);
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+@media only screen and (max-width: 640px) {
+    .responsive {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .responsive {
+        width: 100%;
+    }
+}
+
 @media print {
     body {
         font-size: 12px;
         padding: 0.5rem;
-    }
-
-    .no-print {
-        display: none;
-    }
-
-    h2 {
-        page-break-after: avoid;
     }
 
     .skills-container,
