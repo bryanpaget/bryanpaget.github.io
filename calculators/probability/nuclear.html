@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nuclear Survival Calculator</title>
+    <script>
+        MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']],
+            processEscapes: true
+          }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 20px;
+            background: #f0f2f5;
+        }
+        .calculator {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .factor-group {
+            margin: 1.5rem 0;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .btn-group {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 0.5rem;
+        }
+        button {
+            padding: 0.8rem 1.2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        button.selected {
+            background: #2c3e50;
+            color: white;
+        }
+        #result {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: #ecf0f1;
+            border-radius: 8px;
+            display: none;
+        }
+        .risk-bar {
+            height: 20px;
+            background: #eee;
+            border-radius: 10px;
+            margin: 1rem 0;
+            overflow: hidden;
+        }
+        .risk-fill {
+            height: 100%;
+            background: #e74c3c;
+            transition: width 0.5s;
+        }
+        .math {
+            font-size: 1.1em;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <h1>☢️ Nuclear Survival Calculator</h1>
+
+        <div class="factor-group">
+            <h3>1. Location Type</h3>
+            <div class="btn-group">
+                <button onclick="selectFactor('location', 0.1)">Major City Center</button>
+                <button onclick="selectFactor('location', 0.3)">Suburbs</button>
+                <button onclick="selectFactor('location', 0.6)">Rural Area</button>
+                <button onclick="selectFactor('location', 0.8)">Remote Wilderness</button>
+            </div>
+        </div>
+
+        <div class="factor-group">
+            <h3>2. Distance from Military Targets (km)</h3>
+            <div class="btn-group">
+                <button onclick="selectFactor('distance', 0.05)">&lt; 5 km</button>
+                <button onclick="selectFactor('distance', 0.2)">5-20 km</button>
+                <button onclick="selectFactor('distance', 0.5)">20-50 km</button>
+                <button onclick="selectFactor('distance', 0.8)">&gt; 50 km</button>
+            </div>
+        </div>
+
+        <div class="factor-group">
+            <h3>3. Shelter Quality</h3>
+            <div class="btn-group">
+                <button onclick="selectFactor('shelter', 0.1)">No Shelter</button>
+                <button onclick="selectFactor('shelter', 0.3)">Basic Basement</button>
+                <button onclick="selectFactor('shelter', 0.6)">Reinforced Shelter</button>
+                <button onclick="selectFactor('shelter', 0.9)">Fallout Bunker</button>
+            </div>
+        </div>
+
+        <div class="factor-group">
+            <h3>4. Preparation Level</h3>
+            <div class="btn-group">
+                <button onclick="selectFactor('prep', 0.1)">No Preparation</button>
+                <button onclick="selectFactor('prep', 0.4)">Basic Supplies</button>
+                <button onclick="selectFactor('prep', 0.7)">1 Month Readiness</button>
+                <button onclick="selectFactor('prep', 0.9)">Full Survival Kit</button>
+            </div>
+        </div>
+
+        <button onclick="calculateSurvival()" style="background: #27ae60; color: white;">Calculate Survival Probability</button>
+        <button onclick="resetCalculator()" style="background: #e74c3c; color: white;">Reset</button>
+
+        <div id="result">
+            <div class="risk-bar">
+                <div class="risk-fill" id="riskFill"></div>
+            </div>
+            <h2 id="survivalText"></h2>
+            <div class="math">
+                $$ P_{survival} = P_{base} \times \prod_{i=1}^n f_i $$
+                <div id="calculationDetails"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let factors = {
+            location: null,
+            distance: null,
+            shelter: null,
+            prep: null
+        };
+
+        function selectFactor(type, value) {
+            factors[type] = value;
+            // Update button styles
+            const buttons = event.target.parentElement.children;
+            for(let btn of buttons) {
+                btn.classList.remove('selected');
+            }
+            event.target.classList.add('selected');
+        }
+
+        function calculateSurvival() {
+            // Base survival probability without any factors
+            let P_base = 0.15; // 15% base survival chance in full nuclear exchange
+            let totalFactor = 1;
+
+            // Apply factors
+            for(let factor in factors) {
+                if(factors[factor] !== null) {
+                    totalFactor *= factors[factor];
+                }
+            }
+
+            // Calculate final probability
+            let P_final = P_base * totalFactor;
+            P_final = Math.min(Math.max(P_final, 0.01), 0.95); // Clamp between 1% and 95%
+
+            // Display results
+            document.getElementById('result').style.display = 'block';
+            document.getElementById('riskFill').style.width = `${P_final * 100}%`;
+
+            const survivalText = document.getElementById('survivalText');
+            survivalText.innerHTML = `Survival Probability: ${(P_final * 100).toFixed(1)}%`;
+
+            const details = document.getElementById('calculationDetails');
+            details.innerHTML = `
+                Base Probability: ${(P_base * 100).toFixed(0)}% <br>
+                Combined Factor: ${totalFactor.toFixed(2)} <br>
+                $$ P_{final} = ${P_base.toFixed(2)} \\times ${totalFactor.toFixed(2)} = ${P_final.toFixed(3)} $$
+            `;
+
+            MathJax.typesetPromise();
+        }
+
+        function resetCalculator() {
+            factors = { location: null, distance: null, shelter: null, prep: null };
+            document.querySelectorAll('button').forEach(btn => btn.classList.remove('selected'));
+            document.getElementById('result').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
