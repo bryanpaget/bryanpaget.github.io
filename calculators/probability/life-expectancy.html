@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Comprehensive Life Expectancy Calculator</title>
+    <script>
+        MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            processEscapes: true
+          }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 20px;
+            background: #f5f7fa;
+        }
+        .calculator {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+        .factor-group {
+            margin: 1.5rem 0;
+            padding: 1rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+        }
+        .btn-group {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 0.5rem;
+        }
+        button {
+            padding: 0.8rem 1.2rem;
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            cursor: pointer;
+            background: #f8f9fa;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+        button.selected {
+            background: #2c3e50;
+            color: white;
+            border-color: #2c3e50;
+        }
+        #result {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: #fff;
+            border-radius: 10px;
+            display: none;
+        }
+        .comparison-chart {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        .country-box {
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            background: #f8f9fa;
+        }
+        .math {
+            font-size: 1.1em;
+            margin: 1rem 0;
+            color: #2c3e50;
+        }
+        .factor-note {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+        h2.category {
+            color: #2c3e50;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 0.5rem;
+            margin: 2rem 0 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <h1>📈 Comprehensive Life Expectancy Calculator</h1>
+
+        <h2 class="category">Personal Health Factors</h2>
+        <div class="factor-group">
+            <h3>🦵 Lymphedema Status</h3>
+            <div class="btn-group">
+                <button data-years="+0">None</button>
+                <button data-years="-2">Mild</button>
+                <button data-years="-4">Chronic Severe</button>
+            </div>
+        </div>
+
+        <div class="factor-group">
+            <h3>🩺 Chronic Conditions</h3>
+            <div class="btn-group">
+                <button data-years="+0">None</button>
+                <button data-years="-4">Kidney Issues</button>
+                <button data-years="-6">Diabetes</button>
+            </div>
+        </div>
+
+        <h2 class="category">Lifestyle Choices</h2>
+        <div class="factor-group">
+            <h3>🍎 Diet Type</h3>
+            <div class="btn-group">
+                <button data-years="+2">East Asian</button>
+                <button data-years="+3">Mediterranean</button>
+                <button data-years="-3">Western</button>
+            </div>
+        </div>
+
+        <div class="factor-group">
+            <h3>🏃 Physical Activity</h3>
+            <div class="btn-group">
+                <button data-years="-5">Sedentary</button>
+                <button data-years="+0">Light Exercise</button>
+                <button data-years="+4">Active Lifestyle</button>
+            </div>
+        </div>
+
+        <div class="factor-group">
+            <h3>🚬 Substance Use</h3>
+            <div class="btn-group">
+                <button data-years="-10">Current Smoker</button>
+                <button data-years="-3">Cannabis Daily</button>
+                <button data-years="-5">Heavy Alcohol</button>
+            </div>
+        </div>
+
+        <h2 class="category">Family & Background</h2>
+        <div class="factor-group">
+            <h3>👪 Family History</h3>
+            <div class="btn-group">
+                <button data-years="+0">Stable Family</button>
+                <button data-years="-0.5">Parental Divorce</button>
+                <button data-years="-1.5">Childhood Smoke Exposure</button>
+            </div>
+        </div>
+
+        <div class="factor-group">
+            <h3>🌍 Heritage</h3>
+            <div class="btn-group">
+                <button data-years="+0.5">1st Gen Immigrant</button>
+                <button data-years="+0.3">2nd Gen Immigrant</button>
+                <button data-years="+0">Non-immigrant</button>
+            </div>
+        </div>
+
+        <h2 class="category">Mental Health</h2>
+        <div class="factor-group">
+            <h3>😊 Outlook</h3>
+            <div class="btn-group">
+                <button data-years="+2">Optimistic</button>
+                <button data-years="+0">Neutral</button>
+                <button data-years="-3">Chronic Stress</button>
+            </div>
+        </div>
+
+        <div class="factor-group">
+            <h3>💤 Sleep</h3>
+            <div class="btn-group">
+                <button data-years="+2">7-8hrs Quality</button>
+                <button data-years="+0">Irregular</button>
+                <button data-years="-2">Insomnia</button>
+            </div>
+        </div>
+
+        <h2 class="category">Environmental Factors</h2>
+        <div class="factor-group">
+            <h3>🚗 Transportation</h3>
+            <div class="btn-group">
+                <button data-years="+2">Cyclist</button>
+                <button data-years="+0">Mixed</button>
+                <button data-years="-2">Car Dependent</button>
+            </div>
+        </div>
+
+        <div class="factor-group">
+            <h3>🏭 Environment</h3>
+            <div class="btn-group">
+                <button data-years="+1">Clean Air</button>
+                <button data-years="-1">Urban Pollution</button>
+                <button data-years="-3">Industrial Area</button>
+            </div>
+        </div>
+
+        <button onclick="calculateExpectancy()" style="background: #27ae60; color: white;">Calculate</button>
+        <button onclick="resetCalculator()" style="background: #e74c3c; color: white;">Reset</button>
+
+        <div id="result">
+            <h2>Your Estimated Life Expectancy: <span id="finalAge">73</span></h2>
+            <div class="math">
+                $$ LE = LE_{base} + \sum \Delta_{factors} $$
+            </div>
+
+            <div class="comparison-chart">
+                <div class="country-box">
+                    <h4>Japan 🇯🇵</h4>
+                    <p>84.8 years</p>
+                </div>
+                <div class="country-box">
+                    <h4>South Korea 🇰🇷</h4>
+                    <p>83.5 years</p>
+                </div>
+                <div class="country-box">
+                    <h4>Global 🌍</h4>
+                    <p>73.0 years</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const baseExpectancy = 73.0;
+        let adjustments = 0;
+        let activeButtons = new Set();
+
+        function updateCalculation() {
+            const total = baseExpectancy + adjustments;
+            document.getElementById('finalAge').textContent = total.toFixed(1);
+            document.querySelectorAll('.country-box p').forEach((p, index) => {
+                const values = [84.8, 83.5, 73.0];
+                p.textContent = `${values[index]} (${(total - values[index]).toFixed(1)})`;
+            });
+        }
+
+        function calculateExpectancy() {
+            document.getElementById('result').style.display = 'block';
+            updateCalculation();
+        }
+
+        function resetCalculator() {
+            adjustments = 0;
+            activeButtons.forEach(btn => {
+                btn.classList.remove('selected');
+            });
+            activeButtons.clear();
+            document.getElementById('result').style.display = 'none';
+            updateCalculation();
+        }
+
+        document.querySelector('.calculator').addEventListener('click', (e) => {
+            if (e.target.tagName === 'BUTTON' && e.target.dataset.years) {
+                const btn = e.target;
+                const years = parseFloat(btn.dataset.years);
+                const group = btn.closest('.btn-group');
+
+                // Remove existing selections in group
+                group.querySelectorAll('button').forEach(b => {
+                    if (b !== btn && b.classList.contains('selected')) {
+                        adjustments -= parseFloat(b.dataset.years);
+                        b.classList.remove('selected');
+                        activeButtons.delete(b);
+                    }
+                });
+
+                // Toggle current selection
+                if (btn.classList.contains('selected')) {
+                    btn.classList.remove('selected');
+                    adjustments -= years;
+                    activeButtons.delete(btn);
+                } else {
+                    btn.classList.add('selected');
+                    adjustments += years;
+                    activeButtons.add(btn);
+                }
+
+                updateCalculation();
+            }
+        });
+    </script>
+</body>
+</html>
