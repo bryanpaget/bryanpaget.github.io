@@ -1,72 +1,200 @@
 @import url("https://cdn.jsdelivr.net/npm/water.css@2/out/water.css");
 
 /* ==========================================================================
-   Variables & Base Configuration
+   Enhanced Variables & Theme
    ========================================================================== */
 :root {
-    --color-primary: var(--selection);
-    --color-secondary: var(--highlight);
+    --color-primary: #2c3e50;       /* Navy blue */
+    --color-secondary: #e74c3c;     /* Accent red */
+    --color-accent: #3498db;        /* Sky blue */
+    --color-success: #27ae60;       /* Green */
     --wrapper-height: 80vh;
     --image-max-width: 480px;
     --image-max-height: 480px;
-    --font-family: Arial, sans-serif;
-    --font-family-header: Arial, sans-serif;
-    --font-subheading: Arial, sans-serif;
+    --font-family: 'Segoe UI', system-ui, sans-serif;
+    --font-family-header: 'Segoe UI', system-ui, sans-serif;
+    --font-subheading: 'Segoe UI', system-ui, sans-serif;
+    --shadow-normal: 0 4px 6px rgba(0,0,0,0.05);
+    --shadow-hover: 0 6px 12px rgba(0,0,0,0.1);
+    --border-radius: 8px;
 }
 
 /* ==========================================================================
-   Base Styles
+   Enhanced Base Styles
    ========================================================================== */
-* {
-    box-sizing: border-box;
-}
-
 body {
     font-family: var(--font-family);
     line-height: 1.6;
-    max-width: 800px;
+    max-width: 1200px; /* Increased for promotional layout */
     margin: 0 auto;
     padding: 2rem 1rem;
+    background: #f8f9fa;
 }
 
 /* ==========================================================================
-   Typography
+   Enhanced Typography
    ========================================================================== */
 h1 {
     font-family: var(--font-family-header);
     font-weight: 900;
-    font-size: 2.2rem;
-    margin-bottom: 1rem;
-    display: inline-flex;
+    font-size: 2.8rem; /* Larger for impact */
+    margin-bottom: 1.5rem;
 }
 
 h2 {
     font-family: var(--font-subheading);
     font-weight: 700;
-    font-size: 1.4rem;
-    margin: 2rem 0 1rem;
-    border-bottom: 2px solid var(--color-primary);
-    padding-bottom: 0.5rem;
+    font-size: 1.8rem;
+    margin: 3rem 0 1.5rem;
+    border-bottom: 3px solid var(--color-primary);
+    padding-bottom: 0.75rem;
 }
 
 h3 {
     font-family: var(--font-subheading);
     font-weight: 700;
-    font-size: 1.1rem;
-    margin: 1.5rem 0 0.5rem;
-}
-
-p {
-    font-weight: 300;
+    font-size: 1.3rem;
+    margin: 2rem 0 1rem;
 }
 
 /* ==========================================================================
-   Layout Components
+   Promotional Components
    ========================================================================== */
-.wrapper {
-    min-height: var(--wrapper-height);
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    color: white;
+    text-align: center;
+    padding: 4rem 2rem;
+    border-radius: var(--border-radius);
+    margin: 2rem 0;
 }
 
+.hero h2 {
+    font-size: 2.5rem;
+    color: inherit;
+}
+
+.tagline {
+    font-size: 1.4rem;
+    opacity: 0.9;
+    margin-bottom: 3rem;
+    padding-bottom: 1rem;
+    display: inline-block;
+}
+
+/* Cards & Grids */
+.achievement-highlights,
+.expertise-grid,
+.recognition-grid {
+    display: grid;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.achievement-highlights {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.expertise-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.recognition-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.highlight-card,
+.expertise-card,
+.recognition-card {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-normal);
+    transition: transform 0.3s ease;
+}
+
+.highlight-card:hover,
+.expertise-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* Impact Stories */
+.impact-story {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    margin: 2rem 0;
+    box-shadow: var(--shadow-normal);
+}
+
+.impact-metrics {
+    color: var(--color-success);
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin: 1rem 0;
+}
+
+/* CTA Section */
+.cta {
+    text-align: center;
+    background: var(--color-primary);
+    color: white;
+    padding: 3rem 2rem;
+    border-radius: var(--border-radius);
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.cta-button {
+    background: var(--color-accent);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background: var(--color-secondary);
+}
+
+/* ==========================================================================
+   Responsive Overrides
+   ========================================================================== */
+@media (max-width: 768px) {
+    .hero {
+        padding: 2rem 1rem;
+    }
+    
+    .achievement-highlights,
+    .expertise-grid,
+    .recognition-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+    }
+}
+
+@media print {
+    .hero,
+    .cta {
+        display: none;
+    }
+}
+
+/* ==========================================================================
+   Existing Styles Preservation
+   ========================================================================== */
+/* Maintain your original styles below */
 .content {
     display: flex;
     flex-direction: column;
@@ -74,18 +202,6 @@ p {
     margin: auto;
 }
 
-.card {
-    padding-top: 0;
-    margin-bottom: 0;
-}
-
-.section {
-    margin-bottom: 2rem;
-}
-
-/* ==========================================================================
-   Grid Layouts
-   ========================================================================== */
 .skills-container,
 .education-certifications-grid {
     display: grid;
@@ -94,33 +210,19 @@ p {
     margin: 1rem 0;
 }
 
-/* ==========================================================================
-   Media Elements
-   ========================================================================== */
-.gallery img {
-    width: 97%;
-    height: 97%;
-}
-
 .responsive {
     float: right;
     width: 33.33333%;
     margin: 0;
 }
 
-/* ==========================================================================
-   Lists & Links
-   ========================================================================== */
-ul {
-    padding-left: 1.5rem;
-    margin: 0.5rem 0;
+.gallery img {
+    width: 97%;
+    height: 97%;
+    border-radius: var(--border-radius);
 }
 
-li {
-    margin-bottom: 0.5rem;
-    line-height: 1.4;
-}
-
+/* Maintain original link styles */
 a {
     color: var(--foreground);
     text-decoration: none;
@@ -131,35 +233,4 @@ a {
 a:hover {
     background: var(--color-primary);
     text-decoration: underline;
-}
-
-/* ==========================================================================
-   Responsive Design
-   ========================================================================== */
-@media only screen and (max-width: 640px) {
-    .responsive {
-        width: 50%;
-    }
-}
-
-@media only screen and (max-width: 320px) {
-    .responsive {
-        width: 100%;
-    }
-}
-
-@media print {
-    body {
-        font-size: 12px;
-        padding: 0.5rem;
-    }
-
-    .skills-container,
-    .education-certifications-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .education-certifications-grid > div {
-        padding: 0;
-    }
 }
