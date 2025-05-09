@@ -163,3 +163,115 @@ a:hover {
         padding: 0;
     }
 }
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+.hero {
+    background: linear-gradient(45deg, #1a1a1a 0%, #2d2d2d 100%);
+    color: #f0f0f0;
+    padding: 4rem 1rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.5rem;
+}
+
+.hero-subtitle {
+    font-size: 1.4rem;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+/* ==========================================================================
+   Service Grid
+   ========================================================================== */
+.services-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    margin: 3rem 0;
+}
+
+.service-card {
+    background: var(--background);
+    border: 1px solid var(--border);
+    padding: 2rem;
+    border-radius: 6px;
+    transition: transform 0.2s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-4px);
+}
+
+.service-details li {
+    margin-bottom: 0.8rem;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.service-details li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+}
+
+/* ==========================================================================
+   Approach Section
+   ========================================================================== */
+.approach-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.approach-point {
+    border-left: 3px solid var(--color-primary);
+    padding-left: 1rem;
+}
+
+/* ==========================================================================
+   Contact Section
+   ========================================================================== */
+.contact-section {
+    margin: 4rem 0;
+    text-align: center;
+}
+
+.contact-card {
+    background: var(--background-alt);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+}
+
+.contact-email {
+    font-size: 1.2rem;
+    margin: 1.5rem 0;
+}
+
+/* ==========================================================================
+   Typography Enhancements
+   ========================================================================== */
+h2 {
+    font-size: 1.8rem;
+    letter-spacing: -0.02em;
+    margin-bottom: 2rem;
+}
+
+h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
