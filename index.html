@@ -8,6 +8,8 @@
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
             rel="stylesheet"
         />
+        <!-- Add Exo 2 font from Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
         <script
             id="MathJax-script"
@@ -33,7 +35,8 @@
             body {
                 background-color: var(--earth-dark);
                 color: var(--sand);
-                font-family: "Courier New", monospace;
+                /* Updated font-family with Exo 2 */
+                font-family: 'Exo 2', sans-serif;
                 line-height: 1.7;
                 overflow-x: hidden;
                 min-height: 100vh;
@@ -43,6 +46,10 @@
                     rgba(42, 42, 42, 0.2) 0%,
                     rgba(18, 18, 18, 0) 50%
                 );
+                /* Improved kerning and typography */
+                text-rendering: optimizeLegibility;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
             }
 
             /* Enhanced CRT Effects */
@@ -89,6 +96,7 @@
             .terminal-text {
                 color: var(--sage);
                 text-shadow: 0 0 10px rgba(165, 216, 110, 0.5);
+                font-weight: 500; /* Medium weight for readability */
             }
 
             h1,
@@ -103,6 +111,8 @@
                 color: var(--water);
                 text-shadow: 0 0 15px rgba(90, 211, 255, 0.4);
                 font-size: 2.8rem;
+                font-weight: 800; /* Extra-bold for impact */
+                letter-spacing: -0.5px; /* Tighter kerning for headings */
             }
 
             .section-title {
@@ -114,6 +124,8 @@
                 display: flex;
                 align-items: center;
                 gap: 10px;
+                font-weight: 700;
+                font-size: 1.8rem;
             }
 
             .prompt {
@@ -194,8 +206,8 @@
                 filter: grayscale(30%) contrast(110%) brightness(1);
             }
 
-            /* Stats Section */
-            .stats-section {
+            /* Stats Section - Feng Shui Design */
+            section.stats-section {
                 margin: 60px 0;
                 position: relative;
                 padding: 30px 0;
@@ -240,6 +252,7 @@
                 font-weight: bold;
                 margin-bottom: 10px;
                 text-shadow: 0 0 15px currentColor;
+                letter-spacing: -1px; /* Tighter spacing for numbers */
             }
 
             .stat-item:nth-child(1) .stat-value {
@@ -258,7 +271,7 @@
                 font-size: 1.3rem;
                 margin-bottom: 15px;
                 color: var(--sand);
-                font-weight: bold;
+                font-weight: 700; /* Bold for emphasis */
             }
 
             .stat-desc {
@@ -269,6 +282,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                font-weight: 400; /* Regular weight for readability */
             }
 
             .stat-features {
@@ -285,6 +299,7 @@
                 color: var(--sand);
                 font-size: 0.95rem;
                 line-height: 1.5;
+                font-weight: 300; /* Lighter weight for details */
             }
 
             .stat-features li:before {
@@ -456,6 +471,7 @@
                 position: relative;
                 overflow: hidden;
                 z-index: 1;
+                letter-spacing: 0.5px; /* Improved letter spacing */
             }
 
             .btn-contact:before {
@@ -488,6 +504,24 @@
             .btn-linkedin {
                 color: var(--water);
                 border-color: var(--water);
+            }
+
+            /* Additional typographic enhancements */
+            p {
+                font-weight: 300; /* Lighter for body text */
+                letter-spacing: 0.2px;
+                margin-bottom: 1.2rem;
+            }
+
+            ul, ol {
+                font-weight: 300;
+                letter-spacing: 0.1px;
+            }
+
+            code, pre {
+                /* Monospace for code elements */
+                font-family: 'Roboto Mono', monospace;
+                font-weight: 400;
             }
         </style>
     </head>
