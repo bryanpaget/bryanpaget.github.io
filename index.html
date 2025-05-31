@@ -3,13 +3,15 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Bryan Paget | Systems Architect</title>
+        <title>Bryan Paget | Sustainable Systems Architecture</title>
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
             rel="stylesheet"
         />
         <!-- Add Exo 2 font from Google Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+        <!-- Add JetBrains Mono for terminal elements -->
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
         <script
             id="MathJax-script"
@@ -35,9 +37,8 @@
             body {
                 background-color: var(--earth-dark);
                 color: var(--sand);
-                /* Updated font-family with Exo 2 */
                 font-family: 'Exo 2', sans-serif;
-                line-height: 1.7;
+                line-height: 1.8;
                 overflow-x: hidden;
                 min-height: 100vh;
                 position: relative;
@@ -46,7 +47,6 @@
                     rgba(42, 42, 42, 0.2) 0%,
                     rgba(18, 18, 18, 0) 50%
                 );
-                /* Improved kerning and typography */
                 text-rendering: optimizeLegibility;
                 -webkit-font-smoothing: antialiased;
                 -moz-osx-font-smoothing: grayscale;
@@ -96,7 +96,7 @@
             .terminal-text {
                 color: var(--sage);
                 text-shadow: 0 0 10px rgba(165, 216, 110, 0.5);
-                font-weight: 500; /* Medium weight for readability */
+                font-weight: 500;
             }
 
             h1,
@@ -111,8 +111,8 @@
                 color: var(--water);
                 text-shadow: 0 0 15px rgba(90, 211, 255, 0.4);
                 font-size: 2.8rem;
-                font-weight: 800; /* Extra-bold for impact */
-                letter-spacing: -0.5px; /* Tighter kerning for headings */
+                font-weight: 800;
+                letter-spacing: -0.5px;
             }
 
             .section-title {
@@ -133,37 +133,61 @@
                 font-size: 1.2em;
             }
 
-            /* Math Section */
-            .math-section {
-                background: rgba(35, 35, 35, 0.85);
-                border: 1px solid var(--clay);
-                padding: 30px;
-                margin: 40px 0;
-                position: relative;
-                overflow: hidden;
-                border-radius: 4px;
-                box-shadow: 0 0 25px rgba(165, 216, 110, 0.15);
+            /* Manifesto Content */
+            .manifesto-content {
+                max-width: 800px;
+                margin: 0 auto;
             }
 
-            .math-crt {
+            .manifesto-section {
+                margin-bottom: 60px;
+            }
+
+            /* Terminal Code Blocks */
+            .terminal-code {
+                background-color: rgba(25, 25, 25, 0.9);
+                border: 1px solid var(--clay);
+                border-radius: 4px;
+                padding: 25px;
+                margin: 30px 0;
+                font-family: 'JetBrains Mono', monospace;
+                font-size: 0.95rem;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .terminal-code:before {
+                content: '';
                 position: absolute;
                 top: 0;
                 left: 0;
                 right: 0;
-                bottom: 0;
-                background: linear-gradient(
-                    rgba(0, 30, 0, 0.1) 50%,
-                    rgba(0, 0, 0, 0.1) 50%
-                );
-                background-size: 100% 3px;
-                pointer-events: none;
-                animation: mathscan 6s linear infinite;
-                opacity: 0.6;
+                height: 30px;
+                background: rgba(40, 40, 40, 0.7);
+                border-bottom: 1px solid var(--clay);
             }
 
-            .math-content {
+            .terminal-code pre {
+                margin: 15px 0 0 0;
+                color: var(--sage);
+                line-height: 1.6;
                 position: relative;
-                z-index: 10;
+                z-index: 2;
+            }
+
+            .terminal-code .prompt {
+                color: var(--water);
+                margin-right: 10px;
+            }
+
+            /* Math Blocks */
+            .math-block {
+                background: rgba(35, 35, 35, 0.85);
+                border: 1px solid var(--clay);
+                padding: 25px;
+                margin: 40px 0;
+                border-radius: 4px;
+                text-align: center;
             }
 
             .MathJax {
@@ -184,14 +208,7 @@
                 overflow: hidden;
                 border: 2px solid var(--clay);
                 position: relative;
-                transition: all 0.4s ease;
                 border-radius: 4px;
-            }
-
-            .grid-item:hover {
-                border-color: var(--sage);
-                transform: translateY(-5px);
-                box-shadow: 0 5px 20px rgba(165, 216, 110, 0.3);
             }
 
             .grid-item img {
@@ -199,175 +216,6 @@
                 height: 100%;
                 object-fit: cover;
                 filter: grayscale(80%) contrast(120%) brightness(0.8);
-                transition: filter 0.4s ease;
-            }
-
-            .grid-item:hover img {
-                filter: grayscale(30%) contrast(110%) brightness(1);
-            }
-
-            /* Stats Section - Feng Shui Design */
-            section.stats-section {
-                margin: 60px 0;
-                position: relative;
-                padding: 30px 0;
-            }
-
-            .stats-container {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 30px;
-            }
-
-            .stat-item {
-                text-align: center;
-                padding: 30px 20px;
-                position: relative;
-                transition: all 0.3s ease;
-                border-radius: 8px;
-                background: rgba(35, 35, 35, 0.6);
-                overflow: hidden;
-            }
-
-            .stat-item:hover {
-                background: rgba(45, 45, 45, 0.8);
-                transform: translateY(-5px);
-                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-            }
-
-            .stat-item:nth-child(1) {
-                border-top: 3px solid var(--water);
-            }
-
-            .stat-item:nth-child(2) {
-                border-top: 3px solid var(--sage);
-            }
-
-            .stat-item:nth-child(3) {
-                border-top: 3px solid var(--rust);
-            }
-
-            .stat-value {
-                font-size: 3rem;
-                font-weight: bold;
-                margin-bottom: 10px;
-                text-shadow: 0 0 15px currentColor;
-                letter-spacing: -1px; /* Tighter spacing for numbers */
-            }
-
-            .stat-item:nth-child(1) .stat-value {
-                color: var(--water);
-            }
-
-            .stat-item:nth-child(2) .stat-value {
-                color: var(--sage);
-            }
-
-            .stat-item:nth-child(3) .stat-value {
-                color: var(--rust);
-            }
-
-            .stat-title {
-                font-size: 1.3rem;
-                margin-bottom: 15px;
-                color: var(--sand);
-                font-weight: 700; /* Bold for emphasis */
-            }
-
-            .stat-desc {
-                color: var(--sage);
-                font-size: 1rem;
-                margin-bottom: 15px;
-                min-height: 60px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-weight: 400; /* Regular weight for readability */
-            }
-
-            .stat-features {
-                list-style: none;
-                padding: 0;
-                margin-top: 20px;
-                text-align: left;
-            }
-
-            .stat-features li {
-                margin-bottom: 12px;
-                position: relative;
-                padding-left: 25px;
-                color: var(--sand);
-                font-size: 0.95rem;
-                line-height: 1.5;
-                font-weight: 300; /* Lighter weight for details */
-            }
-
-            .stat-features li:before {
-                content: "▹";
-                position: absolute;
-                left: 0;
-                color: var(--clay);
-                font-size: 1.2rem;
-            }
-
-            /* Animations */
-            @keyframes scanline {
-                0% {
-                    background-position: 0 0;
-                }
-                100% {
-                    background-position: 0 100vh;
-                }
-            }
-
-            @keyframes mathscan {
-                0% {
-                    background-position: 0 0;
-                }
-                100% {
-                    background-position: 0 100%;
-                }
-            }
-
-            @keyframes blink {
-                0%,
-                49% {
-                    opacity: 1;
-                }
-                50%,
-                100% {
-                    opacity: 0;
-                }
-            }
-
-            .blink {
-                animation: blink 1s step-end infinite;
-            }
-
-            /* Kubernetes Badge */
-            .k8s-badge {
-                display: inline-block;
-                background: var(--rust);
-                color: var(--earth-dark);
-                padding: 3px 8px;
-                border-radius: 3px;
-                font-size: 0.85em;
-                margin-left: 5px;
-                vertical-align: middle;
-                box-shadow: 0 0 10px rgba(255, 154, 82, 0.5);
-                font-weight: bold;
-            }
-
-            /* Compact Math */
-            .compact-math {
-                font-size: 0.9em !important;
-            }
-
-            /* Terminal Content */
-            .terminal-content {
-                padding-left: 1.5rem;
-                border-left: 2px solid var(--sage);
-                margin: 1.5rem 0;
             }
 
             /* Feng Shui elements */
@@ -412,53 +260,29 @@
                 border-radius: 50%;
             }
 
-            /* Responsive */
-            @media (max-width: 992px) {
-                .stats-container {
-                    grid-template-columns: 1fr;
-                    gap: 40px;
+            /* Animations */
+            @keyframes scanline {
+                0% {
+                    background-position: 0 0;
                 }
-
-                .stat-item {
-                    padding: 25px;
+                100% {
+                    background-position: 0 100vh;
                 }
             }
 
-            @media (max-width: 768px) {
-                .photo-grid {
-                    grid-template-columns: repeat(2, 1fr);
+            @keyframes blink {
+                0%,
+                49% {
+                    opacity: 1;
                 }
-
-                .math-section {
-                    padding: 20px;
-                }
-
-                h1 {
-                    font-size: 2.2rem;
-                }
-
-                .fengshui-element {
-                    display: none;
+                50%,
+                100% {
+                    opacity: 0;
                 }
             }
 
-            @media (max-width: 576px) {
-                .photo-grid {
-                    grid-template-columns: 1fr;
-                }
-
-                .section-title {
-                    font-size: 1.4rem;
-                }
-
-                .stat-value {
-                    font-size: 2.5rem;
-                }
-            }
-
-            /* Section Spacing */
-            section {
-                margin-bottom: 80px;
+            .blink {
+                animation: blink 1s step-end infinite;
             }
 
             /* Contact buttons */
@@ -471,7 +295,8 @@
                 position: relative;
                 overflow: hidden;
                 z-index: 1;
-                letter-spacing: 0.5px; /* Improved letter spacing */
+                letter-spacing: 0.5px;
+                margin: 10px;
             }
 
             .btn-contact:before {
@@ -508,9 +333,9 @@
 
             /* Additional typographic enhancements */
             p {
-                font-weight: 300; /* Lighter for body text */
+                font-weight: 300;
                 letter-spacing: 0.2px;
-                margin-bottom: 1.2rem;
+                margin-bottom: 1.5rem;
             }
 
             ul, ol {
@@ -518,10 +343,53 @@
                 letter-spacing: 0.1px;
             }
 
-            code, pre {
-                /* Monospace for code elements */
-                font-family: 'Roboto Mono', monospace;
-                font-weight: 400;
+            .manifesto-section p:first-child {
+                font-size: 1.1rem;
+                line-height: 1.9;
+            }
+
+            .emphasis {
+                color: var(--water);
+                font-weight: 500;
+            }
+
+            .quote {
+                border-left: 3px solid var(--clay);
+                padding-left: 20px;
+                margin: 25px 0;
+                font-style: italic;
+                color: var(--sage);
+            }
+
+            /* Responsive */
+            @media (max-width: 992px) {
+                .manifesto-content {
+                    padding: 0 20px;
+                }
+            }
+
+            @media (max-width: 768px) {
+                .photo-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+
+                h1 {
+                    font-size: 2.2rem;
+                }
+
+                .fengshui-element {
+                    display: none;
+                }
+            }
+
+            @media (max-width: 576px) {
+                .photo-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .section-title {
+                    font-size: 1.4rem;
+                }
             }
         </style>
     </head>
@@ -546,389 +414,227 @@
                             <span class="terminal-text blink">█</span>
                         </div>
                         <p class="mt-3 terminal-text">
-                            Building bridges between technology and human needs
+                            Building sustainable foundations for data systems
                         </p>
                     </header>
 
                     <!-- Photo Grid - Two rows of three -->
                     <div class="photo-grid">
                         <div class="grid-item">
-                            <img src="img/profile-2024-19.jpg" alt="Kubernetes Architecture">
+                            <img src="img/profile-2024-19.jpg" alt="Data Infrastructure">
                         </div>
                         <div class="grid-item">
-                            <img src="img/profile-02.jpg" alt="Statistical Analysis">
+                            <img src="img/profile-02.jpg" alt="Statistical Validation">
                         </div>
                         <div class="grid-item">
-                            <img src="img/profile-11.jpg" alt="Open Source Development">
+                            <img src="img/profile-11.jpg" alt="System Design">
                         </div>
                         <div class="grid-item">
                             <img src="img/profile-04.jpg" alt="System Integration">
                         </div>
                         <div class="grid-item">
-                            <img src="img/profile-2024-17.jpg" alt="Technical Consultation">
+                            <img src="img/profile-2024-17.jpg" alt="Technical Strategy">
                         </div>
                         <div class="grid-item">
-                            <img src="img/profile-06.jpg" alt="Public Speaking">
+                            <img src="img/profile-06.jpg" alt="Collaboration">
                         </div>
                     </div>
 
-                    <!-- Stats Section - Feng Shui Design -->
-                    <section class="stats-section">
-                        <div class="container">
-                            <h2 class="section-title text-center mb-5">
-                                <span class="prompt">></span>
-                                Expertise Highlights
-                            </h2>
-
-                            <div class="stats-container">
-                                <!-- Years Stat -->
-                                <div class="stat-item">
-                                    <div class="stat-value">5+</div>
-                                    <div class="stat-title">
-                                        Years Designing Robust Systems
-                                    </div>
-                                    <div class="stat-desc">
-                                        Delivering resilient infrastructure
-                                        solutions
-                                    </div>
-                                </div>
-
-                                <!-- Kubernetes Stat -->
-                                <div class="stat-item">
-                                    <div class="stat-value">K8s</div>
-                                    <div class="stat-title">
-                                        Optimized Kubernetes Environments
-                                    </div>
-                                    <div class="stat-desc">
-                                        Efficiency-focused container
-                                        orchestration
-                                    </div>
-                                    <ul class="stat-features">
-                                        <li>Resource-efficient clusters</li>
-                                        <li>Automated cleanup systems</li>
-                                        <li>Cost-controlled deployments</li>
-                                    </ul>
-                                </div>
-
-                                <!-- OSS Stat -->
-                                <div class="stat-item">
-                                    <div class="stat-value">OSS</div>
-                                    <div class="stat-title">
-                                        Legacy to Open Source Migrations
-                                    </div>
-                                    <div class="stat-desc">
-                                        Modernizing technology stacks
-                                    </div>
-                                    <ul class="stat-features">
-                                        <li>SAS to R/Python transitions</li>
-                                        <li>Proprietary to open systems</li>
-                                        <li>Hybrid solution design</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- Holistic Approach -->
-                    <section class="mb-5">
-                        <h2 class="section-title">
-                            <span class="prompt">></span>
-                            Holistic Problem Solving
-                        </h2>
-
-                        <div class="terminal-content">
-                            <p class="terminal-text">
-My approach integrates technical expertise with systems thinking to solve fundamental challenges in data accessibility and analytical freedom. I specialize in dismantling barriers to open source data analysis and machine learning, enabling organizations to avoid vendor lock-in while building scalable, future-proof solutions.
-
-                            </p>
-
-                            <p class="terminal-text mt-4">
-This perspective allows me to architect systems that balance technical requirements with human-centered design, operational sustainability, and long-term adaptability. By championing open standards and portable tooling, I create environments where data becomes truly accessible and analytical capabilities can evolve without proprietary constraints.
-
-                            </p>
-                        </div>
-                    </section>
-
-                    <!-- Statistical Validation -->
-                    <section class="math-section">
-                        <div class="math-crt"></div>
-                        <div class="math-content">
+                    <div class="manifesto-content">
+                        <!-- Introduction -->
+                        <section class="manifesto-section">
                             <h2 class="section-title">
                                 <span class="prompt">></span>
-                                Statistical Validation Methods
+                                Sustainable Systems Approach
                             </h2>
-
-                            <div class="terminal-content">
-                                <p class="terminal-text">
-                                    Ensuring model reliability through rigorous
-                                    statistical frameworks:
-                                </p>
-
-                                <div class="row mt-4">
-                                    <div class="col-md-6">
-                                        <h4 class="terminal-text">
-                                            Sampling Methodology
-                                        </h4>
-                                        <p class="terminal-text">
-                                            Ensuring representative data through
-                                            proper sampling:
-                                        </p>
-                                        \[ n = \frac{N \cdot z^2 \cdot
-                                        p(1-p)}{e^2 (N-1) + z^2 \cdot p(1-p)} \]
-                                        <p class="mt-2 terminal-text">
-                                            Where \( n \) = sample size, \( N \)
-                                            = population size, \( z \) =
-                                            z-score, \( p \) = proportion, \( e
-                                            \) = margin of error.
-                                        </p>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <h4 class="terminal-text">
-                                            Convergence Analysis
-                                        </h4>
-                                        <p class="terminal-text">
-                                            Monitoring iterative algorithms:
-                                        </p>
-                                        \[ \lim_{n \to \infty}
-                                        \mathbb{E}[f(X_n)] = f(\mathbb{E}[X]) \]
-                                        <p class="mt-2 terminal-text">
-                                            Where \( X_n \) represents iterative
-                                            improvements and \( f \) our
-                                            objective function.
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div class="row mt-4">
-                                    <div class="col-md-6">
-                                        <h4 class="terminal-text">
-                                            Bias-Variance Tradeoff
-                                        </h4>
-                                        <p class="terminal-text">
-                                            Balancing model complexity:
-                                        </p>
-                                        \[ \text{Error} = \text{Bias}^2 +
-                                        \text{Variance} + \varepsilon \]
-                                        <p class="mt-2 terminal-text">
-                                            Optimized through cross-validation
-                                            and regularization.
-                                        </p>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <h4 class="terminal-text">
-                                            Stratified Sampling
-                                        </h4>
-                                        <p class="terminal-text">
-                                            Representation across
-                                            subpopulations:
-                                        </p>
-                                        \[ n_h = N_h \times \frac{n}{N} \]
-                                        <p class="mt-2 terminal-text">
-                                            Where \( n_h \) = sample size for
-                                            stratum \( h \), \( N_h \) =
-                                            population size for stratum \( h \).
-                                        </p>
-                                    </div>
-                                </div>
+                            
+                            <p>
+                                In an environment where technological choices have long-term consequences, 
+                                I focus on building foundations that endure. The most effective solutions 
+                                often emerge from careful, principled design rather than radical disruption.
+                            </p>
+                            
+                            <div class="quote">
+                                "Complex systems thrive when simplicity and interoperability are core design principles."
                             </div>
-                        </div>
-                    </section>
+                        </section>
 
-                    <!-- Core Capabilities -->
-                    <section class="mb-5">
-                        <h2 class="section-title">
-                            <span class="prompt">></span>
-                            Core Capabilities
-                        </h2>
-
-                        <div class="terminal-content">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="mb-4">
-                                        <h4 class="terminal-text">
-                                            Infrastructure Design
-                                            <span class="k8s-badge">K8s</span>
-                                        </h4>
-                                        <ul class="terminal-text">
-                                            <li>
-                                                Kubernetes orchestration at
-                                                scale
-                                            </li>
-                                            <li>
-                                                Cluster optimization & cleanup
-                                            </li>
-                                            <li>
-                                                Resource-efficient deployments
-                                            </li>
-                                            <li>
-                                                Cost-controlled infrastructure
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="mb-4">
-                                        <h4 class="terminal-text">
-                                            AI/ML Systems
-                                        </h4>
-                                        <ul class="terminal-text">
-                                            <li>
-                                                Statistical validation
-                                                frameworks
-                                            </li>
-                                            <li>Sampling methodology design</li>
-                                            <li>
-                                                Bias detection and mitigation
-                                            </li>
-                                            <li>MLOps implementation</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="mb-4">
-                                        <h4 class="terminal-text">
-                                            System Migration
-                                        </h4>
-                                        <ul class="terminal-text">
-                                            <li>SAS to R/Python transitions</li>
-                                            <li>Legacy to modern systems</li>
-                                            <li>Proprietary to open source</li>
-                                            <li>Hybrid solution design</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="mb-4">
-                                        <h4 class="terminal-text">
-                                            Data Strategy
-                                        </h4>
-                                        <ul class="terminal-text">
-                                            <li>Data governance frameworks</li>
-                                            <li>
-                                                Real-time analytics pipelines
-                                            </li>
-                                            <li>Data quality validation</li>
-                                            <li>Cost-optimized storage</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- Kubernetes Focus -->
-                    <section class="math-section">
-                        <div class="math-crt"></div>
-                        <div class="math-content">
+                        <!-- Statistical Integrity -->
+                        <section class="manifesto-section">
                             <h2 class="section-title">
                                 <span class="prompt">></span>
-                                Kubernetes Optimization
+                                I. Ensuring Analytical Integrity
                             </h2>
-
-                            <div class="terminal-content">
+                            
+                            <p>
+                                Trust in data systems begins with methodological rigor. I implement validation 
+                                frameworks that prioritize reproducibility and transparency, creating analyses 
+                                that stand the test of time and scrutiny.
+                            </p>
+                            
+                            <div class="math-block">
+                                <h4 class="terminal-text">Sampling Methodology</h4>
+                                <p>Establishing representative datasets through probability theory:</p>
+                                \[ n = \frac{N \cdot z^2 \cdot p(1-p)}{e^2 (N-1) + z^2 \cdot p(1-p)} \]
                                 <p class="terminal-text">
-                                    Maintaining clean, efficient clusters
-                                    through systematic approaches:
+                                    Where \( n \) = sample size, \( N \) = population size, 
+                                    \( z \) = z-score, \( p \) = proportion, \( e \) = margin of error.
                                 </p>
+                            </div>
+                            
+                            <div class="math-block">
+                                <h4 class="terminal-text">Bias-Variance Tradeoff</h4>
+                                <p>Balancing model complexity against practical utility:</p>
+                                \[ \text{Error} = \text{Bias}^2 + \text{Variance} + \varepsilon \]
+                                <p class="terminal-text">
+                                    Managed through cross-validation and regularization techniques.
+                                </p>
+                            </div>
+                            
+                            <p>
+                                These approaches create analytical environments where insights can be 
+                                verified and built upon—critical for systems meant to last.
+                            </p>
+                        </section>
 
-                                <div class="row mt-4">
-                                    <div class="col-md-6">
-                                        <h4 class="terminal-text">
-                                            Resource Allocation
-                                        </h4>
-                                        <p class="terminal-text">
-                                            Optimizing pod distribution:
-                                        </p>
-                                        <div class="compact-math">
-                                            \[ \text{Eff} = \frac{\sum
-                                            \text{Used}}{\sum \text{Alloc}}
-                                            \times 100\% \]
-                                        </div>
-                                        <p class="mt-2 terminal-text">
-                                            Target: Maintain >85% utilization
-                                            with scaling buffer
-                                        </p>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <h4 class="terminal-text">
-                                            Garbage Collection
-                                        </h4>
-                                        <p class="terminal-text">
-                                            Automated cleanup of unused
-                                            resources:
-                                        </p>
-                                        <pre
-                                            class="terminal-text p-3 bg-dark border border-sage rounded"
-                                        >
-# Automated cleanup cron job
-0 2 * * * kubectl get pods --all-namespaces |
- grep Evicted | awk '{print $2}' |
- xargs kubectl delete pod</pre
-                                        >
-                                        <p class="mt-2 terminal-text">
-                                            Daily cleanup of evicted pods
-                                        </p>
-                                    </div>
+                        <!-- Infrastructure Philosophy -->
+                        <section class="manifesto-section">
+                            <h2 class="section-title">
+                                <span class="prompt">></span>
+                                II. Designing Enduring Infrastructure
+                            </h2>
+                            
+                            <p>
+                                Sustainable systems prioritize interoperability and adaptability. 
+                                The most effective architectures abstract complexity while maintaining 
+                                clarity of purpose and operation.
+                            </p>
+                            
+                            <div class="terminal-code">
+                                <pre><span class="prompt">$</span> juju deploy data-catalogue --channel stable
+<span class="prompt">$</span> juju relate data-catalogue minio
+<span class="prompt">$</span> juju relate data-catalogue postgresql</pre>
+                            </div>
+                            
+                            <p>
+                                This self-describing repository exemplifies the philosophy: 
+                                <span class="emphasis">simplicity through abstraction</span>, 
+                                <span class="emphasis">resilience through design</span>. 
+                                The system automatically:
+                            </p>
+                            
+                            <ul class="terminal-text">
+                                <li>Maintains data lineage and provenance</li>
+                                <li>Enforces validation protocols</li>
+                                <li>Supports multiple access patterns</li>
+                                <li>Adapts to evolving requirements</li>
+                            </ul>
+                            
+                            <p>
+                                The result is infrastructure that serves current needs while retaining 
+                                the flexibility to accommodate future evolution.
+                            </p>
+                        </section>
+
+                        <!-- Open Source Philosophy -->
+                        <section class="manifesto-section">
+                            <h2 class="section-title">
+                                <span class="prompt">></span>
+                                III. The Practicality of Open Standards
+                            </h2>
+                            
+                            <p>
+                                Long-term system viability often correlates with standards-based approaches. 
+                I've guided transitions from proprietary ecosystems to portable solutions, 
+                prioritizing sustainability and operational continuity.
+                            </p>
+                            
+                            <div class="terminal-code">
+                                <pre><span class="prompt">$</span> python migrate_workloads.py --source legacy --target oss \
+    --validation-level comprehensive \
+    --output-dir ./modernized_analytics</pre>
+                            </div>
+                            
+                            <p>
+                These transitions focus on practical outcomes:
+                            </p>
+                            
+                            <ul class="terminal-text">
+                                <li>Maintainable codebases</li>
+                                <li>Transparent operational logic</li>
+                                <li>Community-supported components</li>
+                                <li>Reduced long-term dependencies</li>
+                            </ul>
+                            
+                            <p>
+                                The focus remains on creating systems that organizations can own, 
+                operate, and evolve on their own terms.
+                            </p>
+                        </section>
+
+                        <!-- Collaboration -->
+                        <section class="manifesto-section">
+                            <h2 class="section-title">
+                                <span class="prompt">></span>
+                                Building Sustainable Foundations
+                            </h2>
+                            
+                            <p>
+                                Lasting impact comes from systems designed with foresight and restraint. 
+                I focus on architectures that:
+                            </p>
+                            
+                            <ul class="terminal-text">
+                                <li>Prioritize verifiability as the basis for trust</li>
+                                <li>Embrace interoperability through open standards</li>
+                                <li>Balance innovation with maintainability</li>
+                                <li>Create foundations for organic evolution</li>
+                            </ul>
+                            
+                            <p>
+                                This approach creates environments where organizations maintain control 
+                of their technological destiny, adapting to change without unnecessary disruption.
+                            </p>
+                            
+                            <div class="text-center mt-5">
+                                <p class="terminal-text">
+                                    Interested in sustainable systems design?
+                                </p>
+                                <div class="d-flex justify-content-center flex-wrap mt-4">
+                                    <a
+                                        href="https://github.com/bryanpaget"
+                                        class="btn btn-contact btn-github"
+                                    >
+                                        <i class="fab fa-github me-2"></i>GitHub
+                                    </a>
+                                    <a
+                                        href="https://www.linkedin.com/in/bryanpaget/"
+                                        class="btn btn-contact btn-linkedin"
+                                    >
+                                        <i class="fab fa-linkedin-in me-2"></i>LinkedIn
+                                    </a>
                                 </div>
                             </div>
-                        </div>
-                    </section>
-
-                    <!-- Contact -->
-                    <section class="text-center mt-5 pt-4">
-                        <h2 class="section-title">
-                            <span class="prompt">></span>
-                            Connect
-                        </h2>
-
-                        <div class="terminal-content">
+                        </section>
+                        
+                        <footer class="text-center mt-5 pt-5">
                             <p class="terminal-text">
-                                For collaborations on Kubernetes optimization,
-                                statistical validation, or system migrations:
+                                Designed for accessibility • WCAG 2.1 AA compliant
                             </p>
-                            <div
-                                class="d-flex justify-content-center gap-3 mt-4"
-                            >
-                                <a
-                                    href="https://github.com/bryanpaget"
-                                    class="btn btn-contact btn-github"
-                                >
-                                    <i class="fab fa-github me-2"></i>GitHub
-                                </a>
-                                <a
-                                    href="https://www.linkedin.com/in/bryanpaget/"
-                                    class="btn btn-contact btn-linkedin"
-                                >
-                                    <i class="fab fa-linkedin-in me-2"></i
-                                    >LinkedIn
-                                </a>
-                            </div>
-                        </div>
-                    </section>
-
-                    <footer class="text-center mt-5 pt-4">
-                        <p class="terminal-text">
-                            Designed with accessibility in mind • WCAG 2.1 AA
-                            compliant
-                        </p>
-                        <p class="h4 mb-0 me-2">© 2025 Bryan Paget • Systems Architect</p>
-                    </footer>
+                            <p class="h4 mb-0 me-2">© 2025 Bryan Paget • Systems Architect</p>
+                        </footer>
+                    </div>
                 </div>
             </div>
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
         <script>
-            // Update MathJax rendering after page load
             document.addEventListener("DOMContentLoaded", function () {
                 if (typeof MathJax !== "undefined") {
                     MathJax.typeset();
                 }
 
-                // Add subtle flicker to CRT effect
                 const crtGlow = document.querySelector(".crt-glow");
                 setInterval(() => {
                     if (Math.random() > 0.8) {
@@ -939,7 +645,6 @@ This perspective allows me to architect systems that balance technical requireme
                     }
                 }, 3000);
 
-                // Feng Shui element animation
                 const elements = document.querySelectorAll(".fengshui-element");
                 elements.forEach((el) => {
                     el.style.transform = `translate(${Math.random() * 20 - 10}px, ${Math.random() * 20 - 10}px)`;
