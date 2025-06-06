@@ -4,613 +4,213 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bryan Paget | Sustainable Systems Architecture</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --earth-dark: #121212;
-            --earth-light: #2a2a2a;
-            --clay: #b07d5e;
-            --sand: #f0e6d8;
-            --sage: #a5d86e;
-            --water: #5ad3ff;
-            --rust: #ff9a52;
-            --crt-glow: rgba(165, 216, 110, 0.2);
+            --dark-bg: #0a0a0a;
+            --card-bg: #121212;
+            --text-primary: #e0e0e0;
+            --text-secondary: #9e9e9e;
+            --accent-blue: #4dabf7;
+            --accent-green: #69db7c;
+            --border-color: #2a2a2a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            background-color: var(--earth-dark);
-            color: var(--sand);
-            font-family: 'Exo 2', sans-serif;
-            line-height: 1.8;
-            overflow-x: hidden;
-            min-height: 100vh;
-            position: relative;
-            background-image: radial-gradient(circle at 10% 20%, rgba(42, 42, 42, 0.2) 0%, rgba(18, 18, 18, 0) 50%);
-            text-rendering: optimizeLegibility;
+            background-color: var(--dark-bg);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            font-weight: 400;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            padding-bottom: 40px;
+            padding: 0 20px;
         }
 
-        .crt-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(rgba(18, 18, 18, 0.1) 50%, rgba(0, 0, 0, 0.15) 50%), radial-gradient(circle, transparent 20%, var(--earth-dark) 150%);
-            background-size: 100% 3px, 100% 100%;
-            z-index: -1;
-            pointer-events: none;
-            animation: scanline 7s linear infinite;
+        .container {
+            max-width: 1000px;
+            margin: 60px auto;
         }
 
-        .crt-glow {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(ellipse at center, transparent 30%, var(--crt-glow) 100%);
-            z-index: -1;
-            pointer-events: none;
-            opacity: 0.3;
-        }
-
-        .terminal-text {
-            color: var(--sage);
-            text-shadow: 0 0 10px rgba(165, 216, 110, 0.5);
-            font-weight: 500;
-        }
-
-        h1, h2, h3 {
-            font-weight: 700;
-            letter-spacing: 1px;
-            margin-bottom: 1.5rem;
+        header {
+            text-align: center;
+            margin-bottom: 50px;
         }
 
         h1 {
-            color: var(--water);
-            text-shadow: 0 0 15px rgba(90, 211, 255, 0.4);
             font-size: 2.8rem;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-        }
-
-        .section-title {
-            color: var(--water);
-            border-bottom: 1px solid var(--clay);
-            padding-bottom: 8px;
-            margin-bottom: 25px;
-            position: relative;
-            display: flex;
-            align-items: center;
-            gap: 10px;
             font-weight: 700;
-            font-size: 1.8rem;
+            letter-spacing: -0.5px;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-green));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
 
-        .prompt {
-            color: var(--sage);
-            font-size: 1.2em;
+        .title {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+            margin-bottom: 30px;
         }
 
-        .manifesto-content {
-            max-width: 800px;
-            margin: 0 auto;
+        .intro {
+            max-width: 700px;
+            margin: 0 auto 50px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
         }
 
-        .manifesto-section {
-            margin-bottom: 60px;
-        }
-
-        .terminal-code {
-            background-color: rgba(25, 25, 25, 0.9);
-            border: 1px solid var(--clay);
-            border-radius: 4px;
-            padding: 25px;
-            margin: 30px 0;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.95rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .terminal-code:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 30px;
-            background: rgba(40, 40, 40, 0.7);
-            border-bottom: 1px solid var(--clay);
-        }
-
-        .terminal-code pre {
-            margin: 15px 0 0 0;
-            color: var(--sage);
-            line-height: 1.6;
-            position: relative;
-            z-index: 2;
-        }
-
-        .terminal-code .prompt {
-            color: var(--water);
-            margin-right: 10px;
-        }
-
-        .math-block {
-            background: rgba(35, 35, 35, 0.85);
-            border: 1px solid var(--clay);
-            padding: 25px;
-            margin: 40px 0;
-            border-radius: 4px;
-            text-align: center;
-        }
-
-        .MathJax {
-            color: var(--sand) !important;
-            font-size: 1.1em !important;
-        }
-
-        /* Compact Photo Grid */
         .photo-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 15px;
-            margin: 30px auto;
-            max-width: 600px;
+            margin: 40px 0;
         }
 
         .grid-item {
             aspect-ratio: 1;
             overflow: hidden;
-            border: 2px solid var(--clay);
-            position: relative;
             border-radius: 4px;
-            transition: all 0.3s ease;
-        }
-
-        .grid-item:hover {
-            transform: scale(1.02);
-            box-shadow: 0 5px 20px rgba(165, 216, 110, 0.2);
-            border-color: var(--sage);
+            position: relative;
+            transition: transform 0.3s ease;
         }
 
         .grid-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: grayscale(80%) contrast(120%) brightness(0.8);
-            transition: filter 0.3s ease;
+            transition: transform 0.5s ease;
+        }
+
+        .grid-item:hover {
+            transform: translateY(-5px);
         }
 
         .grid-item:hover img {
-            filter: grayscale(30%) contrast(110%) brightness(1);
+            transform: scale(1.05);
         }
 
-        .fengshui-element {
-            position: absolute;
-            opacity: 0.1;
-            z-index: -1;
+        .links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+            flex-wrap: wrap;
         }
 
-        .fengshui-water {
-            top: 20%;
-            right: 10%;
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            background: radial-gradient(circle, var(--water) 0%, transparent 70%);
-        }
-
-        .fengshui-wood {
-            bottom: 15%;
-            left: 8%;
-            width: 120px;
-            height: 120px;
-            background: radial-gradient(circle, var(--sage) 0%, transparent 70%);
-            transform: rotate(45deg);
-        }
-
-        .fengshui-metal {
-            top: 10%;
-            left: 15%;
-            width: 100px;
-            height: 100px;
-            border: 2px solid var(--clay);
-            border-radius: 50%;
-        }
-
-        @keyframes scanline {
-            0% { background-position: 0 0; }
-            100% { background-position: 0 100vh; }
-        }
-
-        @keyframes blink {
-            0%, 49% { opacity: 1; }
-            50%, 100% { opacity: 0; }
-        }
-
-        .blink {
-            animation: blink 1s step-end infinite;
-        }
-
-        .btn-contact {
-            border: 2px solid;
-            border-radius: 0;
-            font-weight: bold;
-            padding: 12px 30px;
+        .link-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: var(--text-secondary);
+            padding: 10px 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 30px;
             transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-            letter-spacing: 0.5px;
-            margin: 10px;
-        }
-
-        .btn-contact:before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 0%;
-            height: 100%;
-            background: currentColor;
-            transition: all 0.4s ease;
-            z-index: -1;
-            opacity: 0.2;
-        }
-
-        .btn-contact:hover:before {
-            width: 100%;
-        }
-
-        .btn-contact:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .btn-github {
-            color: var(--sage);
-            border-color: var(--sage);
-        }
-
-        .btn-linkedin {
-            color: var(--water);
-            border-color: var(--water);
-        }
-
-        p {
-            font-weight: 300;
-            letter-spacing: 0.2px;
-            margin-bottom: 1.5rem;
-        }
-
-        ul, ol {
-            font-weight: 300;
-            letter-spacing: 0.1px;
-        }
-
-        .manifesto-section p:first-child {
-            font-size: 1.1rem;
-            line-height: 1.9;
-        }
-
-        .emphasis {
-            color: var(--water);
             font-weight: 500;
         }
 
-        .quote {
-            border-left: 3px solid var(--clay);
-            padding-left: 20px;
-            margin: 25px 0;
-            font-style: italic;
-            color: var(--sage);
+        .link-item:hover {
+            color: var(--accent-blue);
+            border-color: var(--accent-blue);
+            background: rgba(77, 171, 247, 0.05);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
         }
 
         /* Responsive adjustments */
-        @media (max-width: 992px) {
-            .manifesto-content {
-                padding: 0 20px;
-            }
-            .photo-grid {
-                max-width: 500px;
-            }
-        }
-
         @media (max-width: 768px) {
+            .photo-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
             h1 {
                 font-size: 2.2rem;
             }
-            .fengshui-element {
-                display: none;
-            }
-            .section-title {
-                font-size: 1.6rem;
-            }
         }
 
-        @media (max-width: 576px) {
+        @media (max-width: 480px) {
             .photo-grid {
                 grid-template-columns: 1fr;
-                max-width: 350px;
             }
-            .section-title {
-                font-size: 1.4rem;
-            }
-            h1 {
-                font-size: 2rem;
-            }
-            .terminal-code, .math-block {
-                padding: 15px;
-            }
-            .btn-contact {
-                padding: 10px 20px;
-                margin: 5px;
-            }
-        }
-
-        @media (max-width: 400px) {
+            
             h1 {
                 font-size: 1.8rem;
             }
-            .section-title {
-                font-size: 1.3rem;
+            
+            .container {
+                margin: 30px auto;
             }
         }
     </style>
 </head>
 <body>
-    <div class="crt-overlay"></div>
-    <div class="crt-glow"></div>
-
-    <!-- Feng Shui elements -->
-    <div class="fengshui-element fengshui-water"></div>
-    <div class="fengshui-element fengshui-wood"></div>
-    <div class="fengshui-element fengshui-metal"></div>
-
-    <div class="container py-4">
-        <div class="row">
-            <div class="col-lg-10 mx-auto">
-                <header class="text-center mb-4">
-                    <h1 class="mb-3">Bryan Paget</h1>
-                    <div class="d-flex align-items-center justify-content-center">
-                        <h2 class="h4 mb-0 me-2">Systems Architect</h2>
-                        <span class="terminal-text blink">█</span>
-                    </div>
-                    <p class="mt-3 terminal-text">
-                        Building sustainable foundations for data systems
-                    </p>
-                </header>
-
-                <!-- Compact Photo Grid - 2x2 layout -->
-                <div class="photo-grid">
-                    <div class="grid-item">
-                        <img src="https://bryanpaget.com/img/profile-2024-19.jpg" alt="Data Infrastructure">
-                    </div>
-                    <div class="grid-item">
-                        <img src="https://bryanpaget.com/img/profile-2024-17.jpg" alt="Statistical Analysis">
-                    </div>
-                    <div class="grid-item">
-                        <img src="https://bryanpaget.com/img/profile-02.jpg" alt="System Design">
-                    </div>
-                    <div class="grid-item">
-                        <img src="https://bryanpaget.com/img/profile-11.jpg" alt="Technical Strategy">
-                    </div>
-                </div>
-
-                <div class="manifesto-content">
-                    <!-- Introduction -->
-                    <section class="manifesto-section">
-                        <h2 class="section-title">
-                            <span class="prompt">></span>
-                            Sustainable Systems Approach
-                        </h2>
-                        
-                        <p>
-                            In an environment where technological choices have long-term consequences, 
-                            I focus on building foundations that endure. The most effective solutions 
-                            often emerge from careful, principled design rather than radical disruption.
-                        </p>
-                        
-                        <div class="quote">
-                            "Complex systems thrive when simplicity and interoperability are core design principles."
-                        </div>
-                    </section>
-
-                    <!-- Statistical Integrity -->
-                    <section class="manifesto-section">
-                        <h2 class="section-title">
-                            <span class="prompt">></span>
-                            I. Ensuring Analytical Integrity
-                        </h2>
-                        
-                        <p>
-                            Trust in data systems begins with methodological rigor. I implement validation 
-                            frameworks that prioritize reproducibility and transparency, creating analyses 
-                            that stand the test of time and scrutiny.
-                        </p>
-                        
-                        <div class="math-block">
-                            <h4 class="terminal-text">Sampling Methodology</h4>
-                            <p>Establishing representative datasets through probability theory:</p>
-                            \[ n = \frac{N \cdot z^2 \cdot p(1-p)}{e^2 (N-1) + z^2 \cdot p(1-p)} \]
-                            <p class="terminal-text">
-                                Where \( n \) = sample size, \( N \) = population size, 
-                                \( z \) = z-score, \( p \) = proportion, \( e \) = margin of error.
-                            </p>
-                        </div>
-                        
-                        <div class="math-block">
-                            <h4 class="terminal-text">Bias-Variance Tradeoff</h4>
-                            <p>Balancing model complexity against practical utility:</p>
-                            \[ \text{Error} = \text{Bias}^2 + \text{Variance} + \varepsilon \]
-                            <p class="terminal-text">
-                                Managed through cross-validation and regularization techniques.
-                            </p>
-                        </div>
-                        
-                        <p>
-                            These approaches create analytical environments where insights can be 
-                            verified and built upon—critical for systems meant to last.
-                        </p>
-                    </section>
-
-                    <!-- Infrastructure Philosophy -->
-                    <section class="manifesto-section">
-                        <h2 class="section-title">
-                            <span class="prompt">></span>
-                            II. Designing Enduring Infrastructure
-                        </h2>
-                        
-                        <p>
-                            Sustainable systems prioritize interoperability and adaptability. 
-                            The most effective architectures abstract complexity while maintaining 
-                            clarity of purpose and operation.
-                        </p>
-                        
-                        <div class="terminal-code">
-                            <pre><span class="prompt">$</span> juju deploy data-catalogue --channel stable
-<span class="prompt">$</span> juju relate data-catalogue minio
-<span class="prompt">$</span> juju relate data-catalogue postgresql</pre>
-                        </div>
-                        
-                        <p>
-                            This self-describing repository exemplifies the philosophy: 
-                            <span class="emphasis">simplicity through abstraction</span>, 
-                            <span class="emphasis">resilience through design</span>. 
-                            The system automatically:
-                        </p>
-                        
-                        <ul class="terminal-text">
-                            <li>Maintains data lineage and provenance</li>
-                            <li>Enforces validation protocols</li>
-                            <li>Supports multiple access patterns</li>
-                            <li>Adapts to evolving requirements</li>
-                        </ul>
-                        
-                        <p>
-                            The result is infrastructure that serves current needs while retaining 
-                            the flexibility to accommodate future evolution.
-                        </p>
-                    </section>
-
-                    <!-- Open Source Philosophy -->
-                    <section class="manifesto-section">
-                        <h2 class="section-title">
-                            <span class="prompt">></span>
-                            III. The Practicality of Open Standards
-                        </h2>
-                        
-                        <p>
-                            Long-term system viability often correlates with standards-based approaches. 
-                            I've guided transitions from proprietary ecosystems to portable solutions, 
-                            prioritizing sustainability and operational continuity.
-                        </p>
-                        
-                        <div class="terminal-code">
-                            <pre><span class="prompt">$</span> python migrate_workloads.py --source legacy --target oss \
-    --validation-level comprehensive \
-    --output-dir ./modernized_analytics</pre>
-                        </div>
-                        
-                        <p>
-                            These transitions focus on practical outcomes:
-                        </p>
-                        
-                        <ul class="terminal-text">
-                            <li>Maintainable codebases</li>
-                            <li>Transparent operational logic</li>
-                            <li>Community-supported components</li>
-                            <li>Reduced long-term dependencies</li>
-                        </ul>
-                        
-                        <p>
-                            The focus remains on creating systems that organizations can own, 
-                            operate, and evolve on their own terms.
-                        </p>
-                    </section>
-
-                    <!-- Collaboration -->
-                    <section class="manifesto-section">
-                        <h2 class="section-title">
-                            <span class="prompt">></span>
-                            Building Sustainable Foundations
-                        </h2>
-                        
-                        <p>
-                            Lasting impact comes from systems designed with foresight and restraint. 
-                            I focus on architectures that:
-                        </p>
-                        
-                        <ul class="terminal-text">
-                            <li>Prioritize verifiability as the basis for trust</li>
-                            <li>Embrace interoperability through open standards</li>
-                            <li>Balance innovation with maintainability</li>
-                            <li>Create foundations for organic evolution</li>
-                        </ul>
-                        
-                        <p>
-                            This approach creates environments where organizations maintain control 
-                            of their technological destiny, adapting to change without unnecessary disruption.
-                        </p>
-                        
-                        <div class="text-center mt-5">
-                            <p class="terminal-text">
-                                Interested in sustainable systems design?
-                            </p>
-                            <div class="d-flex justify-content-center flex-wrap mt-4">
-                                <a href="https://github.com/bryanpaget" class="btn btn-contact btn-github">
-                                    <i class="fab fa-github me-2"></i>GitHub
-                                </a>
-                                <a href="https://www.linkedin.com/in/bryanpaget/" class="btn btn-contact btn-linkedin">
-                                    <i class="fab fa-linkedin-in me-2"></i>LinkedIn
-                                </a>
-                            </div>
-                        </div>
-                    </section>
-                    
-                    <footer class="text-center mt-5 pt-5">
-                        <p class="terminal-text">
-                            Designed for accessibility • WCAG 2.1 AA compliant
-                        </p>
-                        <p class="h4 mb-0 me-2">© 2025 Bryan Paget • Systems Architect</p>
-                    </footer>
-                </div>
+    <div class="container">
+        <header>
+            <h1>Bryan Paget</h1>
+            <div class="title">Sustainable Systems Architecture</div>
+        </header>
+        
+        <div class="intro">
+            <p>Data Platform Engineer with expertise in Kubernetes infrastructure and statistical modeling. I focus on building secure, sustainable foundations for data systems that balance innovation with maintainability. My approach emphasizes verifiable results, interoperability through open standards, and solutions designed for long-term evolution.</p>
+        </div>
+        
+        <div class="photo-grid">
+            <div class="grid-item">
+                <img src="https://bryanpaget.com/img/profile-2024-19.jpg" alt="Data Infrastructure">
+            </div>
+            <div class="grid-item">
+                <img src="https://bryanpaget.com/img/profile-2024-17.jpg" alt="Statistical Analysis">
+            </div>
+            <div class="grid-item">
+                <img src="https://bryanpaget.com/img/profile-02.jpg" alt="System Design">
+            </div>
+            <div class="grid-item">
+                <img src="https://bryanpaget.com/img/profile-11.jpg" alt="Technical Strategy">
+            </div>
+            <div class="grid-item">
+                <img src="https://bryanpaget.com/img/profile-04.jpg" alt="Cloud Architecture">
+            </div>
+            <div class="grid-item">
+                <img src="https://bryanpaget.com/img/profile-06.jpg" alt="Operational Systems">
             </div>
         </div>
+        
+        <div class="links">
+            <a href="https://github.com/bryanpaget" class="link-item">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/bryanpaget/" class="link-item">
+                <i class="fab fa-linkedin-in"></i> LinkedIn
+            </a>
+            <a href="https://bryanpaget.medium.com/" class="link-item">
+                <i class="fab fa-medium-m"></i> Medium
+            </a>
+            <a href="https://rpubs.com/bryanpaget" class="link-item">
+                <i class="fas fa-chart-bar"></i> RPubs
+            </a>
+        </div>
+        
+        <footer>
+            <p>© 2025 Bryan Paget • Systems Architect</p>
+        </footer>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            if (typeof MathJax !== "undefined") {
-                MathJax.typeset();
-            }
-
-            const crtGlow = document.querySelector(".crt-glow");
-            setInterval(() => {
-                if (Math.random() > 0.8) {
-                    crtGlow.style.opacity = Math.random() * 0.4 + 0.1;
-                    setTimeout(() => {
-                        crtGlow.style.opacity = 0.3;
-                    }, 100);
-                }
-            }, 3000);
-
-            const elements = document.querySelectorAll(".fengshui-element");
-            elements.forEach((el) => {
-                el.style.transform = `translate(${Math.random() * 20 - 10}px, ${Math.random() * 20 - 10}px)`;
-            });
-        });
-    </script>
 </body>
 </html>
