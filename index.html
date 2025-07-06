@@ -1,288 +1,72 @@
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bryan Paget | Sustainable Systems Architecture</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --dark-bg: #121212;
-            --card-bg: #1e1e1e;
-            --text-primary: #e0e0e0;
-            --text-secondary: #9e9e9e;
-            --accent-blue: #64b5f6;
-            --accent-green: #81c784;
-            --accent-gold: #ffd54f;
-            --border-color: #2a2a2a;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: var(--dark-bg);
-            color: var(--text-primary);
-            font-family: 'Inter', sans-serif;
-            line-height: 1.7;
-            font-weight: 400;
-            -webkit-font-smoothing: antialiased;
-            padding: 0 20px;
-            min-height: 100vh;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 80px auto;
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 60px;
-            position: relative;
-        }
-
-        header::after {
-            content: "";
-            display: block;
-            width: 100px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent-blue), var(--accent-green));
-            margin: 25px auto 0;
-            border-radius: 2px;
-        }
-
-        h1 {
-            font-size: 2.8rem;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            margin-bottom: 10px;
-            background: linear-gradient(90deg, var(--accent-blue), var(--accent-green));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            line-height: 1.2;
-        }
-
-        .title {
-            font-size: 1.2rem;
-            color: var(--text-secondary);
-            font-weight: 400;
-            margin-bottom: 30px;
-            letter-spacing: 0.5px;
-        }
-
-        .intro {
-            max-width: 700px;
-            margin: 0 auto 60px;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--text-secondary);
-            position: relative;
-            padding: 0 20px;
-        }
-
-        .intro::before {
-            content: """;
-            position: absolute;
-            top: -25px;
-            left: 0;
-            font-size: 3rem;
-            color: var(--accent-gold);
-            opacity: 0.3;
-            font-family: Georgia, serif;
-            line-height: 1;
-        }
-
-        .photo-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin: 50px 0;
-        }
-
-        .grid-item {
-            aspect-ratio: 1;
-            overflow: hidden;
-            border-radius: 6px;
-            position: relative;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-            border: 1px solid var(--border-color);
-        }
-
-        .grid-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.7s ease;
-        }
-
-        .grid-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
-            border-color: rgba(129, 199, 132, 0.2);
-        }
-
-        .grid-item:hover img {
-            transform: scale(1.08);
-        }
-
-        .links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 50px;
-            flex-wrap: wrap;
-        }
-
-        .link-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-            color: var(--text-secondary);
-            padding: 12px 25px;
-            border: 1px solid var(--border-color);
-            border-radius: 30px;
-            transition: all 0.3s ease;
-            font-weight: 500;
-            background: var(--card-bg);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-        }
-
-        .link-item:hover {
-            color: var(--accent-blue);
-            border-color: var(--accent-blue);
-            background: rgba(30, 30, 30, 0.8);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(100, 181, 246, 0.2);
-        }
-
-        .link-item i {
-            transition: transform 0.3s ease;
-        }
-
-        .link-item:hover i {
-            transform: scale(1.15);
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 80px;
-            padding-top: 25px;
-            border-top: 1px solid var(--border-color);
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            letter-spacing: 0.3px;
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .photo-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
-            }
-            
-            h1 {
-                font-size: 2.4rem;
-            }
-            
-            .container {
-                margin: 60px auto;
-            }
-            
-            .links {
-                gap: 15px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .photo-grid {
-                grid-template-columns: 1fr;
-                max-width: 350px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .container {
-                margin: 40px auto;
-            }
-            
-            .title {
-                font-size: 1.1rem;
-            }
-            
-            .link-item {
-                padding: 10px 20px;
-                font-size: 0.95rem;
-            }
-            
-            .intro {
-                font-size: 1rem;
-                padding: 0;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <header>
-            <h1>Bryan Paget</h1>
-            <div class="title">Sustainable Systems Architecture</div>
-        </header>
-        
-        <div class="intro">
-            <p>Data Platform Engineer with expertise in Kubernetes infrastructure and statistical modeling. I focus on building secure, sustainable foundations for data systems that balance innovation with maintainability. My approach emphasizes verifiable results, interoperability through open standards, and solutions designed for long-term evolution.</p>
-        </div>
-        
-        <div class="photo-grid">
-            <div class="grid-item">
-                <img src="https://bryanpaget.com/img/profile-2024-19.jpg" alt="Data Infrastructure">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" href="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Bryan's Blog" />
+        <link rel="stylesheet" type="text/css" href="/public/style.css" />
+    </head>
+    <body>
+        <main>
+            <div class="wrapper home card">
+                <div class="content">
+                    <h1>Bryan Paget</h1>
+                    <div>
+                        <div class="responsive">
+                            <div class="gallery">
+                                <img src="img/profile-2024-19.jpg" />
+                            </div>
+                        </div>
+                        <div class="responsive">
+                            <div class="gallery">
+                                <img src="img/profile-02.jpg" />
+                            </div>
+                        </div>
+                        <div class="responsive">
+                            <div class="gallery">
+                                <img src="img/profile-11.jpg" />
+                            </div>
+                        </div>
+                        <div class="responsive">
+                            <div class="gallery">
+                                <img src="img/profile-04.jpg" />
+                            </div>
+                        </div>
+                        <div class="responsive">
+                            <div class="gallery">
+                                <img src="img/profile-2024-17.jpg" />
+                            </div>
+                        </div>
+                        <div class="responsive">
+                            <div class="gallery">
+                                <img src="img/profile-06.jpg" />
+                            </div>
+                        </div>
+                    </div>
+                    <p>
+                        <strong>Find me on: &nbsp;</strong>
+                        <a href="https://bryanpaget.medium.com/">Medium</a>,
+                        <a href="https://github.com/bryanpaget">Github</a>,
+                        <a href="https://rpubs.com/bryanpaget">RPubs</a>,
+                        <a href="https://gitlab.gnome.org/bryanpaget">GNOME</a>,
+                        <a href="https://www.instagram.com/bryanpaget/"
+                            >Instagram</a
+                        >,
+                        <a href="https://pixelfed.social/bryanpaget">Pixelfed</a
+                        >,
+                        <a
+                            href="https://www.youtube.com/channel/UCXyqeZK2jdGSAiGIuUKVNvA"
+                            >YouTube</a
+                        >,
+                        <a href="https://www.linkedin.com/in/bryanpaget/"
+                            >LinkedIn</a
+                        >
+                        <!-- <a href="https://bryanpaget.tumblr.com/">Tumblr</a> -->
+                    </p>
+                </div>
             </div>
-            <div class="grid-item">
-                <img src="https://bryanpaget.com/img/profile-2024-17.jpg" alt="Statistical Analysis">
-            </div>
-            <div class="grid-item">
-                <img src="https://bryanpaget.com/img/profile-02.jpg" alt="System Design">
-            </div>
-            <div class="grid-item">
-                <img src="https://bryanpaget.com/img/profile-11.jpg" alt="Technical Strategy">
-            </div>
-            <div class="grid-item">
-                <img src="https://bryanpaget.com/img/profile-04.jpg" alt="Cloud Architecture">
-            </div>
-            <div class="grid-item">
-                <img src="https://bryanpaget.com/img/profile-06.jpg" alt="Operational Systems">
-            </div>
-        </div>
-        
-        <div class="links">
-            <a href="https://github.com/bryanpaget" class="link-item">
-                <i class="fab fa-github"></i> GitHub
-            </a>
-            <a href="https://www.linkedin.com/in/bryanpaget/" class="link-item">
-                <i class="fab fa-linkedin-in"></i> LinkedIn
-            </a>
-            <a href="https://bryanpaget.medium.com/" class="link-item">
-                <i class="fab fa-medium-m"></i> Medium
-            </a>
-            <a href="https://rpubs.com/bryanpaget" class="link-item">
-                <i class="fas fa-chart-bar"></i> RPubs
-            </a>
-        </div>
-        
-        <footer>
-            <p>© 2025 Bryan Paget • Systems Architect</p>
-        </footer>
-    </div>
-</body>
+        </main>
+    </body>
 </html>
