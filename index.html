@@ -1,76 +1,279 @@
-
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <link rel="icon" href="" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="Bryan's Blog" />
-        <link rel="stylesheet" type="text/css" href="/public/style.css" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-        <link rel="manifest" href="/site.webmanifest">
-    </head>
-    <body>
-        <main>
-            <div class="wrapper home card">
-                <div class="content">
-                    <h1>Bryan Paget</h1>
-                    <div>
-                        <div class="responsive">
-                            <div class="gallery">
-                                <img src="img/profile-2024-19.jpg" />
-                            </div>
-                        </div>
-                        <div class="responsive">
-                            <div class="gallery">
-                                <img src="img/profile-02.jpg" />
-                            </div>
-                        </div>
-                        <div class="responsive">
-                            <div class="gallery">
-                                <img src="img/profile-11.jpg" />
-                            </div>
-                        </div>
-                        <div class="responsive">
-                            <div class="gallery">
-                                <img src="img/profile-04.jpg" />
-                            </div>
-                        </div>
-                        <div class="responsive">
-                            <div class="gallery">
-                                <img src="img/profile-2024-17.jpg" />
-                            </div>
-                        </div>
-                        <div class="responsive">
-                            <div class="gallery">
-                                <img src="img/profile-06.jpg" />
-                            </div>
-                        </div>
-                    </div>
-                    <p>
-                        <strong>Find me on: &nbsp;</strong>
-                        <a href="https://bryanpaget.medium.com/">Medium</a>,
-                        <a href="https://github.com/bryanpaget">Github</a>,
-                        <a href="https://rpubs.com/bryanpaget">RPubs</a>,
-                        <a href="https://gitlab.gnome.org/bryanpaget">GNOME</a>,
-                        <a href="https://www.instagram.com/bryanpaget/"
-                            >Instagram</a
-                        >,
-                        <a href="https://pixelfed.social/bryanpaget">Pixelfed</a
-                        >,
-                        <a
-                            href="https://www.youtube.com/channel/UCXyqeZK2jdGSAiGIuUKVNvA"
-                            >YouTube</a
-                        >,
-                        <a href="https://www.linkedin.com/in/bryanpaget/"
-                            >LinkedIn</a
-                        >
-                        <!-- <a href="https://bryanpaget.tumblr.com/">Tumblr</a> -->
-                    </p>
-                </div>
-            </div>
-        </main>
-    </body>
+<head>
+<meta charset="utf-8" />
+<link rel="icon" href="" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Bryan's Blog" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<style>
+@import url("https://edwardtufte.github.io/tufte-css/et-book.css");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap");
+/* CSS Variables for Light Mode */
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --text-primary: #111111;
+  --text-secondary: #333333;
+  --border-color: #d9d9d9;
+  --link-color: #0066cc;
+  --link-hover: #004499;
+  --accent-color: #ff006e;
+  --gallery-bg: #f5f5f5;
+}
+/* Dark Mode Variables */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-primary: #121212;
+    --bg-secondary: #1e1e1e;
+    --text-primary: #f0f0f0;
+    --text-secondary: #b0b0b0;
+    --border-color: #333333;
+    --link-color: #66b3ff;
+    --link-hover: #99ccff;
+    --accent-color: #ff6b9d;
+    --gallery-bg: #1a1a1a;
+  }
+}
+/* Base styles */
+* {
+  box-sizing: border-box;
+}
+[hidden] {
+  display: none !important;
+}
+body {
+  font-family: "et-book", "Lato", serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  margin: auto;
+  max-width: 1200px;
+  padding: 0 10%;
+  counter-reset: sidenote-counter;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+/* Typography */
+h1, h2, h3, h4, h5 {
+  font-family: "Lato", sans-serif;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+h1 {
+  font-weight: 900;
+  font-size: 2rem;
+  line-height: 1.2;
+  margin-top: 2rem;
+}
+h2 {
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: 400;
+}
+h3 {
+  font-size: 1.2rem;
+}
+p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+/* Layout */
+.wrapper {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  margin: auto;
+  width: 100%;
+}
+.home {
+  justify-content: left;
+}
+/* Gallery Container - Updated for responsive grid */
+.content > div:nth-child(2) {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+/* Gallery styling */
+.responsive {
+  width: 100%;
+}
+.gallery {
+  position: relative;
+  background-color: var(--gallery-bg);
+  border-radius: 4px;
+  overflow: hidden;
+  aspect-ratio: 1/1;
+}
+.gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+/* Links */
+a:link,
+a:visited {
+  color: var(--link-color);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+a:hover {
+  color: var(--link-hover);
+  background-color: rgba(102, 179, 255, 0.1);
+  border-bottom: 1px solid var(--link-hover);
+}
+/* Project descriptions */
+.project-item {
+  margin-bottom: 1.5rem;
+}
+.project-title {
+  font-weight: 700;
+  display: inline;
+  color: var(--text-primary);
+}
+.project-description {
+  font-style: italic;
+  color: var(--text-secondary);
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.9rem;
+}
+/* Social links section */
+.social-links {
+  margin-bottom: 2rem;
+}
+.social-links strong {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+/* Media queries */
+@media only screen and (max-width: 768px) {
+  body {
+    padding: 0 5%;
+  }
+  
+  /* Two columns for tablets and phones */
+  .content > div:nth-child(2) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  
+  /* Still two columns for small phones */
+  .content > div:nth-child(2) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+}
+@media only screen and (max-width: 320px) {
+  /* One column for very small phones */
+  .content > div:nth-child(2) {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+<body>
+<main>
+<div class="wrapper home">
+<div class="content">
+<h1>Bryan Paget</h1>
+<div>
+<div class="responsive">
+<div class="gallery">
+<img src="img/profile-2024-19.jpg" />
+</div>
+</div>
+<div class="responsive">
+<div class="gallery">
+<img src="img/profile-02.jpg" />
+</div>
+</div>
+<div class="responsive">
+<div class="gallery">
+<img src="img/profile-11.jpg" />
+</div>
+</div>
+<div class="responsive">
+<div class="gallery">
+<img src="img/profile-04.jpg" />
+</div>
+</div>
+<div class="responsive">
+<div class="gallery">
+<img src="img/profile-2024-17.jpg" />
+</div>
+</div>
+<div class="responsive">
+<div class="gallery">
+<img src="img/profile-06.jpg" />
+</div>
+</div>
+</div>
+<div class="social-links">
+<p>
+<strong>Social Media: &nbsp;</strong>
+<a href="https://bryanpaget.medium.com/">Medium</a>,
+<a href="https://github.com/bryanpaget">Github</a>,
+<a href="https://rpubs.com/bryanpaget">RPubs</a>,
+<a href="https://gitlab.gnome.org/bryanpaget">GNOME</a>,
+<a href="https://www.instagram.com/bryanpaget/"
+>Instagram</a
+>,
+<a href="https://pixelfed.social/bryanpaget">Pixelfed</a
+>,
+<a
+href="https://www.youtube.com/channel/UCXyqeZK2jdGSAiGIuUKVNvA"
+>YouTube</a
+>,
+<a href="https://www.linkedin.com/in/bryanpaget/"
+>LinkedIn</a
+>
+<!-- <a href="https://bryanpaget.tumblr.com/">Tumblr</a> -->
+</p>
+</div>
+<div class="projects">
+<p>
+<strong>Projects: &nbsp;</strong>
+</p>
+<div class="project-item">
+<a href="https://bryanpaget.neocities.org/career/resume" class="project-title">Resume</a>
+<span class="project-description">Professional experience and qualifications</span>
+</div>
+<div class="project-item">
+<a href="https://bryanpaget.neocities.org/research/generative-adversarial-models" class="project-title">Master's Thesis</a>
+<span class="project-description">Summary of research on Generative Adversarial Networks</span>
+</div>
+<div class="project-item">
+<a href="https://github.com/StatCan/zone-kubeflow-containers" class="project-title">Zone Kubeflow Containers</a>
+<span class="project-description">Statistics Canada's ML platform project</span>
+</div>
+<div class="project-item">
+<a href="https://github.com/bryanpaget/toronto-bikeshare" class="project-title">Toronto Bikeshare</a>
+<span class="project-description">Analysis of Toronto's bikeshare program data</span>
+</div>
+<div class="project-item">
+<a href="https://github.com/StatCan/namespace-cleaner" class="project-title">Namespace Cleaner</a>
+<span class="project-description">Tool for cleaning and organizing namespaces in large codebases</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body>
 </html>
