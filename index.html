@@ -4,276 +4,396 @@
 <meta charset="utf-8" />
 <link rel="icon" href="" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Bryan's Blog" />
+<meta name="description" content="Bryan Paget - Systems Thinker" />
+<meta name="color-scheme" content="light dark">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
 <style>
-@import url("https://edwardtufte.github.io/tufte-css/et-book.css");
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap");
-/* CSS Variables for Light Mode */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 :root {
+  color-scheme: light dark;
+  
+  /* Light theme (default) */
   --bg-primary: #ffffff;
-  --bg-secondary: #f8f9fa;
-  --text-primary: #111111;
+  --text-primary: #0a0a0a;
   --text-secondary: #333333;
-  --border-color: #d9d9d9;
-  --link-color: #0066cc;
-  --link-hover: #004499;
-  --accent-color: #ff006e;
-  --gallery-bg: #f5f5f5;
+  --text-accent: #000000;
+  --border-color: #e0e0e0;
+  --link-color: #0a0a0a;
+  --link-hover: #000000;
+  --spacing-unit: 1rem;
+  --spacing-ratio: 1.5;
+  --container-width: 800px;
 }
-/* Dark Mode Variables */
+
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg-primary: #121212;
-    --bg-secondary: #1e1e1e;
-    --text-primary: #f0f0f0;
-    --text-secondary: #b0b0b0;
-    --border-color: #333333;
-    --link-color: #66b3ff;
-    --link-hover: #99ccff;
-    --accent-color: #ff6b9d;
-    --gallery-bg: #1a1a1a;
+    /* Dark theme - activates automatically when system prefers dark mode */
+    --bg-primary: #0a0a0a;
+    --text-primary: #e8e8e8;
+    --text-secondary: #a0a0a0;
+    --text-accent: #ffffff;
+    --border-color: #2a2a2a;
+    --link-color: #e8e8e8;
+    --link-hover: #ffffff;
   }
 }
-/* Base styles */
+
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-[hidden] {
-  display: none !important;
-}
+
 body {
-  font-family: "et-book", "Lato", serif;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   background-color: var(--bg-primary);
   color: var(--text-primary);
-  margin: auto;
-  max-width: 1200px;
-  padding: 0 10%;
-  counter-reset: sidenote-counter;
+  line-height: 1.6;
+  font-weight: 400;
+  font-size: 17px;
+  padding: 1.5rem 1rem;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
-/* Typography */
-h1, h2, h3, h4, h5 {
-  font-family: "Lato", sans-serif;
-  color: var(--text-primary);
-  margin-bottom: 1rem;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacing-unit) * var(--spacing-ratio) * 1.5);
+  flex: 1;
 }
+
+/* Header Section */
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacing-unit) * 0.5);
+  margin-bottom: calc(var(--spacing-unit) * 0.5);
+}
+
 h1 {
-  font-weight: 900;
-  font-size: 2rem;
-  line-height: 1.2;
-  margin-top: 2rem;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--text-accent);
 }
-h2 {
-  font-size: 1.5rem;
-  font-style: italic;
-  font-weight: 400;
-}
-h3 {
-  font-size: 1.2rem;
-}
-p {
-  margin-bottom: 1rem;
-  line-height: 1.6;
+
+.subtitle {
+  font-size: 1.1rem;
   color: var(--text-secondary);
+  font-weight: 400;
+  max-width: 600px;
 }
-/* Layout */
-.wrapper {
-  min-height: 80vh;
-  display: flex;
-  flex-direction: column;
-}
-.content {
-  display: flex;
-  flex-direction: column;
-  max-width: 800px;
-  margin: auto;
-  width: 100%;
-}
-.home {
-  justify-content: left;
-}
-/* Gallery Container - Updated for responsive grid */
-.content > div:nth-child(2) {
+
+/* Gallery Section */
+.gallery-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  margin-bottom: 1.5rem;
+  gap: 0.75rem;
+  margin-bottom: calc(var(--spacing-unit) * 1.5);
 }
-/* Gallery styling */
-.responsive {
-  width: 100%;
-}
-.gallery {
-  position: relative;
-  background-color: var(--gallery-bg);
-  border-radius: 4px;
-  overflow: hidden;
+
+.gallery-item {
   aspect-ratio: 1/1;
+  overflow: hidden;
+  border-radius: 2px;
 }
-.gallery img {
+
+.gallery-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
+
+/* Bio Section */
+.bio {
+  margin-bottom: calc(var(--spacing-unit) * 1);
+}
+
+.bio p {
+  margin-bottom: calc(var(--spacing-unit) * var(--spacing-ratio));
+  color: var(--text-primary);
+  line-height: 1.7;
+}
+
+.bio p:last-of-type {
+  margin-bottom: 0;
+}
+
+.cta {
+  font-weight: 600;
+  margin-top: calc(var(--spacing-unit) * 0.75);
+  color: var(--text-accent);
+  font-size: 1rem;
+}
+
+/* Improved Social Links - Better mobile layout */
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: calc(var(--spacing-unit) * 1.5);
+  justify-content: flex-start;
+}
+
+.social-label {
+  font-weight: 600;
+  color: var(--text-accent);
+  margin-right: 0.25rem;
+  flex-shrink: 0;
+}
+
 /* Links */
-a:link,
-a:visited {
+a {
   color: var(--link-color);
   text-decoration: none;
-  border-bottom: 1px solid var(--border-color);
-  transition: all 0.2s ease;
+  white-space: nowrap;
+  transition: color 0.2s ease;
 }
+
 a:hover {
   color: var(--link-hover);
-  background-color: rgba(102, 179, 255, 0.1);
-  border-bottom: 1px solid var(--link-hover);
+  text-decoration: underline;
 }
-/* Project descriptions */
+
+/* Projects Section */
+.projects-section {
+  margin-top: calc(var(--spacing-unit) * 0.5);
+}
+
+.projects-label {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: calc(var(--spacing-unit) * 1);
+  color: var(--text-accent);
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.project-list {
+  list-style-type: none;
+}
+
 .project-item {
-  margin-bottom: 1.5rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border-color);
+  transition: border-color 0.3s ease;
 }
+
+.project-item:last-child {
+  border-bottom: none;
+}
+
 .project-title {
-  font-weight: 700;
-  display: inline;
-  color: var(--text-primary);
-}
-.project-description {
-  font-style: italic;
-  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--text-accent);
+  margin-bottom: 0.25rem;
   display: block;
-  margin-top: 0.25rem;
+}
+
+.project-description {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Footer Section */
+.site-footer {
+  margin-top: auto;
+  padding: 1.5rem 0 1rem 0;
+  border-top: 1px solid var(--border-color);
+  color: var(--text-secondary);
   font-size: 0.9rem;
+  transition: border-color 0.3s ease;
 }
-/* Social links section */
-.social-links {
-  margin-bottom: 2rem;
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
-.social-links strong {
-  font-weight: 700;
-  font-size: 1.1rem;
-  color: var(--text-primary);
+
+.footer-links {
+  display: flex;
+  gap: 1rem;
 }
-/* Media queries */
-@media only screen and (max-width: 768px) {
+
+/* Responsive */
+@media (max-width: 768px) {
   body {
-    padding: 0 5%;
+    font-size: 16px;
+    padding: 1rem 0.75rem;
   }
   
-  /* Two columns for tablets and phones */
-  .content > div:nth-child(2) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media only screen and (max-width: 480px) {
   h1 {
-    font-size: 1.5rem;
+    font-size: 3rem;
   }
   
-  /* Still two columns for small phones */
-  .content > div:nth-child(2) {
+  .gallery-container {
     grid-template-columns: repeat(2, 1fr);
     gap: 0.5rem;
   }
+  
+  /* Improved mobile layout for social links */
+  .social-links {
+    gap: 0.5rem;
+    justify-content: flex-start;
+  }
+  
+  .social-label {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Adjusted Projects heading for mobile */
+  .projects-label {
+    font-size: 1.3rem;
+  }
+  
+  /* Footer mobile adjustments */
+  .footer-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  
+  .footer-links {
+    width: 100%;
+    justify-content: flex-start;
+  }
 }
-@media only screen and (max-width: 320px) {
-  /* One column for very small phones */
-  .content > div:nth-child(2) {
-    grid-template-columns: 1fr;
+
+@media (max-width: 480px) {
+  .gallery-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  /* Further refinement for very small screens */
+  .social-links {
+    gap: 0.5rem 0.75rem;
+  }
+  
+  .social-links a {
+    font-size: 0.95rem;
+  }
+}
+
+/* Additional mobile optimization for very small screens */
+@media (max-width: 380px) {
+  .social-links {
+    gap: 0.4rem 0.6rem;
+  }
+  
+  .social-links a {
+    font-size: 0.9rem;
   }
 }
 </style>
 </head>
 <body>
-<main>
-<div class="wrapper home">
-<div class="content">
-<h1>Bryan Paget</h1>
-<div>
-<div class="responsive">
-<div class="gallery">
-<img src="img/profile-2024-19.jpg" />
+<div class="container">
+  <div class="header">
+    <h1>Bryan Paget</h1>
+    <div class="subtitle">Systems thinker bridging technology and human needs</div>
+  </div>
+
+  <div class="gallery-container">
+    <div class="gallery-item">
+      <img src="img/profile-2024-19.jpg" alt="Profile photo" />
+    </div>
+    <div class="gallery-item">
+      <img src="img/profile-02.jpg" alt="Profile photo" />
+    </div>
+    <div class="gallery-item">
+      <img src="img/profile-11.jpg" alt="Profile photo" />
+    </div>
+    <div class="gallery-item">
+      <img src="img/profile-04.jpg" alt="Profile photo" />
+    </div>
+    <div class="gallery-item">
+      <img src="img/profile-2024-17.jpg" alt="Profile photo" />
+    </div>
+    <div class="gallery-item">
+      <img src="img/profile-06.jpg" alt="Profile photo" />
+    </div>
+  </div>
+
+  <div class="bio">
+    <p>I help organizations transition from proprietary systems to open source solutions, combining technical expertise in Kubernetes and data engineering with a focus on sustainable implementation. My unconventional path—spanning bicycle mechanics, shiatsu therapy, data science, and martial arts—reflects a deliberate exploration of how systems work across different domains.</p>
+    
+    <p>Rather than following conventional career trajectories, I focus on creating technology that serves human needs. This perspective is informed by practices in meditation, yoga, and taijiquan (tai chi), which cultivate the clarity and resilience needed to navigate increasing uncertainty and build systems that empower rather than dominate.</p>
+    
+    <div class="cta">Available for consulting and collaborative projects.</div>
+  </div>
+
+  <div class="social-links">
+    <span class="social-label">Connect:</span>
+    <a href="https://www.linkedin.com/in/bryanpaget/">LinkedIn</a>
+    <a href="https://github.com/bryanpaget">GitHub</a>
+    <a href="https://pixelfed.social/bryanpaget">Pixelfed</a>
+    <a href="https://bryanpaget.medium.com/">Medium</a>
+    <a href="https://www.youtube.com/channel/UCXyqeZK2jdGSAiGIuUKVNvA">YouTube</a>
+  </div>
+
+  <div class="projects-section">
+    <div class="projects-label">Projects</div>
+    
+    <ul class="project-list">
+      <li class="project-item">
+        <a href="https://bryanpaget.neocities.org/career/resume" class="project-title">Resume</a>
+        <div class="project-description">Professional journey mapping technical skills to human needs across diverse domains.</div>
+      </li>
+      
+      <li class="project-item">
+        <a href="https://bryanpaget.neocities.org/research/generative-adversarial-models" class="project-title">Master's Thesis</a>
+        <div class="project-description">Exploration of the mathematics behind generative adversarial networks and their parallels to human creativity.</div>
+      </li>
+      
+      <li class="project-item">
+        <a href="https://github.com/StatCan/zone-kubeflow-containers" class="project-title">Zone Kubeflow Containers</a>
+        <div class="project-description">Statistics Canada's ML platform infrastructure balancing technical precision with usability.</div>
+      </li>
+      
+      <li class="project-item">
+        <a href="https://github.com/bryanpaget/toronto-bikeshare" class="project-title">Toronto Bikeshare</a>
+        <div class="project-description">Urban mobility patterns revealing insights about city design and human behavior.</div>
+      </li>
+      
+      <li class="project-item">
+        <a href="https://github.com/StatCan/namespace-cleaner" class="project-title">Namespace Cleaner</a>
+        <div class="project-description">Tool for removing digital debris to simplify complex systems and create clarity.</div>
+      </li>
+    </ul>
+  </div>
 </div>
-</div>
-<div class="responsive">
-<div class="gallery">
-<img src="img/profile-02.jpg" />
-</div>
-</div>
-<div class="responsive">
-<div class="gallery">
-<img src="img/profile-11.jpg" />
-</div>
-</div>
-<div class="responsive">
-<div class="gallery">
-<img src="img/profile-04.jpg" />
-</div>
-</div>
-<div class="responsive">
-<div class="gallery">
-<img src="img/profile-2024-17.jpg" />
-</div>
-</div>
-<div class="responsive">
-<div class="gallery">
-<img src="img/profile-06.jpg" />
-</div>
-</div>
-</div>
-<div class="social-links">
-<p>
-<strong>Social Media: &nbsp;</strong>
-<a href="https://bryanpaget.medium.com/">Medium</a>,
-<a href="https://github.com/bryanpaget">Github</a>,
-<a href="https://rpubs.com/bryanpaget">RPubs</a>,
-<a href="https://gitlab.gnome.org/bryanpaget">GNOME</a>,
-<a href="https://www.instagram.com/bryanpaget/"
->Instagram</a
->,
-<a href="https://pixelfed.social/bryanpaget">Pixelfed</a
->,
-<a
-href="https://www.youtube.com/channel/UCXyqeZK2jdGSAiGIuUKVNvA"
->YouTube</a
->,
-<a href="https://www.linkedin.com/in/bryanpaget/"
->LinkedIn</a
->
-<!-- <a href="https://bryanpaget.tumblr.com/">Tumblr</a> -->
-</p>
-</div>
-<div class="projects">
-<p>
-<strong>Projects: &nbsp;</strong>
-</p>
-<div class="project-item">
-<a href="https://bryanpaget.neocities.org/career/resume" class="project-title">Resume</a>
-<span class="project-description">Professional experience and qualifications</span>
-</div>
-<div class="project-item">
-<a href="https://bryanpaget.neocities.org/research/generative-adversarial-models" class="project-title">Master's Thesis</a>
-<span class="project-description">Summary of research on Generative Adversarial Networks</span>
-</div>
-<div class="project-item">
-<a href="https://github.com/StatCan/zone-kubeflow-containers" class="project-title">Zone Kubeflow Containers</a>
-<span class="project-description">Statistics Canada's ML platform project</span>
-</div>
-<div class="project-item">
-<a href="https://github.com/bryanpaget/toronto-bikeshare" class="project-title">Toronto Bikeshare</a>
-<span class="project-description">Analysis of Toronto's bikeshare program data</span>
-</div>
-<div class="project-item">
-<a href="https://github.com/StatCan/namespace-cleaner" class="project-title">Namespace Cleaner</a>
-<span class="project-description">Tool for cleaning Kubeflow namespaces</span>
-</div>
-</div>
-</div>
-</div>
-</main>
+
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-links">
+      <a href="https://paypal.me/bpaget1985">Buy me a coffee</a>
+    </div>
+  </div>
+</footer>
 </body>
 </html>
