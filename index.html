@@ -96,24 +96,18 @@ h1 {
   max-width: 600px;
 }
 
-/* Gallery Section */
-.gallery-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.75rem;
-  margin-bottom: calc(var(--spacing-unit) * 1.5);
-}
-
-.gallery-item {
-  aspect-ratio: 1/1;
-  overflow: hidden;
-  border-radius: 2px;
-}
-
-.gallery-item img {
+/* Profile Image Section */
+.profile-image {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  max-width: 400px;
+  margin: 0 auto calc(var(--spacing-unit) * 1.5);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.profile-image img {
+  width: 100%;
+  height: auto;
   display: block;
 }
 
@@ -246,11 +240,6 @@ a:hover {
     font-size: 3rem;
   }
   
-  .gallery-container {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem;
-  }
-  
   /* Improved mobile layout for social links */
   .social-links {
     gap: 0.5rem;
@@ -281,10 +270,6 @@ a:hover {
 }
 
 @media (max-width: 480px) {
-  .gallery-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
   h1 {
     font-size: 2.5rem;
   }
@@ -315,36 +300,15 @@ a:hover {
 <div class="container">
   <div class="header">
     <h1>Bryan Paget</h1>
-    <div class="subtitle">Systems thinker bridging technology and human needs</div>
+    <div class="subtitle">Systems thinker focused on technology and human experience</div>
   </div>
 
-  <div class="gallery-container">
-    <div class="gallery-item">
-      <img src="img/profile-2024-19.jpg" alt="Profile photo" />
-    </div>
-    <div class="gallery-item">
-      <img src="img/profile-02.jpg" alt="Profile photo" />
-    </div>
-    <div class="gallery-item">
-      <img src="img/profile-11.jpg" alt="Profile photo" />
-    </div>
-    <div class="gallery-item">
-      <img src="img/profile-04.jpg" alt="Profile photo" />
-    </div>
-    <div class="gallery-item">
-      <img src="img/profile-2024-17.jpg" alt="Profile photo" />
-    </div>
-    <div class="gallery-item">
-      <img src="img/profile-06.jpg" alt="Profile photo" />
-    </div>
+  <div class="profile-image">
+    <img src="img/profile-2024-19.jpg" alt="Profile photo" />
   </div>
 
   <div class="bio">
-    <p>I help organizations transition from proprietary systems to open source solutions, combining technical expertise in Kubernetes and data engineering with a focus on sustainable implementation. My unconventional path—spanning bicycle mechanics, shiatsu therapy, data science, and martial arts—reflects a deliberate exploration of how systems work across different domains.</p>
-    
-    <p>Rather than following conventional career trajectories, I focus on creating technology that serves human needs. This perspective is informed by practices in meditation, yoga, and taijiquan (tai chi), which cultivate the clarity and resilience needed to navigate increasing uncertainty and build systems that empower rather than dominate.</p>
-    
-    <div class="cta">Available for consulting and collaborative projects.</div>
+    <p>I am an open source consultant who builds sovereign systems, specializing in Kubernetes and data engineering, because reliable tools should serve you, not rule you, a principle I apply through a multidisciplinary lens of technology, data, and experience.</p>
   </div>
 
   <div class="social-links">
@@ -362,27 +326,27 @@ a:hover {
     <ul class="project-list">
       <li class="project-item">
         <a href="https://bryanpaget.neocities.org/career/resume" class="project-title">Resume</a>
-        <div class="project-description">Professional journey mapping technical skills to human needs across diverse domains.</div>
+        <div class="project-description">Professional experience across domains.</div>
       </li>
       
       <li class="project-item">
         <a href="https://bryanpaget.neocities.org/research/generative-adversarial-models" class="project-title">Master's Thesis</a>
-        <div class="project-description">Exploration of the mathematics behind generative adversarial networks and their parallels to human creativity.</div>
+        <div class="project-description">Research on generative adversarial networks.</div>
       </li>
       
       <li class="project-item">
         <a href="https://github.com/StatCan/zone-kubeflow-containers" class="project-title">Zone Kubeflow Containers</a>
-        <div class="project-description">Statistics Canada's ML platform infrastructure balancing technical precision with usability.</div>
+        <div class="project-description">Data science and machine learning platform for Statistics Canada.</div>
       </li>
       
       <li class="project-item">
         <a href="https://github.com/bryanpaget/toronto-bikeshare" class="project-title">Toronto Bikeshare</a>
-        <div class="project-description">Urban mobility patterns revealing insights about city design and human behavior.</div>
+        <div class="project-description">Analysis of urban mobility patterns and system usage.</div>
       </li>
       
       <li class="project-item">
         <a href="https://github.com/StatCan/namespace-cleaner" class="project-title">Namespace Cleaner</a>
-        <div class="project-description">Tool for removing digital debris to simplify complex systems and create clarity.</div>
+        <div class="project-description">Tool for managing derelict kubernetes namespaces.</div>
       </li>
     </ul>
   </div>
@@ -391,7 +355,6 @@ a:hover {
 <footer class="site-footer">
   <div class="footer-content">
     <div class="footer-links">
-      <a href="https://paypal.me/bpaget1985">Buy me a coffee</a>
     </div>
   </div>
 </footer>
