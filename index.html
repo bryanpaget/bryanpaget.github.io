@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bryan Paget</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,540 +15,189 @@
         }
 
         body {
-            font-family: 'Inter', system-ui, -apple-system, 'SF Pro Text', 'Segoe UI', 'Helvetica Neue', sans-serif;
-            background: #0e080b;
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+            background: #0c070a;
             min-height: 100vh;
             display: flex;
-            justify-content: center;
             align-items: center;
-            padding: 2rem;
-            color: #e0d4c4;
-            position: relative;
-            isolation: isolate;
+            justify-content: center;
+            padding: 1.5rem;
+            color: #e6dfd5;
+            line-height: 1.4;
         }
 
-        /* animated SVG background: low-key, irradiated dust & flicker */
-        .desert-bg {
+        /* deep, calm gradient background – no noise, no movement */
+        body::before {
+            content: '';
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: 0;
-            pointer-events: none;
-            opacity: 0.85;
+            background: radial-gradient(circle at 30% 10%, #2a1a1a, #080406);
+            z-index: -2;
         }
 
-        .desert-bg svg {
+        /* very subtle texture overlay (barely there) */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            display: block;
-            object-fit: cover;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" opacity="0.03"><path fill="none" d="M0 0 L200 0 M0 50 L200 50 M0 100 L200 100 M0 150 L200 150 M50 0 L50 200 M100 0 L100 200 M150 0 L150 200" stroke="%23b87a50" stroke-width="0.5"/></svg>');
+            background-repeat: repeat;
+            background-size: 40px 40px;
+            pointer-events: none;
+            z-index: -1;
         }
 
-        /* main card — rounded, borderless, tone-on-tone depth */
-        .container {
-            position: relative;
-            z-index: 10;
-            max-width: 540px;
+        /* main card – clean, spacious, professional */
+        .card {
+            max-width: 560px;
             width: 100%;
-            text-align: center;
-            backdrop-filter: blur(14px);
-            background: rgba(18, 12, 15, 0.65);
-            border-radius: 48px;
-            padding: 2.6rem 2rem 2.6rem;
-            box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(0, 0, 0, 0.2);
+            background: rgba(18, 12, 15, 0.7);
+            backdrop-filter: blur(16px);
+            border-radius: 32px;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 25px 40px -20px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(180, 100, 70, 0.15);
             transition: all 0.2s ease;
         }
 
-        /* profile image — rounded but subtle, no harsh borders */
-        .profile-photo {
-            width: 130px;
-            height: 130px;
+        /* profile image – refined, not oversize */
+        .avatar {
+            width: 112px;
+            height: 112px;
+            margin: 0 auto 1.5rem;
+            border-radius: 50%;
             object-fit: cover;
-            border-radius: 60px;
-            margin-bottom: 1.6rem;
-            box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.5), 0 0 0 2px rgba(140, 80, 55, 0.25);
-            transition: transform 0.2s ease, box-shadow 0.2s;
-            filter: grayscale(0.1) contrast(1.05);
-        }
-
-        .profile-photo:hover {
-            transform: scale(1.01);
-            box-shadow: 0 14px 28px -8px rgba(0, 0, 0, 0.6), 0 0 0 2px rgba(180, 95, 60, 0.4);
-        }
-
-        /* name: solid, warm terracotta — no gradient, single tone */
-        h1 {
-            color: #bc784c;
-            font-size: 2.3rem;
-            font-weight: 540;
-            letter-spacing: -0.5px;
-            margin-bottom: 1.8rem;
-            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
-            background: none;
-            -webkit-background-clip: unset;
-            background-clip: unset;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
             display: block;
+            border: 2px solid rgba(190, 110, 70, 0.3);
+            transition: border-color 0.2s;
         }
 
-        /* link buttons — rounded, no borders, pure tone-on-tone */
+        .avatar:hover {
+            border-color: rgba(190, 110, 70, 0.7);
+        }
+
+        /* name – solid color, warm but not shouting */
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 550;
+            letter-spacing: -0.3px;
+            text-align: center;
+            color: #c67f52;
+            margin-bottom: 0.75rem;
+        }
+
+        /* subtle descriptor (optional, but adds context) */
+        .descriptor {
+            text-align: center;
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: #b9aa99;
+            margin-bottom: 2rem;
+            letter-spacing: -0.2px;
+        }
+
+        /* link grid – clean, even spacing */
         .links {
             display: flex;
             flex-direction: column;
-            gap: 0.9rem;
-            margin: 1rem 0 0.6rem;
+            gap: 0.85rem;
+            margin: 1.5rem 0 1rem;
         }
 
-        .link-item {
+        /* button style – rounded, solid fill with subtle hover */
+        .link-btn {
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(26, 18, 21, 0.7);
+            width: 100%;
+            padding: 0.9rem 1rem;
+            background: rgba(28, 20, 23, 0.8);
             backdrop-filter: blur(4px);
-            padding: 0.95rem 1rem;
             border-radius: 60px;
             text-decoration: none;
-            transition: all 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-            width: 100%;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
-
-        /* subtle glow sweep on hover — no border trick */
-        .link-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(200, 110, 60, 0.12), transparent);
-            transition: left 0.55s;
-        }
-
-        .link-item:hover::before {
-            left: 100%;
-        }
-
-        .link-platform {
-            font-weight: 470;
+            font-weight: 480;
             font-size: 1rem;
-            letter-spacing: -0.2px;
-            color: #d1c0aa;
-            transition: color 0.2s;
-            text-align: center;
-            width: 100%;
+            color: #e2d6ca;
+            transition: all 0.2s ease;
+            border: none;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
         }
 
-        .link-item:hover {
-            background: rgba(36, 26, 28, 0.85);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px -6px rgba(0, 0, 0, 0.4);
+        .link-btn:hover {
+            background: rgba(50, 36, 40, 0.9);
+            transform: translateY(-1px);
+            color: #f2e2cf;
+            box-shadow: 0 8px 18px -6px rgba(0, 0, 0, 0.4);
         }
 
-        .link-item:hover .link-platform {
-            color: #e7cba5;
-        }
-
-        /* footer: no location, only blog link */
+        /* footer with only blog link */
         .footer {
             margin-top: 2.2rem;
-            padding-top: 1.2rem;
+            text-align: center;
+            padding-top: 0.8rem;
         }
 
-        .main-site-link {
+        .blog-link {
             display: inline-block;
-            margin-top: 0.2rem;
             color: #b87a50;
             text-decoration: none;
             font-size: 0.85rem;
             font-weight: 460;
-            transition: all 0.2s;
+            transition: color 0.2s;
+            border-bottom: 1px solid rgba(184, 122, 80, 0.4);
             padding-bottom: 2px;
-            background: none;
-            border-bottom: none;
-            position: relative;
-        }
-        
-        .main-site-link::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0%;
-            height: 1px;
-            background: #b87a50;
-            transition: width 0.25s;
-        }
-        
-        .main-site-link:hover::after {
-            width: 100%;
-        }
-        
-        .main-site-link:hover {
-            color: #da9a6a;
         }
 
-        @media (max-width: 560px) {
-            body {
-                padding: 1rem;
-            }
-            .container {
-                padding: 1.8rem 1.4rem 2rem;
-                border-radius: 36px;
-            }
-            .profile-photo {
-                width: 104px;
-                height: 104px;
+        .blog-link:hover {
+            color: #da9a6a;
+            border-bottom-color: #da9a6a;
+        }
+
+        /* responsive adjustments */
+        @media (max-width: 500px) {
+            .card {
+                padding: 1.8rem 1.4rem;
+                border-radius: 28px;
             }
             h1 {
                 font-size: 1.9rem;
             }
-            .link-item {
+            .avatar {
+                width: 96px;
+                height: 96px;
+            }
+            .link-btn {
                 padding: 0.75rem 0.8rem;
+                font-size: 0.9rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="desert-bg" id="blinkCanvas" aria-hidden="true"></div>
-    
-    <div class="container">
-        <img src="./img/profile-2024-19.jpg" alt="Bryan Paget" class="profile-photo" />
+    <div class="card">
+        <img src="./img/profile-2024-19.jpg" alt="Bryan Paget" class="avatar" />
         <h1>Bryan Paget</h1>
+        <div class="descriptor"></div>
         
         <div class="links">
-            <a href="https://github.com/bryanpaget" target="_blank" rel="noopener" class="link-item">
-                <span class="link-platform">GitHub</span>
-            </a>
-            <a href="https://www.linkedin.com/in/bryanpaget/" target="_blank" rel="noopener" class="link-item">
-                <span class="link-platform">LinkedIn</span>
-            </a>
-            <a href="https://www.youtube.com/@bryanpaget" target="_blank" rel="noopener" class="link-item">
-                <span class="link-platform">YouTube</span>
-            </a>
-            <a href="https://www.instagram.com/bryanpaget" target="_blank" rel="noopener" class="link-item">
-                <span class="link-platform">Instagram</span>
-            </a>
-            <a href="https://medium.com/@bryanpaget" target="_blank" rel="noopener" class="link-item">
-                <span class="link-platform">Medium</span>
-            </a>
-            <a href="https://www.xiaohongshu.com/user/profile/64919888000000001c02a065" target="_blank" rel="noopener" class="link-item">
-                <span class="link-platform">小红书</span>
-            </a>
-            <a href="https://pixelfed.social/@bryanpaget" target="_blank" rel="noopener" class="link-item">
-                <span class="link-platform">Pixelfed</span>
-            </a>
+            <a href="https://github.com/bryanpaget" target="_blank" rel="noopener" class="link-btn">GitHub</a>
+            <a href="https://www.linkedin.com/in/bryanpaget/" target="_blank" rel="noopener" class="link-btn">LinkedIn</a>
+            <a href="https://www.youtube.com/@bryanpaget" target="_blank" rel="noopener" class="link-btn">YouTube</a>
+            <a href="https://www.instagram.com/bryanpaget" target="_blank" rel="noopener" class="link-btn">Instagram</a>
+            <a href="https://medium.com/@bryanpaget" target="_blank" rel="noopener" class="link-btn">Medium</a>
+            <a href="https://www.xiaohongshu.com/user/profile/64919888000000001c02a065" target="_blank" rel="noopener" class="link-btn">小红书</a>
+            <a href="https://pixelfed.social/@bryanpaget" target="_blank" rel="noopener" class="link-btn">Pixelfed</a>
         </div>
 
         <div class="footer">
-            <a href="https://bryanpaget.neocities.org/" class="main-site-link">visit the archive →</a>
+            <a href="https://bryanpaget.neocities.org/" class="blog-link">visit the archive →</a>
         </div>
     </div>
-
-    <script>
-        (function() {
-
-            const bgContainer = document.getElementById('blinkCanvas');
-            if (!bgContainer) return;
-            
-            const dustColors = [
-                "#7a3e2c",  // dried clay / muted autumn leaf
-                "#8c5438",  // warm rust / soft terracotta
-                "#6b4a3a",  // dusty brown-burgundy
-                "#7c5a44",  // faded leather
-                "#5f3e2e",  // deep earth
-                "#4a5c5a",  // irradiated teal-grey (muted dark teal)
-                "#9e6a48",  // pale burnt orange (lower saturation)
-                "#6a3f2c",  // shadow wine
-                "#56645e",  // dusty sage-teal
-                "#8b5e42",  // clay pot
-                "#704c38",   // old brick
-                "#94654a"    // dusty rust
-            ];
-            
-            const width = window.innerWidth;
-            const height = window.innerHeight;
-            
-            const svgNS = "http://www.w3.org/2000/svg";
-            const svg = document.createElementNS(svgNS, "svg");
-            svg.setAttribute("width", "100%");
-            svg.setAttribute("height", "100%");
-            svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
-            svg.setAttribute("preserveAspectRatio", "none");
-            
-            const defs = document.createElementNS(svgNS, "defs");
-            
-            // very soft, dusty glow — low energy, borderless depth
-            const dustGlow = document.createElementNS(svgNS, "filter");
-            dustGlow.setAttribute("id", "dustGlow");
-            dustGlow.setAttribute("x", "-30%");
-            dustGlow.setAttribute("y", "-30%");
-            dustGlow.setAttribute("width", "160%");
-            dustGlow.setAttribute("height", "160%");
-            const blur1 = document.createElementNS(svgNS, "feGaussianBlur");
-            blur1.setAttribute("in", "SourceGraphic");
-            blur1.setAttribute("stdDeviation", "2.2");
-            const mergeDust = document.createElementNS(svgNS, "feMerge");
-            const mergeNodeA = document.createElementNS(svgNS, "feMergeNode");
-            mergeNodeA.setAttribute("in", "blur");
-            const mergeNodeB = document.createElementNS(svgNS, "feMergeNode");
-            mergeNodeB.setAttribute("in", "SourceGraphic");
-            mergeDust.appendChild(mergeNodeA);
-            mergeDust.appendChild(mergeNodeB);
-            dustGlow.appendChild(blur1);
-            dustGlow.appendChild(mergeDust);
-            defs.appendChild(dustGlow);
-            
-            // faint haze filter for larger 'heat' spots
-            const heatHaze = document.createElementNS(svgNS, "filter");
-            heatHaze.setAttribute("id", "heatHaze");
-            const blurHeat = document.createElementNS(svgNS, "feGaussianBlur");
-            blurHeat.setAttribute("in", "SourceGraphic");
-            blurHeat.setAttribute("stdDeviation", "4.5");
-            const mergeHeat = document.createElementNS(svgNS, "feMerge");
-            const mH1 = document.createElementNS(svgNS, "feMergeNode");
-            mH1.setAttribute("in", "blur");
-            const mH2 = document.createElementNS(svgNS, "feMergeNode");
-            mH2.setAttribute("in", "SourceGraphic");
-            mergeHeat.appendChild(mH1);
-            mergeHeat.appendChild(mH2);
-            heatHaze.appendChild(blurHeat);
-            heatHaze.appendChild(mergeHeat);
-            defs.appendChild(heatHaze);
-            
-            // grain / dust texture (very fine) — adds depth without borders
-            const grainFilter = document.createElementNS(svgNS, "filter");
-            grainFilter.setAttribute("id", "dustGrain");
-            const turbulence = document.createElementNS(svgNS, "feTurbulence");
-            turbulence.setAttribute("type", "fractalNoise");
-            turbulence.setAttribute("baseFrequency", "0.75");
-            turbulence.setAttribute("numOctaves", "3");
-            turbulence.setAttribute("result", "noise");
-            const colorMat = document.createElementNS(svgNS, "feColorMatrix");
-            colorMat.setAttribute("type", "matrix");
-            colorMat.setAttribute("values", "0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.05 0");
-            grainFilter.appendChild(turbulence);
-            grainFilter.appendChild(colorMat);
-            defs.appendChild(grainFilter);
-            
-            svg.appendChild(defs);
-            
-            // background: irradiated dark earth (deep, dusty)
-            const bgRect = document.createElementNS(svgNS, "rect");
-            bgRect.setAttribute("width", "100%");
-            bgRect.setAttribute("height", "100%");
-            bgRect.setAttribute("fill", "#0e080b");
-            svg.appendChild(bgRect);
-            
-            // gradient overlay: dry heat from horizon — tone-on-tone depth
-            const gradientOverlay = document.createElementNS(svgNS, "rect");
-            gradientOverlay.setAttribute("width", "100%");
-            gradientOverlay.setAttribute("height", "100%");
-            gradientOverlay.setAttribute("fill", "url(#wasteGrad)");
-            const gradDef = document.createElementNS(svgNS, "linearGradient");
-            gradDef.setAttribute("id", "wasteGrad");
-            gradDef.setAttribute("x1", "0%");
-            gradDef.setAttribute("y1", "0%");
-            gradDef.setAttribute("x2", "0%");
-            gradDef.setAttribute("y2", "100%");
-            const stopTop = document.createElementNS(svgNS, "stop");
-            stopTop.setAttribute("offset", "0%");
-            stopTop.setAttribute("stop-color", "#3a2a22");
-            stopTop.setAttribute("stop-opacity", "0.45");
-            const stopMid = document.createElementNS(svgNS, "stop");
-            stopMid.setAttribute("offset", "50%");
-            stopMid.setAttribute("stop-color", "#1f1518");
-            stopMid.setAttribute("stop-opacity", "0.7");
-            const stopBot = document.createElementNS(svgNS, "stop");
-            stopBot.setAttribute("offset", "100%");
-            stopBot.setAttribute("stop-color", "#0a0608");
-            stopBot.setAttribute("stop-opacity", "0.95");
-            gradDef.appendChild(stopTop);
-            gradDef.appendChild(stopMid);
-            gradDef.appendChild(stopBot);
-            defs.appendChild(gradDef);
-            gradientOverlay.setAttribute("fill", "url(#wasteGrad)");
-            svg.appendChild(gradientOverlay);
-            
-            // dust grain layer
-            const grainRect = document.createElementNS(svgNS, "rect");
-            grainRect.setAttribute("width", "100%");
-            grainRect.setAttribute("height", "100%");
-            grainRect.setAttribute("filter", "url(#dustGrain)");
-            grainRect.setAttribute("pointer-events", "none");
-            svg.appendChild(grainRect);
-            
-            // ——————————————————————————————————————————————
-            //  LOW-KEY BLINKEN LIGHTS: POST-CYBERPUNK IRRADIATED
-            //  no aggressive blink — slow, irregular, like failing neon / dust storms
-            // ——————————————————————————————————————————————
-            const rand = (min, max) => min + Math.random() * (max - min);
-            
-            // fewer lights: sparse, lonely wasteland feeling
-            const numLights = Math.floor(Math.random() * 65) + 65;
-            
-            for (let i = 0; i < numLights; i++) {
-                const x = rand(2, width - 2);
-                const y = rand(2, height - 2);
-                const colorIdx = Math.floor(Math.random() * dustColors.length);
-                const color = dustColors[colorIdx];
-                // very muted base opacity (0.1 to 0.4) — low key, atmospheric
-                const baseOpacity = rand(0.1, 0.38);
-                const size = rand(2.2, 6.8);
-                
-                let element;
-                // mostly circles, occasional soft rectangles (rounded, borderless)
-                if (Math.random() > 0.7) {
-                    element = document.createElementNS(svgNS, "rect");
-                    element.setAttribute("x", x - size/2);
-                    element.setAttribute("y", y - size/2);
-                    element.setAttribute("width", size * 0.9);
-                    element.setAttribute("height", size * 0.9);
-                    element.setAttribute("rx", size * 0.3);
-                } else {
-                    element = document.createElementNS(svgNS, "circle");
-                    element.setAttribute("cx", x);
-                    element.setAttribute("cy", y);
-                    element.setAttribute("r", size * 0.6);
-                }
-                
-                element.setAttribute("fill", color);
-                element.setAttribute("opacity", baseOpacity);
-                
-                // rare glow (only ~20% to keep dusty and refined)
-                if (Math.random() > 0.8) {
-                    element.setAttribute("filter", "url(#dustGlow)");
-                }
-                
-                // extremely slow, irregular heartbeat / decay flicker
-                const duration = rand(4.2, 11.5);
-                const delay = rand(0, 5.5);
-                
-                // irregular, non‑rhythmic values — like dying embers
-                let values;
-                const pattern = Math.random();
-                if (pattern < 0.4) {
-                    values = `${baseOpacity}; 0.05; ${baseOpacity}; 0.15; ${baseOpacity}; 0.03; ${baseOpacity}; 0.1; ${baseOpacity}`;
-                } else if (pattern < 0.7) {
-                    values = `0.07; ${baseOpacity}; 0.04; ${baseOpacity}; 0.18; ${baseOpacity}; 0.05; ${baseOpacity}`;
-                } else {
-                    values = `${baseOpacity}; 0.1; ${baseOpacity}; 0.02; ${baseOpacity}; 0.13; ${baseOpacity}; 0.06`;
-                }
-                
-                const animate = document.createElementNS(svgNS, "animate");
-                animate.setAttribute("attributeName", "opacity");
-                animate.setAttribute("values", values);
-                animate.setAttribute("dur", `${duration}s`);
-                animate.setAttribute("repeatCount", "indefinite");
-                animate.setAttribute("begin", `${delay}s`);
-                element.appendChild(animate);
-                
-                svg.appendChild(element);
-            }
-            
-            // "irradiated hotspots": slightly larger, very slow pulse, distant
-            const hotspotCount = Math.floor(Math.random() * 16) + 10;
-            for (let i = 0; i < hotspotCount; i++) {
-                const x = rand(3, width - 3);
-                const y = rand(3, height - 3);
-                const radius = rand(5, 13);
-                const heatColor = dustColors[Math.floor(Math.random() * dustColors.length)];
-                const hotspot = document.createElementNS(svgNS, "circle");
-                hotspot.setAttribute("cx", x);
-                hotspot.setAttribute("cy", y);
-                hotspot.setAttribute("r", radius * 0.55);
-                hotspot.setAttribute("fill", heatColor);
-                hotspot.setAttribute("filter", "url(#heatHaze)");
-                hotspot.setAttribute("opacity", "0.16");
-                const pulse = document.createElementNS(svgNS, "animate");
-                pulse.setAttribute("attributeName", "opacity");
-                pulse.setAttribute("values", "0.06; 0.24; 0.06; 0.1; 0.2; 0.06");
-                pulse.setAttribute("dur", `${rand(6, 13)}s`);
-                pulse.setAttribute("repeatCount", "indefinite");
-                pulse.setAttribute("begin", `${rand(0, 6)}s`);
-                hotspot.appendChild(pulse);
-                svg.appendChild(hotspot);
-            }
-            
-            // subtle, faint organic wave lines (no borders, just depth)
-            const waveGroup = document.createElementNS(svgNS, "g");
-            waveGroup.setAttribute("stroke", "rgba(100, 75, 60, 0.18)");
-            waveGroup.setAttribute("stroke-width", "0.8");
-            waveGroup.setAttribute("fill", "none");
-            waveGroup.setAttribute("stroke-linecap", "round");
-            for (let i = 0; i < 14; i++) {
-                const startY = rand(height * 0.1, height * 0.9);
-                const amplitude = rand(15, 45);
-                const frequency = rand(0.008, 0.025);
-                const phase = rand(0, Math.PI * 2);
-                let pathData = `M 0 ${startY} `;
-                for (let x = 0; x <= width; x += 35) {
-                    const yOffset = Math.sin(x * frequency + phase) * amplitude;
-                    pathData += `L ${x} ${startY + yOffset} `;
-                }
-                const wavePath = document.createElementNS(svgNS, "path");
-                wavePath.setAttribute("d", pathData);
-                wavePath.setAttribute("opacity", "0.12");
-                const waveAnim = document.createElementNS(svgNS, "animate");
-                waveAnim.setAttribute("attributeName", "opacity");
-                waveAnim.setAttribute("values", "0.05; 0.18; 0.05; 0.1; 0.2; 0.05");
-                waveAnim.setAttribute("dur", `${rand(9, 18)}s`);
-                waveAnim.setAttribute("repeatCount", "indefinite");
-                wavePath.appendChild(waveAnim);
-                waveGroup.appendChild(wavePath);
-            }
-            svg.appendChild(waveGroup);
-            
-            // dust motes / irradiated particles (many, extremely low opacity)
-            const moteCount = 240;
-            for (let i = 0; i < moteCount; i++) {
-                const x = rand(0, width);
-                const y = rand(0, height);
-                const mote = document.createElementNS(svgNS, "circle");
-                mote.setAttribute("cx", x);
-                mote.setAttribute("cy", y);
-                mote.setAttribute("r", "0.9");
-                const moteColor = dustColors[Math.floor(Math.random() * dustColors.length)];
-                mote.setAttribute("fill", moteColor);
-                mote.setAttribute("opacity", rand(0.04, 0.16));
-                const moteAnim = document.createElementNS(svgNS, "animate");
-                moteAnim.setAttribute("attributeName", "opacity");
-                moteAnim.setAttribute("values", `0.02; 0.1; 0.02; 0.06; 0.14; 0.02`);
-                moteAnim.setAttribute("dur", `${rand(4, 10)}s`);
-                moteAnim.setAttribute("repeatCount", "indefinite");
-                mote.appendChild(moteAnim);
-                svg.appendChild(mote);
-            }
-            
-            // faint diagonal light traces — post‑apocalyptic data residue, borderless
-            const traceCount = 20;
-            for (let i = 0; i < traceCount; i++) {
-                const startX = rand(0, width * 0.7);
-                const startY = rand(0, height);
-                const endX = startX + rand(40, 160);
-                const endY = startY + rand(-50, 50);
-                const trace = document.createElementNS(svgNS, "line");
-                trace.setAttribute("x1", startX);
-                trace.setAttribute("y1", startY);
-                trace.setAttribute("x2", endX);
-                trace.setAttribute("y2", endY);
-                trace.setAttribute("stroke", "rgba(130, 85, 60, 0.2)");
-                trace.setAttribute("stroke-width", "0.6");
-                trace.setAttribute("stroke-dasharray", "4 8");
-                const traceAnim = document.createElementNS(svgNS, "animate");
-                traceAnim.setAttribute("attributeName", "opacity");
-                traceAnim.setAttribute("values", "0.04; 0.16; 0.04; 0.09; 0.18; 0.04");
-                traceAnim.setAttribute("dur", `${rand(7, 14)}s`);
-                traceAnim.setAttribute("repeatCount", "indefinite");
-                trace.appendChild(traceAnim);
-                svg.appendChild(trace);
-            }
-            
-            bgContainer.appendChild(svg);
-        })();
-    </script>
 </body>
 </html>
