@@ -14,19 +14,53 @@
             box-sizing: border-box;
         }
 
+        /* Muted Elegance Palette – no purple, pure grey/charcoal/silver + gold */
+        :root {
+            /* Light mode */
+            --bg-start: #e2e0e6;
+            --bg-end: #cecbd3;
+            --card-bg: rgba(255, 255, 255, 0.72);
+            --card-border: rgba(109, 106, 117, 0.2);
+            --text-primary: #2a2832;
+            --text-secondary: #6d6a75;
+            --accent: #deb841;
+            --accent-hover: #de9e36;
+            --link-bg: rgba(55, 50, 62, 0.06);
+            --link-bg-hover: rgba(55, 50, 62, 0.12);
+            --link-text: #37323e;
+            --footer-link: #6d6a75;
+            --grid-opacity: 0.12;
+        }
+
+        body.dark {
+            --bg-start: #1e1c24;
+            --bg-end: #121017;
+            --card-bg: rgba(28, 26, 33, 0.88);
+            --card-border: rgba(191, 189, 193, 0.15);
+            --text-primary: #f0ece8;
+            --text-secondary: #bfbdc1;
+            --accent: #deb841;
+            --accent-hover: #de9e36;
+            --link-bg: rgba(55, 50, 62, 0.55);
+            --link-bg-hover: rgba(55, 50, 62, 0.8);
+            --link-text: #eae6e0;
+            --footer-link: #bfbdc1;
+            --grid-opacity: 0.08;
+        }
+
         body {
-            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
-            background: #0c070a;
+            font-family: 'Inter', 'Helvetica Neue', 'SF Pro Text', system-ui, -apple-system, sans-serif;
+            background: var(--bg-start);
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 1.5rem;
-            color: #e6dfd5;
-            line-height: 1.4;
+            color: var(--text-primary);
+            transition: background 0.25s ease, color 0.2s ease;
         }
 
-        /* deep, calm gradient background – no noise, no movement */
+        /* gradient background – pure grey scale */
         body::before {
             content: '';
             position: fixed;
@@ -34,11 +68,12 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at 30% 10%, #2a1a1a, #080406);
+            background: radial-gradient(circle at 30% 20%, var(--bg-end), var(--bg-start));
             z-index: -2;
+            transition: background 0.25s ease;
         }
 
-        /* very subtle texture overlay (barely there) */
+        /* very subtle geometric grid – neutral */
         body::after {
             content: '';
             position: fixed;
@@ -46,144 +81,164 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" opacity="0.03"><path fill="none" d="M0 0 L200 0 M0 50 L200 50 M0 100 L200 100 M0 150 L200 150 M50 0 L50 200 M100 0 L100 200 M150 0 L150 200" stroke="%23b87a50" stroke-width="0.5"/></svg>');
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" opacity="0.4"><path fill="none" d="M0 0 L200 0 M0 50 L200 50 M0 100 L200 100 M0 150 L200 150 M50 0 L50 200 M100 0 L100 200 M150 0 L150 200" stroke="%236d6a75" stroke-width="0.4"/></svg>');
             background-repeat: repeat;
-            background-size: 40px 40px;
+            background-size: 48px 48px;
             pointer-events: none;
             z-index: -1;
+            opacity: var(--grid-opacity);
+            transition: opacity 0.2s ease;
         }
 
-        /* main card – clean, spacious, professional */
+        /* main card */
         .card {
-            max-width: 560px;
+            max-width: 540px;
             width: 100%;
-            background: rgba(18, 12, 15, 0.7);
-            backdrop-filter: blur(16px);
+            background: var(--card-bg);
+            backdrop-filter: blur(18px);
             border-radius: 32px;
-            padding: 2.5rem 2rem;
-            box-shadow: 0 25px 40px -20px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(180, 100, 70, 0.15);
-            transition: all 0.2s ease;
+            padding: 2.4rem 2rem;
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.2), 0 0 0 1px var(--card-border);
+            transition: all 0.3s ease;
         }
 
-        /* profile image – refined, not oversize */
+        /* theme toggle – minimal, gold accent */
+        .theme-toggle {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 1.2rem;
+        }
+        .toggle-btn {
+            background: var(--link-bg);
+            border: none;
+            border-radius: 40px;
+            padding: 0.4rem 0.9rem;
+            font-size: 0.78rem;
+            font-weight: 480;
+            color: var(--text-secondary);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+            transition: all 0.2s ease;
+            backdrop-filter: blur(4px);
+            font-family: inherit;
+        }
+        .toggle-btn:hover {
+            background: var(--link-bg-hover);
+            color: var(--accent);
+        }
+        .toggle-icon {
+            font-size: 0.9rem;
+        }
+
+        /* avatar – refined */
         .avatar {
             width: 112px;
             height: 112px;
             margin: 0 auto 1.5rem;
             border-radius: 50%;
             object-fit: cover;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 22px -8px rgba(0, 0, 0, 0.2);
             display: block;
-            border: 2px solid rgba(190, 110, 70, 0.3);
+            border: 2px solid var(--accent);
             transition: border-color 0.2s;
         }
-
         .avatar:hover {
-            border-color: rgba(190, 110, 70, 0.7);
+            border-color: var(--accent-hover);
         }
 
-        /* name – solid color, warm but not shouting */
+        /* name – only, no subtitle */
         h1 {
-            font-size: 2.2rem;
-            font-weight: 550;
+            font-size: 2.3rem;
+            font-weight: 560;
             letter-spacing: -0.3px;
             text-align: center;
-            color: #c67f52;
-            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+            margin-bottom: 1.8rem;
         }
 
-        /* subtle descriptor (optional, but adds context) */
-        .descriptor {
-            text-align: center;
-            font-size: 0.9rem;
-            font-weight: 400;
-            color: #b9aa99;
-            margin-bottom: 2rem;
-            letter-spacing: -0.2px;
-        }
-
-        /* link grid – clean, even spacing */
+        /* link buttons – no arrows, clean */
         .links {
             display: flex;
             flex-direction: column;
             gap: 0.85rem;
-            margin: 1.5rem 0 1rem;
+            margin: 0.5rem 0 1rem;
         }
-
-        /* button style – rounded, solid fill with subtle hover */
         .link-btn {
             display: flex;
             align-items: center;
             justify-content: center;
             width: 100%;
             padding: 0.9rem 1rem;
-            background: rgba(28, 20, 23, 0.8);
+            background: var(--link-bg);
             backdrop-filter: blur(4px);
             border-radius: 60px;
             text-decoration: none;
             font-weight: 480;
-            font-size: 1rem;
-            color: #e2d6ca;
+            font-size: 0.98rem;
+            color: var(--link-text);
             transition: all 0.2s ease;
             border: none;
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
         }
-
         .link-btn:hover {
-            background: rgba(50, 36, 40, 0.9);
+            background: var(--link-bg-hover);
             transform: translateY(-1px);
-            color: #f2e2cf;
-            box-shadow: 0 8px 18px -6px rgba(0, 0, 0, 0.4);
+            color: var(--accent);
+            box-shadow: 0 8px 18px -8px rgba(0, 0, 0, 0.15);
         }
 
-        /* footer with only blog link */
+        /* footer – only blog link, no arrow (just text) */
         .footer {
-            margin-top: 2.2rem;
+            margin-top: 2rem;
             text-align: center;
-            padding-top: 0.8rem;
         }
-
         .blog-link {
             display: inline-block;
-            color: #b87a50;
+            color: var(--footer-link);
             text-decoration: none;
             font-size: 0.85rem;
-            font-weight: 460;
+            font-weight: 440;
             transition: color 0.2s;
-            border-bottom: 1px solid rgba(184, 122, 80, 0.4);
-            padding-bottom: 2px;
+            border-bottom: 1px solid transparent;
         }
-
         .blog-link:hover {
-            color: #da9a6a;
-            border-bottom-color: #da9a6a;
+            color: var(--accent);
+            border-bottom-color: var(--accent);
         }
 
-        /* responsive adjustments */
+        /* responsive */
         @media (max-width: 500px) {
             .card {
-                padding: 1.8rem 1.4rem;
+                padding: 1.6rem 1.4rem;
                 border-radius: 28px;
             }
             h1 {
                 font-size: 1.9rem;
+                margin-bottom: 1.4rem;
             }
             .avatar {
                 width: 96px;
                 height: 96px;
             }
             .link-btn {
-                padding: 0.75rem 0.8rem;
-                font-size: 0.9rem;
+                padding: 0.7rem 0.8rem;
+                font-size: 0.88rem;
             }
         }
     </style>
 </head>
 <body>
     <div class="card">
+        <div class="theme-toggle">
+            <button id="darkModeToggle" class="toggle-btn" aria-label="Switch theme">
+                <span class="toggle-icon">🌙</span>
+                <span>Dark / Light</span>
+            </button>
+        </div>
         <img src="./img/profile-2024-19.jpg" alt="Bryan Paget" class="avatar" />
         <h1>Bryan Paget</h1>
-        <div class="descriptor"></div>
         
         <div class="links">
             <a href="https://github.com/bryanpaget" target="_blank" rel="noopener" class="link-btn">GitHub</a>
@@ -199,5 +254,32 @@
             <a href="https://bryanpaget.neocities.org/" class="blog-link">visit the archive →</a>
         </div>
     </div>
+
+    <script>
+        (function() {
+            const toggleBtn = document.getElementById('darkModeToggle');
+            // Check system preference and stored preference
+            const stored = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            
+            if (stored === 'dark' || (stored === null && prefersDark)) {
+                document.body.classList.add('dark');
+            } else if (stored === 'light') {
+                document.body.classList.remove('dark');
+            }
+            
+            function toggleTheme() {
+                if (document.body.classList.contains('dark')) {
+                    document.body.classList.remove('dark');
+                    localStorage.setItem('theme', 'light');
+                } else {
+                    document.body.classList.add('dark');
+                    localStorage.setItem('theme', 'dark');
+                }
+            }
+            
+            toggleBtn.addEventListener('click', toggleTheme);
+        })();
+    </script>
 </body>
 </html>
