@@ -1,10 +1,10 @@
 # bryanpaget.com
 
-This is my personal homepage, hosted on GitHub Pages at [bryanpaget.com](https://bryanpaget.com). It's a lightweight, single-page site — a link-in-bio style card that points to my profiles across the web and showcases a selection of my projects. The page is plain HTML/CSS/JS with no framework, featuring a muted greyscale-and-gold aesthetic, a dark/light theme toggle, and a fully responsive layout.
+This is my personal homepage, hosted on GitHub Pages at [bryanpaget.com](https://bryanpaget.com). It's a lightweight, single-page site — a link-in-bio style card that points to my profiles across the web and showcases a selection of my projects. The page is plain HTML/CSS/JS with no framework, featuring a simple classic serif design and a fully responsive layout.
 
 ## Structure
 
-- `index.html` — the entire site, with inline styles and the theme-toggle script
+- `index.html` — the entire site, with inline styles and a small script for the footer year
 - `img/` — avatar and photo assets referenced by the page
 - `.github/workflows/jekyll-docker.yml` — builds the site on push to `main` via a Jekyll container (the page is static, so Jekyll passes it through)
 - `CNAME` — maps the repo to `bryanpaget.com`
@@ -21,4 +21,4 @@ Selected sub-pages are linked from the homepage:
 
 ## Development
 
-Run locally with `jekyll serve` (see the `Gemfile` for dependencies), then open http://localhost:4000. Push to `main` to deploy.
+Run locally with `bundle exec jekyll serve` (see the `Gemfile` for dependencies; gems install into `vendor/bundle`), then open http://localhost:4000. Push to `main` to deploy.
