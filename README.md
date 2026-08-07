@@ -1,6 +1,6 @@
 # bryanpaget.com
 
-This is my personal homepage, hosted on GitHub Pages at [bryanpaget.com](https://bryanpaget.com). It's a lightweight, single-page site — a link-in-bio style card that points to my profiles across the web and showcases a selection of my projects. The page is plain HTML/CSS/JS with no framework, featuring a simple classic serif design and a fully responsive layout.
+This is my personal homepage, hosted on GitHub Pages at [bryanpaget.com](https://bryanpaget.com). It's a lightweight, single-page site — a link-in-bio style card that points to my profiles across the web and showcases a selection of my projects. The page is plain HTML/CSS/JS with no framework, featuring a simple classic sans-serif design, an automatic light/dark theme that follows your system preference, and a fully responsive layout.
 
 ## Structure
 
