@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bryan Paget</title>
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bryanpaget.com/">
+    <meta property="og:title" content="Bryan Paget">
+    <meta property="og:description" content="Personal homepage of Bryan Paget.">
+    <meta property="og:image" content="https://bryanpaget.com/trust.jpg">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Bryan Paget">
+    <meta name="twitter:description" content="Personal homepage of Bryan Paget.">
+    <meta name="twitter:image" content="https://bryanpaget.com/trust.jpg">
     <style>
         :root {
             --text: #1a1a1a;
@@ -149,6 +158,10 @@
         footer .note {
             color: var(--muted);
         }
+        footer .sep {
+            color: var(--border);
+            margin: 0 0.15rem;
+        }
 
         @media (max-width: 480px) {
             .container {
@@ -190,24 +203,28 @@
                 <li><a href="https://www.youtube.com/@bryanpaget" target="_blank" rel="noopener" class="link"><span class="name">YouTube</span><span class="meta">youtube.com/@bryanpaget</span></a></li>
                 <li><a href="https://www.instagram.com/bryanpaget" target="_blank" rel="noopener" class="link"><span class="name">Instagram</span><span class="meta">instagram.com/bryanpaget</span></a></li>
                 <li><a href="https://www.xiaohongshu.com/user/profile/64919888000000001c02a065" target="_blank" rel="noopener" class="link"><span class="name">小红书</span><span class="meta">xiaohongshu.com</span></a></li>
-                <li><a href="https://pixelfed.social/@bryanpaget" target="_blank" rel="noopener" class="link"><span class="name">Pixelfed</span><span class="meta">pixelfed.social/@bryanpaget</span></a></li>
+                <li><a href="https://pixelfed.social/@bryanpaget" target="_blank" rel="me noopener" class="link"><span class="name">Pixelfed</span><span class="meta">pixelfed.social/@bryanpaget</span></a></li>
             </ul>
         </section>
 
         <section>
             <h2 class="section-title">Projects</h2>
             <ul class="links">
-                <li><a href="https://bryanpaget.com/heart-sutra" target="_blank" rel="noopener" class="link"><span class="name">Heart Sutra</span><span class="meta">bryanpaget.com/heart-sutra</span></a></li>
-                <li><a href="https://bryanpaget.com/toronto-bikeshare" target="_blank" rel="noopener" class="link"><span class="name">Toronto Bikeshare</span><span class="meta">bryanpaget.com/toronto-bikeshare</span></a></li>
-                <li><a href="https://bryanpaget.com/tetragon-and-ebpf" target="_blank" rel="noopener" class="link"><span class="name">Tetragon &amp; eBPF</span><span class="meta">bryanpaget.com/tetragon-and-ebpf</span></a></li>
-                <li><a href="https://bryanpaget.com/markdown-to-pdf" target="_blank" rel="noopener" class="link"><span class="name">Markdown to PDF</span><span class="meta">bryanpaget.com/markdown-to-pdf</span></a></li>
-                <li><a href="https://bryanpaget.com/ZonePresentationNovember2025" target="_blank" rel="noopener" class="link"><span class="name">Zone Presentation</span><span class="meta">bryanpaget.com/ZonePresentationNovember2025</span></a></li>
+                <li><a href="https://bryanpaget.com/heart-sutra" target="_blank" rel="noopener" class="link"><span class="name">Heart Sutra</span><span class="meta">An interactive meditation on the Heart Sutra</span></a></li>
+                <li><a href="https://bryanpaget.com/toronto-bikeshare" target="_blank" rel="noopener" class="link"><span class="name">Toronto Bikeshare</span><span class="meta">Live bike share station telemetry</span></a></li>
+                <li><a href="https://bryanpaget.com/tetragon-and-ebpf" target="_blank" rel="noopener" class="link"><span class="name">Tetragon &amp; eBPF</span><span class="meta">Security observability from the kernel up</span></a></li>
+                <li><a href="https://bryanpaget.com/markdown-to-pdf" target="_blank" rel="noopener" class="link"><span class="name">Markdown to PDF</span><span class="meta">GitHub Action that converts Markdown to PDF</span></a></li>
+                <li><a href="https://bryanpaget.com/ZonePresentationNovember2025" target="_blank" rel="noopener" class="link"><span class="name">Zone Presentation</span><span class="meta">Talk deck for Statistics Canada</span></a></li>
             </ul>
         </section>
 
         <footer>
             <div class="footer-inner">
-                <a href="https://bryanpaget.neocities.org/">Archive</a>
+                <div>
+                    <a href="https://bryanpaget.neocities.org/">Archive</a>
+                    <span class="sep">&middot;</span>
+                    <a href="mailto:vazt357ja@mozmail.com">Email</a>
+                </div>
                 <span class="note">&copy; <span id="year"></span> Bryan Paget</span>
             </div>
         </footer>
